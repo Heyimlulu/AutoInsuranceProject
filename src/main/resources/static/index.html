@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Build CRUD Nodejs Application</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/post_policy.js"></script>
+</head>
+<body>
+	<div class="container">
+		<ul class="nav nav-pills">
+			<li class="nav-item">
+				<a class="nav-link" href="/">Add New</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/policies.html">All policies</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/policy_edit_log_add.html">Add Edit Log</a>
+			</li>
+		</ul>
+		<div class="row">
+			<div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
+				<h3>Add new Policy</h3>
+				<form id="add_new_police">
+					<div class="form-group">
+						<label class="control-label" for="policyNumber">Policy Number:</label>
+						<input type="text" class="form-control" id="policyNumber"
+								placeholder="Enter Policy Number" name="policyNumber" required></input>
+                    </div>
+					<div class="form-group">
+						<label class="control-label" for="policyEffectiveDate">Effective Date:</label>
+						<input type="date" class="form-control" id="policyEffectiveDate"
+								placeholder="Enter Effective Date" name="policyEffectiveDate" required></input>
+					</div>                    
+					<div class="form-group">
+						<label class="control-label" for="policyExpireDate">Exp Date:</label>
+						<input type="date" class="form-control" id="policyExpireDate"
+								placeholder="Enter policyExpireDate" name="policyExpireDate" required></input>
+					</div>                    
+					<div class="form-group">
+						<label class="control-label" for="paymentOption">paymentOption:</label>
+						<input type="text" class="form-control" id="paymentOption"
+								placeholder="Enter paymentOption" name="paymentOption" required></input>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="totalAmount">totalAmount:</label>
+						<input type="number" class="form-control" id="totalAmount"
+								placeholder="Enter totalAmount" name="totalAmount" required></input>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="active">active:</label>
+						<input type="boolean" class="form-control" id="active"
+								placeholder="Enter active" name"active" required></input>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="additionalInfos">additionalInfos:</label>
+						<input type="text" class="form-control" id="additionalInfos"
+								placeholder="Enter additionalInfos" name="additionalInfos" required></input>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="creationDate">creationDate:</label>
+						<input type="date" class="form-control" id="creationDate"
+								placeholder="Enter creationDate" name="creationDate" required></input>
+					</div>                    
+					<button type="submit" class="btn btn-danger" id="btn-add-new-policy">Create</button>
+				</form>
+				<div id="response" style="display:none; margin-top:10px">
+				</div>
+			</div>
+		</div>
+		<hr>		
+	</div>
+</body>
+</html>
