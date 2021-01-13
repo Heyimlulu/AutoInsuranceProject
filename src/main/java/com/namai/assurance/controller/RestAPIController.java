@@ -82,12 +82,12 @@ public class RestAPIController {
 				//set new values for policy
 				policy.setPolicyNumber(_policy.getPolicyNumber());
 				policy.setAdditionalInfos(_policy.getAdditionalInfos());
-				policy.setCreationDate(policy.getCreationDate());
+				policy.setCreationDate(_policy.getCreationDate());
 				policy.setPaymentOption(_policy.getPaymentOption());
 				policy.setActive(_policy.isActive());
-				policy.setPolicyEffectiveDate(policy.getPolicyEffectiveDate());
-				policy.setPolicyExpireDate(policy.getPolicyExpireDate());
-				policy.setTotalAmount(policy.getTotalAmount());
+				policy.setPolicyEffectiveDate(_policy.getPolicyEffectiveDate());
+				policy.setPolicyExpireDate(_policy.getPolicyExpireDate());
+				policy.setTotalAmount(_policy.getTotalAmount());
 				
 	
 				// save the change to database
