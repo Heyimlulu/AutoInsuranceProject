@@ -23,23 +23,7 @@ $(document).ready(function() {
             async: false,
             cache: false,
             success: function (response) {
-                let policy = response.policys[0];
-                let policyString = "{ policy number: " + policy.policyNumber + 
-                                            ", policy effective date: " + policy.policyEffectiveDate +
-                                            ", policy expire date: " + policy.policyExpireDate +
-                                            ", policy payment option: " + policy.paymentOption +
-                                            ", policy total amount: " + policy.totalAmount +
-                                            ", policy is active: " + policy.active +
-                                            ", policy additional infos: " + policy.additionalInfos +
-                                            ", policy creation date: " + policy.creationDate  + " }"
-                let successAlert = '<div class="alert alert-success alert-dismissible">' + 
-                                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                        '<strong>' + response.message + '</strong> Policies\'s Info = ' + policyString;
-                                    '</div>'
-                $("#response").append(successAlert);
-                $("#response").css({"display": "block"});
-
-                resetUploadForm();
+                window.location = "/policies.html"; 
             },
             error: function (response) {
                 let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
