@@ -21,9 +21,23 @@
 5. Apply
 6. Run
 
+```
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.539 s
+[INFO] Finished at: 2021-01-14T09:54:14+01:00
+[INFO] ------------------------------------------------------------------------
+```
+
 Delete .m2 folder in `C:\Users\<user>\.m2` if the build failed
 
 ## Run
 
 1. Right-Click on the project
 2. Go to `Run As` > `Spring Boot App`
+3. Access through `http://localhost:8888/`
+
+```
+21-01-14 jeu. 09:55:03.442 INFO  AssuranceApplication Started AssuranceApplication in 11.748 seconds (JVM running for 12.851)
+```
