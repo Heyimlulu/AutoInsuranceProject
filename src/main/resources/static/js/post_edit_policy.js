@@ -20,18 +20,7 @@ $(document).ready(function() {
             async: false,
             cache: false,
             success: function (response) {
-                let policyEditLog = response.policyEditLogs[0];
-                let policyEditLogString = "{ Edited table: " + policyEditLog.editedTableName + 
-                                            ", policy edited date: " + policyEditLog.editedDate +
-                                            ", policy edited by: " + policyEditLog.editedBy +
-                                            ", policy log informations: " + policyEditLog.additionalInfos  + " }"
-                let successAlert = '<div class="alert alert-success alert-dismissible">' + 
-                                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                        '<strong>' + response.message + '</strong> Policies\'s Info = ' + policyEditLogString;
-                                    '</div>'
-                $("#response").append(successAlert);
-                $("#response").css({"display": "block"});
-                resetUploadForm();
+                window.location = "/edit_policies.html";
             },
             error: function (response) {
                 let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
