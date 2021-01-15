@@ -5,13 +5,24 @@ $(document).ready(function() {
         // PREPARE FORM DATA
         let formData = {
             policyNumber : $("#policyNumber").val(),
-                policyEffectiveDate :  $("#policyEffectiveDate").val(),
-                policyExpireDate: $("#policyExpireDate").val(),
-                paymentOption: $("#paymentOption").val(),
-                totalAmount: $("#totalAmount").val(),
-                active: $("#active").val(),
-                additionalInfos: $("#additionalInfos").val(),
-                creationDate: $("#creationDate").val()
+            policyEffectiveDate :  $("#policyEffectiveDate").val(),
+            policyExpireDate: $("#policyExpireDate").val(),
+            paymentOption: $("#paymentOption").val(),
+            totalAmount: $("#totalAmount").val(),
+            active: $("#active").val(),
+            additionalInfos: $("#additionalInfos").val(),
+            creationDate: $("#creationDate").val()
+        }
+
+        // If effective date is greater than expiracy date
+        if(Date.parse($("#policyEffectiveDate").val()) > Date.parse($("#policyExpireDate").val())){
+            let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
+                                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                '<strong>' + 'Error: Effective date cannot be greater than expiracy date' + '</strong>' + 
+                             '</div>'
+            $("#response").append(errorAlert);
+            $("#response").css({"display": "block"});
+            return;
         }
 
         $.ajax({
@@ -36,6 +47,31 @@ $(document).ready(function() {
                 location.replace("https://www.w3schools.com");
             }
         });
+    });
+
+    function todayDate() {
+        var today = new Date(); // get the current date
+        var dd = today.getDate(); // get the day from today.
+        var mm = today.getMonth()+1; // get the month from today +1 because january is 0!
+        var yyyy = today.getFullYear(); // get the year from today
+    
+        // if day is below 10, add a zero
+        if(dd < 10) {
+            dd = '0' + dd
+        }
+    
+        // if day is below 10, add a zero
+        if(mm < 10) {
+            mm = '0' + mm
+        }
+    
+        // final result is dd/mm/yyyy
+        return dd + '/' + mm + '/' + yyyy;
+    }
+
+    $(document).ready(function(){
+        $('#policyEffectiveDate').attr('min', todayDate());
+        $('#policyExpireDate').attr('min', todayDate());
     });
 
     (function(){
