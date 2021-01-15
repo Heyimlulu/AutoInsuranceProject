@@ -24,6 +24,17 @@ $(document).ready(function() {
             $("#response").css({"display": "block"});
             return;
         }
+        
+         // Effective date plus grande que effective date
+        if(Date.parse($("#policyEffectiveDate").val()) < Date.parse($("#creationDate").val())){
+            let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
+                                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                '<strong>' + 'Error: Invalid creation date' + '</strong>' + 
+                             '</div>'
+            $("#response").append(errorAlert);
+            $("#response").css({"display": "block"});
+            return;
+        }
 
         $.ajax({
             url: '/api/policy/create',
