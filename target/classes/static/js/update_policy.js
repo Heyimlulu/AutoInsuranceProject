@@ -65,7 +65,7 @@ $(document).ready(function(){
         }
     });
 
-    $(document).on("click", "table button.btn_id", function(){
+    $(document).on("click", "table button.btn_id", function(){       
         let id_of_button = (event.srcElement.id);
         let policyId = id_of_button.split("_")[2];
   
@@ -83,12 +83,27 @@ $(document).ready(function(){
                 $("#active").val(policy.active);
                 $("#additional_infos").val(policy.additionalInfos);
                 $("#creation_date").val(policy.creationDate);
-                $("#div_policy_updating").css({"display": "block"});
+                //$("#div_policy_updating").css({"display": "block"});
+                console.log(response); 
+
+                let url = "/update_policies.html?id=" + policy.id + 
+                "&policynumber=" + policy.policyNumber + 
+                "&effectivedate=" + policy.policyEffectiveDate +
+                "&expiredate=" + policy.policyExpireDate +
+                "&paymentoption=" + policy.paymentOption +
+                "&totalamount=" + policy.totalAmount +
+                "&active=" + policy.active +
+                "&additionalinfos=" + policy.additionalInfos +
+                "&creationdate=" + policy.creationDate;
+                
+                window.location.href = url;
+
+                //window.location = "/update_policies.html"; 
             },
             error: function(error){
                 console.log(error);
                 alert("Error -> " + error);
             }
-        });        
+        });    
     });
 });
