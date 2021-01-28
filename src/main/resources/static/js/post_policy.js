@@ -16,8 +16,8 @@ $(document).ready(function() {
 
         // If effective date is greater than expiracy date
         if(Date.parse($("#policyEffectiveDate").val()) > Date.parse($("#policyExpireDate").val())){
-            let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
-                                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+            let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
                                 '<strong>' + 'Error: Effective date cannot be greater than expiracy date' + '</strong>' + 
                              '</div>'
             $("#response").append(errorAlert);
@@ -27,9 +27,20 @@ $(document).ready(function() {
         
          // Effective date plus grande que effective date
         if(Date.parse($("#policyEffectiveDate").val()) < Date.parse($("#creationDate").val())){
-            let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
-                                '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+            let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
                                 '<strong>' + 'Error: Invalid creation date' + '</strong>' + 
+                             '</div>'
+            $("#response").append(errorAlert);
+            $("#response").css({"display": "block"});
+            return;
+        }
+        
+        // If the dates are all the same
+        if(Date.parse($("#policyEffectiveDate").val()) == Date.parse($("#policyExpireDate").val()) || Date.parse($("#policyEffectiveDate").val()) == Date.parse($("#creationDate"))){
+            let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                                '<strong>' + 'Error: Invalid dates' + '</strong>' + 
                              '</div>'
             $("#response").append(errorAlert);
             $("#response").css({"display": "block"});
@@ -48,8 +59,8 @@ $(document).ready(function() {
                 window.location = "/policies.html"; 
             },
             error: function (response) {
-                let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
-                                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 
+                                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
                                     '<strong>' + response.message + '</strong>' + ' ,Error: ' + message.error + 
                                 '</div>'
                 $("#response").append(errorAlert);

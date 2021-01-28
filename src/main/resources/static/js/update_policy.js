@@ -34,8 +34,8 @@ $(document).ready(function(){
                                                 ", additionalInfos:" + policy.additionalInfos +   
                                                 ", creationDate:" + policy.creationDate  + "}"
                     
-                    let successAlert = '<div class="alert alert-success alert-dismissible">' + 
-                                            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                    let successAlert = '<div class="alert alert-success alert-dismissible fade show" role="alert">' + 
+                                            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
                                             '<strong>' + response.message + '</strong> Policy\'s Info = ' + policyString;
                                         '</div>'
 
@@ -49,8 +49,8 @@ $(document).ready(function(){
                 },
 
                 error: function (response) {
-                    let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
-                                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                    let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 
+                                        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
                                         '<strong>' + response.message + '</strong>' + ' ,Error: ' + message.error + 
                                     '</div>';
 
