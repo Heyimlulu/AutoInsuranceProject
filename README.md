@@ -3,9 +3,10 @@
 ## Prerequisites
 
 - Eclipse IDE for Enterprise Java Developers
+  - Install the `Spring Tools 4 (Spring Tool Suite 4)` available in the Eclipse marketplace
 - Xampp (Apache & MySQL)
   - Port is default
-  - Add a new database **assurance_db** with default parameters
+  - Add a new database `assurance_db` with default parameters
 
 ## Build
 
