@@ -1,5 +1,11 @@
 # InsuranceProject
 
+## Built with 
+
+| Bootstrap  | HTML | CSS | Javascript |  Java | JQuery | Spring Boot | Maven | Hibernate
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| 5.0 | 5 | 3 | ES6 | 1.8 | 3.4.1 | 2.3.1 | 3.8.1 | 5.4.27 |
+
 ## Prerequisites
 
 - Eclipse IDE for Enterprise Java Developers
