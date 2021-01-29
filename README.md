@@ -8,7 +8,7 @@ An automobile insurance management application using Spring Boot, Maven and Boos
 - [Setup](#setup)
   - [Prerequisite](#prerequisites)
   - [Build](#build)
-  - [Run](run)
+  - [Run](#run)
 
 ## Technologies
 
