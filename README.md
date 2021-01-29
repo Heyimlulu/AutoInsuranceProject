@@ -1,6 +1,6 @@
 # InsuranceProject
 
-An automobile insurance management application using Spring Boot, Maven and Boostrap 
+An automobile insurance management application using Spring Boot, Maven and Bootstrap 
 
 ## Table of Contents
 
