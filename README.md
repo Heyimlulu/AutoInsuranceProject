@@ -1,20 +1,34 @@
 # InsuranceProject
 
-## Built with 
+An automobile insurance management application using Spring Boot, Maven and Boostrap 
+
+## Table of Contents
+
+- [Technologies](#technologies)
+- [Setup](#setup)
+  - [Prerequisite](#prerequisites)
+  - [Build](#build)
+  - [Run](run)
+
+## Technologies
 
 | Bootstrap  | HTML | CSS | Javascript |  Java | JQuery | Spring Boot | Maven | Hibernate
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 5.0 | 5 | 3 | ES6 | 1.8 | 3.4.1 | 2.3.1 | 3.8.1 | 5.4.27 |
+| 5.0 ✔️ | 5 ✔️ | 3 ✔️ | ES6 ✔️ | 1.8 ✔️ | 3.4.1 ✔️ | 2.3.1 ✔️ | 3.8.1 ✔️ | 5.4.27 ✔️ |
 
-## Prerequisites
+## Setup
 
-- Eclipse IDE for Enterprise Java Developers
-  - Install the `Spring Tools 4 (Spring Tool Suite 4)` available in the Eclipse marketplace
-- Xampp (Apache & MySQL)
-  - Port is default
+To run this project, you need to do the following
+
+### Prerequisites
+
+- Install Eclipse IDE for Enterprise Java Developers
+  - Install the `Spring Tools 4 (Spring Tool Suite 4)` in the Eclipse marketplace
+- Install Xampp and setup a Web Server with Apache & MySQL
+  - Ports is default
   - Add a new database `assurance_db` with default parameters
 
-## Build
+### Build
 
 1. Right-Click on the project
 2. Go to `Run As` > `Run Configurations...`
@@ -39,7 +53,7 @@
 
 Delete .m2 folder in `C:\Users\<user>\.m2` if the build failed
 
-## Run
+### Run
 
 1. Right-Click on the project
 2. Go to `Run As` > `Spring Boot App`
