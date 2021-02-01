@@ -23,29 +23,19 @@ $(document).ready(function(){
                 dataType : 'json',
                 async: false,
                 cache: false,
-                success: function (response) {
-                    let policy = response.policys[0];
-                    let policyString = "{policyNumber:" + policy.policyNumber + 
-                                                " ,policyEffectiveDate:" + policy.policyEffectiveDate + 
-                                                ", policyExpireDate:" + policy.policyExpireDate +
-                                                ", paymentOption:" + policy.paymentOption +
-                                                ", totalAmount:" + policy.totalAmount +
-                                                ", active:" + policy.active +
-                                                ", additionalInfos:" + policy.additionalInfos +   
-                                                ", creationDate:" + policy.creationDate  + "}"
-                    
+                success: function (response) {            
                     let successAlert = '<div class="alert alert-success alert-dismissible fade show" role="alert">' + 
                                             '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
-                                            '<strong>' + response.message + '</strong> Policy\'s Info = ' + policyString;
+                                            '<strong> Successfully updated a Policy with ID ' + policyId + '</strong>'
                                         '</div>'
-
-                    // change the updated data for policy table record
-                    $("#tr_" + policyId + " td.td_policy_number").text(policy.policyNumber.toUpperCase());
-                    $("#tr_" + policyId + " td.td_creation_date").text(policy.creationDate.toUpperCase());
 
                     $("#response").empty();
                     $("#response").append(successAlert);
                     $("#response").css({"display": "block"});
+                    
+                    setTimeout( () => { 
+                    	window.location = "/policies.html";
+                    }, 2500);
                 },
 
                 error: function (response) {
@@ -83,10 +73,8 @@ $(document).ready(function(){
                 $("#active").val(policy.active);
                 $("#additional_infos").val(policy.additionalInfos);
                 $("#creation_date").val(policy.creationDate);
-                //$("#div_policy_updating").css({"display": "block"});
-                console.log(response); 
 
-                let url = "/update_policies.html?id=" + policy.id + 
+                let url = "/policy_update.html?id=" + policy.id + 
                 "&policynumber=" + policy.policyNumber + 
                 "&effectivedate=" + policy.policyEffectiveDate +
                 "&expiredate=" + policy.policyExpireDate +
@@ -98,7 +86,6 @@ $(document).ready(function(){
                 
                 window.location.href = url;
 
-                //window.location = "/update_policies.html"; 
             },
             error: function(error){
                 console.log(error);

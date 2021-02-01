@@ -30,15 +30,15 @@
          data[tmp[0]] = tmp[1];
     }
     
-    document.getElementById('policy_id').value = data.id;
-    document.getElementById('policy_number').value = data.policynumber;
-    document.getElementById('policy_effective_date').value = data.effectivedate;
-    document.getElementById('policy_expire_date').value = data.expiredate;
-    document.getElementById('payment_option').value = data.paymentoption;
-    document.getElementById('total_amount').value = data.totalamount;
-    document.getElementById('active').value = data.active;
-    document.getElementById('additional_infos').value = data.additionalinfos;
-    document.getElementById('creation_date').value = data.creationdate;
+    document.getElementById('policy_id').value = decodeURI(data.id);
+    document.getElementById('policy_number').value = decodeURI(data.policynumber);
+    document.getElementById('policy_effective_date').value = decodeURI(data.effectivedate);
+    document.getElementById('policy_expire_date').value = decodeURI(data.expiredate);
+    document.getElementById('payment_option').value = decodeURI(data.paymentoption);
+    document.getElementById('total_amount').value = decodeURI(data.totalamount);
+    document.getElementById('active').value = decodeURI(data.active);
+    document.getElementById('additional_infos').value = decodeURI(data.additionalinfos);
+    document.getElementById('creation_date').value = decodeURI(data.creationdate);
 }
 </script>
 </head>
