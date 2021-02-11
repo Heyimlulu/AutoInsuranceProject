@@ -12,15 +12,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <!-- Script files -->
 <script type="text/javascript" src="/js/post_policy.js"></script>
-
-<style>
-	.form-group {
-		margin-bottom: 1rem;
-	}
-	.form-group:last-of-type {
-		margin-bottom: 1.7rem;
-	}
-</style>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 1.6rem;">
@@ -80,9 +73,11 @@
 								placeholder="Enter totalAmount" name="totalAmount" required></input>
 					</div>
 					<div class="form-group">
-						<label class="control-label" for="active">active:</label>
-						<input type="boolean" class="form-control" id="active"
-								placeholder="Enter active" name"active" required></input>
+						<label for="active">Active?</label>
+						<select id="active" class="form-select" aria-label="Default select example">
+							<option value="true">Yes</option>
+							<option value="false">No</option>
+						</select>
 					</div>
 					<div class="form-group">
 						<label class="control-label" for="additionalInfos">additionalInfos:</label>

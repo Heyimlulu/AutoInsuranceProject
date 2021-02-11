@@ -26,7 +26,7 @@ $(document).ready(function(){
                 success: function (response) {            
                     let successAlert = '<div class="alert alert-success alert-dismissible fade show" role="alert">' + 
                                             '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
-                                            '<strong> Successfully updated a Policy with ID ' + policyId + '</strong>'
+                                            '<strong> Policy N°' + policyId + ' has been successfully updated! Redirecting to all policies page... </strong>'
                                         '</div>'
 
                     $("#response").empty();
