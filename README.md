@@ -53,6 +53,23 @@ To run this project, you need to do the following
 
 Delete .m2 folder in `C:\Users\<user>\.m2` if the build failed
 
+### Database connection
+
+In the `./src/main/resources/application.properties` files, look for theses lines
+
+```
+spring.datasource.url=jdbc:mysql://localhost:3306/assurance_db?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=	
+
+server.port=8888
+```
+
+- `datasource.url` is the database URL connection
+- Make sure your username and password are correct in the `datasource.username` and `datasource.password` field
+- `server.port` default set is 8888, but you can change that
+
+
 ### Run
 
 1. Right-Click on the project
