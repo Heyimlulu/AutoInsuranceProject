@@ -7,3 +7,15 @@
 .form-check:first-of-type {
     margin-bottom: 0;
 }
+.form-design {
+    background-color: #cafafe;
+    padding: 10px;
+    border-radius: 3px;
+    margin: auto;
+}
+.jumbotron {
+    padding: 2rem 1rem;
+    margin: 2rem 10rem;
+    background-color: #cafafe;
+    border-radius: .3rem;
+}

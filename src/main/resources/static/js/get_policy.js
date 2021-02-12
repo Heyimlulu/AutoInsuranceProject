@@ -13,8 +13,8 @@ $(document).ready(function(){
                 let deleteButton = '<button ' +
                                         'id=' +
                                         '\"' + 'btn_delete_' + policy.id + '\"'+
-                                        ' type="button" class="btn btn-danger btn_delete" data-toggle="modal" data-target="#delete-modal"' +
-                                        '>&times</button>';
+                                        ' type="button" class="btn btn-danger btn_delete" data-bs-toggle="modal" data-bs-target="#delete-modal">' +
+                                        '&times</button>';
 
                 let get_More_Info_Btn = '<button' +
                                             ' id=' + '\"' + 'btn_id_' + policy.id + '\"' +

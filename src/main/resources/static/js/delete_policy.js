@@ -7,7 +7,7 @@
         let btn_id = (event.srcElement.id);
         policyId = btn_id.split("_")[2];
 
-        $("div.modal-body").text("Do you want to delete a Policy with id = " + policyId + " ?");
+        $("div.modal-body").text("Policy N°" + policyId + " will be deleted, do you want to continue?");
         $("#model-delete-btn").css({"display": "inline"});
     });
 
@@ -16,7 +16,7 @@
             url: '/api/policy/deletebyid/' + policyId,
             type: 'DELETE',
             success: function(response) {
-                $("div.modal-body").text("Delete successfully a Policy with id = " + policyId + "!");
+                $("div.modal-body").text("Policy N°" + policyId + " has been successfully deleted" + "!");
 
                 $("#model-delete-btn").css({"display": "none"});
                 $("button.btn.btn-secondary").text("Close");
