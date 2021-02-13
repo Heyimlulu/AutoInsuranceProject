@@ -26,15 +26,15 @@
     }
 	
 	/* Decode input field to avoid URL syntax */
-    document.getElementById('policy_id').value = decodeURI(data.id);
-    document.getElementById('policy_number').value = decodeURI(data.policynumber);
-    document.getElementById('policy_effective_date').value = decodeURI(data.effectivedate);
-    document.getElementById('policy_expire_date').value = decodeURI(data.expiredate);
-    document.getElementById('payment_option').value = decodeURI(data.paymentoption);
-    document.getElementById('total_amount').value = decodeURI(data.totalamount);
+    document.getElementById('policyID').value = decodeURI(data.id);
+    document.getElementById('policyNumber').value = decodeURI(data.policynumber);
+    document.getElementById('policyEffectiveDate').value = decodeURI(data.effectivedate);
+    document.getElementById('policyExpireDate').value = decodeURI(data.expiredate);
+    document.getElementById('paymentOption').value = decodeURI(data.paymentoption);
+    document.getElementById('totalAmount').value = decodeURI(data.totalamount);
     document.getElementById('active').value = decodeURI(data.active);
-    document.getElementById('additional_infos').value = decodeURI(data.additionalinfos);
-    document.getElementById('creation_date').value = decodeURI(data.creationdate);
+    document.getElementById('additionalInfos').value = decodeURI(data.additionalinfos);
+    document.getElementById('creationDate').value = decodeURI(data.creationdate);
 }
 </script>
 </head>
@@ -50,7 +50,7 @@
 			  <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Policy</a>
 				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-				  <li><a class="dropdown-item" href="/">Add New</a></li>
+				  <li><a class="dropdown-item" href="/policy_add.html">Add New</a></li>
 				  <li><a class="dropdown-item" href="/policies.html">All policies</a></li>
 				</ul>
 			  </li><!-- Policy pages -->
@@ -71,28 +71,28 @@
                 <h3>Update Policy</h3>
 				<form id="update_policy_form">
 					<div class="form-group">
-						<label for="policy_id">Id:</label>
-						<input type="number" class="form-control" id="policy_id" readonly>
+						<label for="policyID">Id:</label>
+						<input type="number" class="form-control" id="policyID" readonly>
 					</div>
 					<div class="form-group">
-						<label for="policy_number">Policy Number:</label>
-						<input type="text" class="form-control" placeholder="Enter Policy number" id="policy_number">
+						<label for="policyNumber">Policy Number:</label>
+						<input type="text" class="form-control" placeholder="Enter Policy number" id="policyNumber">
 					</div>
 					<div class="form-group">
-						<label for="policy_effective_date">Effective Date:</label>
-						<input type="date" class="form-control" placeholder="Enter Effective date" id="policy_effective_date">
+						<label for="policyEffectiveDate">Effective Date:</label>
+						<input type="date" class="form-control" placeholder="Enter Effective date" id="policyEffectiveDate">
 					</div>				  
 					<div class="form-group">
-						<label for="policy_expire_date">Expire Date:</label>
-						<input type="date" class="form-control" placeholder="Enter Expire date" id="policy_expire_date">
+						<label for="policyExpireDate">Expire Date:</label>
+						<input type="date" class="form-control" placeholder="Enter Expire date" id="policyExpireDate">
 					</div>				  				
 					<div class="form-group">
-						<label for="payment_option">Payment option:</label>
-						<input type="text" class="form-control" placeholder="Enter payment option" id="payment_option">
+						<label for="paymentOption">Payment option:</label>
+						<input type="text" class="form-control" placeholder="Enter payment option" id="paymentOption">
 					</div>
 					<div class="form-group">
-						<label for="total_amount">Total amount:</label>
-						<input type="number" class="form-control" placeholder="Enter the total amount" id="total_amount">
+						<label for="totalAmount">Total amount:</label>
+						<input type="number" class="form-control" placeholder="Enter the total amount" id="totalAmount">
 					</div>
 					<div class="form-group">
 						<label for="active">Active?</label>
@@ -102,12 +102,12 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="additional_infos">Additional Infos:</label>
-						<input type="text" class="form-control" placeholder="Enter additional infos" id="additional_infos">
+						<label for="additionalInfos">Additional Infos:</label>
+						<input type="text" class="form-control" placeholder="Enter additional infos" id="additionalInfos">
 					</div>
 					<div class="form-group">
-						<label for="creation_date">Creation date:</label>
-						<input type="date" class="form-control" placeholder="Enter creation date" id="creation_date">
+						<label for="creationDate">Creation date:</label>
+						<input type="date" class="form-control" placeholder="Enter creation date" id="creationDate">
 					</div>				  				
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>

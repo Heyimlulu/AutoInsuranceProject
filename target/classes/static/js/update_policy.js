@@ -2,19 +2,53 @@ $(document).ready(function(){
     $("#update_policy_form").submit(function(evt) {
         evt.preventDefault();
         try {
-            let policyId = $("#policy_id").val();
+            let policyId = $("#policyID").val();
 
             // PREPARE FORM DATA
             let formData = {
-            policyNumber : $("#policy_number").val(),
-                policyEffectiveDate :  $("#policy_effective_date").val(),
-                policyExpireDate: $("#policy_expire_date").val(),
-                paymentOption: $("#payment_option").val(),
-                totalAmount: $("#total_amount").val(),
+                policyNumber : $("#policyNumber").val(),
+                policyEffectiveDate :  $("#policyEffectiveDate").val(),
+                policyExpireDate: $("#policyExpireDate").val(),
+                paymentOption: $("#paymentOption").val(),
+                totalAmount: $("#totalAmount").val(),
                 active: $("#active").val(),
-                additionalInfos: $("#additional_infos").val(),
-                creationDate: $("#creation_date").val()
-        }         
+                additionalInfos: $("#additionalInfos").val(),
+                creationDate: $("#creationDate").val()
+            }
+
+            // If effective date is greater than expiracy date
+            if(Date.parse($("#policyEffectiveDate").val()) > Date.parse($("#policyExpireDate").val())){
+                let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '<strong>' + 'Error: Effective date cannot be greater than expiracy date' + '</strong>' +
+                    '</div>'
+                $("#response").append(errorAlert);
+                $("#response").css({"display": "block"});
+                return;
+            }
+
+            // Effective date plus grande que effective date
+            if(Date.parse($("#policyEffectiveDate").val()) < Date.parse($("#creationDate").val())){
+                let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '<strong>' + 'Error: Invalid creation date' + '</strong>' +
+                    '</div>'
+                $("#response").append(errorAlert);
+                $("#response").css({"display": "block"});
+                return;
+            }
+
+            // If the dates are all the same
+            if(Date.parse($("#policyEffectiveDate").val()) == Date.parse($("#policyExpireDate").val()) || Date.parse($("#policyEffectiveDate").val()) == Date.parse($("#creationDate"))){
+                let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                    '<strong>' + 'Error: Invalid dates' + '</strong>' +
+                    '</div>'
+                $("#response").append(errorAlert);
+                $("#response").css({"display": "block"});
+                return;
+            }
+
             $.ajax({
                 url: '/api/policy/updatebyid/' + policyId + "/",
                 type: 'PUT',
@@ -64,15 +98,15 @@ $(document).ready(function(){
             type: 'GET',
             success: function(response) {
                 let policy = response.policys[0];                
-                $("#policy_id").val(policy.id);
-                $("#policy_number").val(policy.policyNumber);
-                $("#policy_effective_date").val(policy.policyEffectiveDate);
-                $("#policy_expire_date").val(policy.policyExpireDate);
-                $("#payment_option").val(policy.paymentOption);
-                $("#total_amount").val(policy.totalAmount);
+                $("#policyID").val(policy.id);
+                $("#policyNumber").val(policy.policyNumber);
+                $("#policyEffectiveDate").val(policy.policyEffectiveDate);
+                $("#policyExpireDate").val(policy.policyExpireDate);
+                $("#paymentOption").val(policy.paymentOption);
+                $("#totalAmount").val(policy.totalAmount);
                 $("#active").val(policy.active);
-                $("#additional_infos").val(policy.additionalInfos);
-                $("#creation_date").val(policy.creationDate);
+                $("#additionalInfos").val(policy.additionalInfos);
+                $("#creationDate").val(policy.creationDate);
 
                 let url = "/policy_update.html?id=" + policy.id + 
                 "&policynumber=" + policy.policyNumber + 

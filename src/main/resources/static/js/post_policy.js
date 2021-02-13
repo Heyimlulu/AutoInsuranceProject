@@ -14,8 +14,6 @@ $(document).ready(function() {
             creationDate: $("#creationDate").val()
         }
 
-        console.log(formData);
-
         // If effective date is greater than expiracy date
         if(Date.parse($("#policyEffectiveDate").val()) > Date.parse($("#policyExpireDate").val())){
             let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 
