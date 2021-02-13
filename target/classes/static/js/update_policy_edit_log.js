@@ -21,32 +21,25 @@ $(document).ready(function(){
                 async: false,
                 cache: false,
                 success: function (response) {
-                    let policyEditLog = response.editLogPolicies[0];
-                    let policyEditLogString = "{editedTableName:" + policyEditLog.editedTableName + 
-                                                " ,policy_id_artifact:" + policyEditLog.policy_id_artifact + 
-                                                ", editedDate:" + policyEditLog.editedDate +
-                                                ", editedBy:" + policyEditLog.editedBy +  
-                                                ", additionalInfos:" + policyEditLog.additionalInfos  + "}"
-                    
-                    let successAlert = '<div class="alert alert-success alert-dismissible">' + 
-                                            '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                            '<strong>' + response.message + '</strong> PolicyEditLog\'s Info = ' + policyEditLogString;
+                    let successAlert = '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
+                                            '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                                            '<strong> Policy Edit Log N°' + policyEditLogId + ' has been successfully updated! Redirecting to all edit log policies page... </strong>' +
                                         '</div>'
-
-                    // change the updated data for policy edit log table record
-                    $("#tr_" + policyEditLogId + " td.td_edited_by").text(policyEditLog.editedBy.toUpperCase());
-                    $("#tr_" + policyEditLogId + " td.td_edited_date").text(policyEditLog.editedDate.toUpperCase());
 
                     $("#response").empty();
                     $("#response").append(successAlert);
                     $("#response").css({"display": "block"});
+
+                    setTimeout( () => {
+                        window.location = "/policies_edit_log.html";
+                    }, 2500);
                 },
 
                 error: function (response) {
-                    let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
-                                        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                        '<strong>' + response.message + '</strong>' + ' ,Error: ' + message.error + 
-                                    '</div>';
+                    let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                                        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                                        '<strong> There was an error updating this edit log policy, please try again </strong>' +
+                                    '</div>'
 
                     $("#response").empty();                                    
                     $("#response").append(errorAlert);
@@ -67,14 +60,22 @@ $(document).ready(function(){
             url: '/api/editLog/findone/' + policyEditLogId,
             type: 'GET',
             success: function(response) {
-                let policyEditLog = response.editLogPolicies[0];                
+                let policyEditLog = response.editLogPolicies[0];
                 $("#edit_log_policy_id").val(policyEditLog.id);
                 $("#edit_log_policy_edited_table").val(policyEditLog.editedTableName);
                 $("#policy_id_artifact").val(policyEditLog.policy_id_artifact);
                 $("#edit_log_policy_edited_date").val(policyEditLog.editedDate);
                 $("#edit_log_policy_edited_by").val(policyEditLog.editedBy);
                 $("#edit_log_additional_info").val(policyEditLog.additionalInfos);
-                $("#div_edit_log_policy_updating").css({"display": "block"});
+
+                let url = "/policy_edit_log_update.html?editlogid=" + policyEditLog.id +
+                    "&editedtablename=" + policyEditLog.editedTableName +
+                    "&idartifact=" + policyEditLog.policy_id_artifact +
+                    "&editeddate=" + policyEditLog.editedDate +
+                    "&editedby=" + policyEditLog.editedBy +
+                    "&additionalinfos=" + policyEditLog.additionalInfos;
+
+                window.location.href = url;
             },
             error: function(error){
                 console.log(error);

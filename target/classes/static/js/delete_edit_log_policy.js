@@ -6,7 +6,7 @@ $(document).ready(function(){
         policyEditLogId = btn_id.split("_")[2];
 
         $("div.modal-body")
-            .text("Do you want delete a Edit Log Policy with id = " + policyEditLogId + " ?");
+            .text("Policy Edit Log N°" + policyEditLogId + " will be deleted, do you want to continue?");
         $("#model-delete-btn").css({"display": "inline"});
     });
 
@@ -15,8 +15,7 @@ $(document).ready(function(){
             url: '/api/editLog/deletebyid/' + policyEditLogId,
             type: 'DELETE',
             success: function(response) {
-                $("div.modal-body")
-                    .text("Delete successfully a Edited Log Policy with id = " + policyEditLogId + "!");
+                $("div.modal-body").text("Policy Edit Log N°" + policyEditLogId + " has been successfully deleted" + "!");
 
                 $("#model-delete-btn").css({"display": "none"});
                 $("button.btn.btn-secondary").text("Close");
