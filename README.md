@@ -22,7 +22,7 @@ To run this project, you need to do the following
 ### Prerequisites
 
 - Install Xampp and setup a Web Server with Apache & MySQL
-  - Ports is default
+  - MySQL port is default
   - Add a new database `assurance_db` with default parameters
 
 ### Database-setup
