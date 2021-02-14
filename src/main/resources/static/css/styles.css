@@ -19,3 +19,11 @@
     background-color: #cafafe;
     border-radius: .3rem;
 }
+.credits {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+}
+
+.credits-links {
+    text-decoration: none;
+}

@@ -1,8 +1,6 @@
 	$(document).ready(function(){
     let policyId = 0;
 
-    console.log("Hello World");
-
     $(document).on("click", "#div_policy_table table button.btn_delete", function() {
         let btn_id = (event.srcElement.id);
         policyId = btn_id.split("_")[2];
