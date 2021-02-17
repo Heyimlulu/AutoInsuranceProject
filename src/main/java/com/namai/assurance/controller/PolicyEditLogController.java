@@ -35,10 +35,10 @@ public class PolicyEditLogController {
 			policyEditLog.setPolicy(p);
 			PolicyEditLog returnedPolicy = policyEditLogServices.savePolicyEditLog(policyEditLog);
 
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", Arrays.asList(returnedPolicy), ""),
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", Arrays.asList(returnedPolicy), null, ""),
 					HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Policy!", null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Fail to post a new Policy!", null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -50,9 +50,9 @@ public class PolicyEditLogController {
 			List<PolicyEditLog> policyEditLogInfos = policyEditLogServices.getPolicyEditLogInfos();
 
 			return new ResponseEntity<Message>(new Message("Get Policys Edit Log' Infos!", 
-					policyEditLogInfos, ""), HttpStatus.OK);
+					policyEditLogInfos, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail!", null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Fail!", null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -64,13 +64,13 @@ public class PolicyEditLogController {
 
 			if (optPolicy.isPresent()) {
 				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a policy by id = " + id,
-						Arrays.asList(optPolicy.get()), ""), HttpStatus.OK);
+						Arrays.asList(optPolicy.get()), null, ""), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a policy by id = " + id, null, ""),
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a policy by id = " + id, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Failure", null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -91,14 +91,14 @@ public class PolicyEditLogController {
 				policyEditLogServices.updatePolicyEditLog(policyEditLog);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a PolicyEditLog " + "with id = " + id, null, ""), null);
+						new Message("Successfully! Updated a PolicyEditLog " + "with id = " + id, null, null, ""), null);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Policy " + "with id = " + id, null, ""),
+						new Message("Failer! Can NOT Found a Policy " + "with id = " + id, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Failure", null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -111,14 +111,14 @@ public class PolicyEditLogController {
 				policyEditLogServices.deletePolicyEditLogById(id);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Delete a PolicyEditLog with id = " + id, null, ""), HttpStatus.OK);
+						new Message("Successfully! Delete a PolicyEditLog with id = " + id, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a PolicyEditLog " + "with id = " + id, null, ""),
+						new Message("Failer! Can NOT Found a PolicyEditLog " + "with id = " + id, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Failure", null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}

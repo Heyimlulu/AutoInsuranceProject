@@ -50,7 +50,17 @@ public class PolicyEditLog {
 		this.policy = policy;
 	}
 
-	public PolicyEditLog() {
+	public PolicyEditLog() {}
+	
+	public PolicyEditLog(long id, String editedTableName, long policy_id_artifact, Date editedDate, String editedBy, String additionalInfos, Policy policy) {
+		super();
+		this.id = id;
+		this.editedTableName = editedTableName;
+		this.policy_id_artifact = policy_id_artifact;
+		this.editedDate = editedDate;
+		this.editedBy = editedBy;
+		this.additionalInfos = additionalInfos;
+		this.policy = policy;
 	}
 
 	public long getId() {
@@ -93,12 +103,6 @@ public class PolicyEditLog {
 		this.additionalInfos = additionalInfos;
 	}
 
-	@Override
-	public String toString() {
-		return "PolicyEditLog [id=" + id + ", editedTableName=" + editedTableName + ", editedDate=" + editedDate
-				+ ", editedBy=" + editedBy + ", additionalInfos=" + additionalInfos + "]";
-	}
-
 	public long getPolicy_id_artifact() {
 		return policy_id_artifact;
 	}
@@ -107,16 +111,9 @@ public class PolicyEditLog {
 		this.policy_id_artifact = policy_id_artifact;
 	}
 
-	public PolicyEditLog(long id, String editedTableName, long policy_id_artifact, Date editedDate, String editedBy,
-			String additionalInfos, Policy policy) {
-		super();
-		this.id = id;
-		this.editedTableName = editedTableName;
-		this.policy_id_artifact = policy_id_artifact;
-		this.editedDate = editedDate;
-		this.editedBy = editedBy;
-		this.additionalInfos = additionalInfos;
-		this.policy = policy;
+	@Override
+	public String toString() {
+		return "PolicyEditLog [id=" + id + ", editedTableName=" + editedTableName + ", editedDate=" + editedDate
+				+ ", editedBy=" + editedBy + ", additionalInfos=" + additionalInfos + "]";
 	}
-
 }

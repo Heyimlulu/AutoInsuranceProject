@@ -30,12 +30,42 @@ public class Policy {
 
 	@Column
 	private Date policyExpireDate;
+
+	@Column
+	private String paymentOption;
+
+	@Column
+	private double totalAmount;
+
+	@Column
+	private boolean active;
+
+	@Column
+	private String additionalInfos;
+
+	@Column
+	private Date creationDate;
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
+	private List<PolicyEditLog> policyEditLogs;
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
+	private List<Bill> bill;
+	
+	// Policy Edit Log Model - GET/SET
+	public List<PolicyEditLog> getPolicyEditLogs() { return policyEditLogs; }
+	public void setPolicyEditLogs(List<PolicyEditLog> policyEditLogs) { this.policyEditLogs = policyEditLogs; }
+
+	// Bill Model - GET/SET
+	public List<Bill> getBill() { return bill; }
+	public void setBill(List<Bill> bill) { this.bill = bill; }
 	
 	public Policy()
 	{}
 	
-	public Policy(long id, String policyNumber, Date policyEffectiveDate, Date policyExpireDate, String paymentOption,
-			double totalAmount, boolean active, String additionalInfos, Date creationDate) {
+	public Policy(long id, String policyNumber, Date policyEffectiveDate, Date policyExpireDate, String paymentOption, double totalAmount, boolean active, String additionalInfos, Date creationDate) {
 		super();
 		this.id = id;
 		this.policyNumber = policyNumber;
@@ -48,6 +78,36 @@ public class Policy {
 		this.creationDate = creationDate;
 	}
 
+	public void setId(long id) { this.id = id; }
+	
+	public long getId() {
+		return this.id;
+	}
+		
+	public String getPolicyNumber() {
+		return policyNumber;
+	}
+
+	public void setPolicyNumber(String policyNumber) {
+		this.policyNumber = policyNumber;
+	}
+
+	public Date getPolicyEffectiveDate() {
+		return policyEffectiveDate;
+	}
+
+	public void setPolicyEffectiveDate(Date policyEffectiveDate) {
+		this.policyEffectiveDate = policyEffectiveDate;
+	}
+
+	public Date getPolicyExpireDate() {
+		return policyExpireDate;
+	}
+
+	public void setPolicyExpireDate(Date policyExpireDate) {
+		this.policyExpireDate = policyExpireDate;
+	}
+	
 	public String getPaymentOption() {
 		return paymentOption;
 	}
@@ -86,69 +146,6 @@ public class Policy {
 
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
-	}
-
-	@Column
-	private String paymentOption;
-	
-	@Column
-	private double totalAmount;
-	
-	@Column
-	private boolean active;
-	
-	@Column
-	private String additionalInfos;
-	
-	@Column
-	private Date creationDate;
-	
-	@JsonManagedReference
-	@OneToMany(mappedBy = "policy", cascade = {
-	        CascadeType.ALL
-	    })
-	    private List < PolicyEditLog > policyEditLogs;
-	
-	public List<PolicyEditLog> getPolicyEditLogs() {
-		return policyEditLogs;
-	}
-
-	public void setPolicyEditLogs(List<PolicyEditLog> policyEditLogs) {
-		this.policyEditLogs = policyEditLogs;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-	
-	public long getId() {
-		return this.id;
-	}
-	
-	
-	
-	public String getPolicyNumber() {
-		return policyNumber;
-	}
-
-	public void setPolicyNumber(String policyNumber) {
-		this.policyNumber = policyNumber;
-	}
-
-	public Date getPolicyEffectiveDate() {
-		return policyEffectiveDate;
-	}
-
-	public void setPolicyEffectiveDate(Date policyEffectiveDate) {
-		this.policyEffectiveDate = policyEffectiveDate;
-	}
-
-	public Date getPolicyExpireDate() {
-		return policyExpireDate;
-	}
-
-	public void setPolicyExpireDate(Date policyExpireDate) {
-		this.policyExpireDate = policyExpireDate;
 	}
 
 	@Override
