@@ -1,3 +1,4 @@
+/* form style */
 .form-group, .form-check {
     margin-bottom: 1rem;
 }
@@ -13,6 +14,8 @@
     border-radius: 3px;
     margin: auto;
 }
+
+/* jumbotron style */
 .jumbotron {
     padding: 2rem 1rem;
     margin: 2rem 10rem;
@@ -26,4 +29,26 @@
 
 .credits-links {
     text-decoration: none;
+}
+
+/* Bootstrap navbar dropdown with hover effect */
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: none;
+    }
+    .navbar .nav-item:hover .nav-link {
+        color: rgba(0,0,0,.7);
+    }
+    .navbar .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+    .navbar .nav-item .dropdown-menu {
+        margin-top:0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .jumbotron {
+        margin: 2rem 1rem;
+    }
 }
