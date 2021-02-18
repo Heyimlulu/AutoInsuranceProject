@@ -20,7 +20,7 @@ $(document).ready(function() {
             async: false,
             cache: false,
             success: function (response) {
-                window.location = "/policies_edit_log.html";
+                window.location = "/policyeditlog/policies_edit_log.html";
             },
             error: function (response) {
                 let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 

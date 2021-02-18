@@ -68,7 +68,7 @@ $(document).ready(function(){
                     $("#response").css({"display": "block"});
                     
                     setTimeout( () => { 
-                    	window.location = "/policies.html";
+                    	window.location = "/policy/policies.html";
                     }, 2500);
                 },
 
@@ -108,7 +108,7 @@ $(document).ready(function(){
                 $("#additionalInfos").val(policy.additionalInfos);
                 $("#creationDate").val(policy.creationDate);
 
-                let url = "/policy_update.html?id=" + policy.id + 
+                let url = "/policy/policy_update.html?id=" + policy.id +
                 "&policynumber=" + policy.policyNumber + 
                 "&effectivedate=" + policy.policyEffectiveDate +
                 "&expiredate=" + policy.policyExpireDate +

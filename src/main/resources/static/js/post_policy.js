@@ -56,7 +56,7 @@ $(document).ready(function() {
             async: false,
             cache: false,
             success: function (response) {
-                window.location = "/policies.html"; 
+                window.location = "/policy/policies.html";
             },
             error: function (response) {
                 let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 

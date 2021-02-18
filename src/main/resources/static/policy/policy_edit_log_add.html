@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Auto Insurance Application | Add Edit Log Policy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap 5.0 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap 5.0 Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/post_edit_policy.js"></script>
+<!-- Script files -->
+<script src="../js/navbar.js"></script>
+<!-- Custom CSS -->
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div id="navbar"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-7 form-design">
+				<h3>Add new Edit Log Policy</h3>
+				<form id="add_new_edit_policy">
+					<div class="form-group">
+						<label class="control-label" for="policy_id_artifact">Policy Id:</label>
+						<input type="text" class="form-control" id="policy_id_artifact"
+								placeholder="Enter Policy Id" name="policy_id_artifact" required></input>
+                    </div>
+					<div class="form-group">
+						<label class="control-label" for="editedTableName">Policy edited table:</label>
+						<input type="text" class="form-control" id="editedTableName"
+								placeholder="Enter Policy Edited Table" name="editedTableName" required></input>
+                    </div>
+					<div class="form-group">
+						<label class="control-label" for="editedDate">Edited Date:</label>
+						<input type="date" class="form-control" id="editedDate"
+								placeholder="Enter Edited Date" name="editedDate" required></input>
+					</div>                    
+					<div class="form-group">
+						<label class="control-label" for="editedBy">Edited By:</label>
+						<input type="text" class="form-control" id="editedBy"
+								placeholder="Enter edited by" name="editedBy" required></input>
+					</div>                    
+					<div class="form-group">
+						<label class="control-label" for="additionalInfos">Additionals Infos:</label>
+						<input type="text" class="form-control" id="additionalInfos"
+								placeholder="Enter Additional Infos" name="additionalInfos" required></input>
+					</div>                  
+					<button type="submit" class="btn btn-danger" id="btn-add-new-edit_policy">Create</button>
+				</form>
+				<div id="response" style="display:none; margin-top:10px">
+				</div>
+			</div>
+		</div>
+		<hr>		
+	</div>
+</body>
+</html>

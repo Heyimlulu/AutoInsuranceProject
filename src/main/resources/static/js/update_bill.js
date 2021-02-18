@@ -43,7 +43,7 @@ $(document).ready(function(){
                     $("#response").css({"display": "block"});
 
                     setTimeout( () => {
-                        window.location = "/bills.html";
+                        window.location = "/bill/bills.html";
                     }, 2500);
                 },
 
@@ -84,7 +84,7 @@ $(document).ready(function(){
                 $("#balance").val(bill.balance);
                 $("#status").val(bill.status);
 
-                let url = "/bill_update.html?id=" + bill.id +
+                let url = "/bill/bill_update.html?id=" + bill.id +
                     "&dueDate=" + bill.dueDate +
                     "&minimumPayment=" + bill.minimumPayment +
                     "&createdDate=" + bill.createdDate +

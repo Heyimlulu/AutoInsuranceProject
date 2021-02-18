@@ -34,7 +34,7 @@ $(document).ready(function() {
             async: false,
             cache: false,
             success: function (response) {
-                window.location = "/bills.html";
+                window.location = "/bill/bills.html";
             },
             error: function (response) {
                 let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
