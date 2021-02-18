@@ -31,7 +31,7 @@ $(document).ready(function(){
                     $("#response").css({"display": "block"});
 
                     setTimeout( () => {
-                        window.location = "/policyeditlog/policies_edit_log.html";
+                        window.location = "/policy/updatepolicyeditlog.html";
                     }, 2500);
                 },
 
@@ -68,7 +68,7 @@ $(document).ready(function(){
                 $("#edit_log_policy_edited_by").val(policyEditLog.editedBy);
                 $("#edit_log_additional_info").val(policyEditLog.additionalInfos);
 
-                let url = "/policyeditlog/policy_edit_log_update.html?editlogid=" + policyEditLog.id +
+                let url = "/policy/updatepolicyeditlog.html?editlogid=" + policyEditLog.id +
                     "&editedtablename=" + policyEditLog.editedTableName +
                     "&idartifact=" + policyEditLog.policy_id_artifact +
                     "&editeddate=" + policyEditLog.editedDate +

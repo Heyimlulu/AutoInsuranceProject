@@ -108,7 +108,7 @@ $(document).ready(function(){
                 $("#additionalInfos").val(policy.additionalInfos);
                 $("#creationDate").val(policy.creationDate);
 
-                let url = "/policy/policy_update.html?id=" + policy.id +
+                let url = "/policy/updatepolicy.html?id=" + policy.id +
                 "&policynumber=" + policy.policyNumber + 
                 "&effectivedate=" + policy.policyEffectiveDate +
                 "&expiredate=" + policy.policyExpireDate +
