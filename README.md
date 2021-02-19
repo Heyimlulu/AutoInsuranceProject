@@ -40,3 +40,12 @@ server.port=8888
 - `datasource.url` is the database URL connection
 - Make sure your username and password are correct in the `datasource.username` and `datasource.password` field
 - `server.port` default set is 8888, but you can change that
+
+## Author
+
+- [namaio](https://github.com/namaio)
+
+## Contributors
+
+- [Heyimlulu](https://github.com/Heyimlulu)
+- [Dead-Bot](https://github.com/Dead-Bot)
