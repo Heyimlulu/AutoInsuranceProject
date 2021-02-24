@@ -1,5 +1,3 @@
-$( document ).ready(function() {
-    $("#navbar").load("/navbar.html",function(){
-
-    });
+$(document).ready(function() {
+    $("#navbar").load("/navbar.html",function(){ });
 });
