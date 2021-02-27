@@ -1,15 +1,26 @@
+html {
+    margin: 4rem 0 0 16rem;
+}
+
+#navbar {
+    display: none;
+}
+
 /* form style */
 .form-group, .form-check {
     margin-bottom: 1rem;
 }
+
 .form-group:last-of-type {
     margin-bottom: 1.7rem;
 }
+
 .form-check:first-of-type {
     margin-bottom: 0;
 }
+
 .form-design {
-    background-color: #cafafe;
+    background-color: #d3d8ef;
     padding: 10px;
     border-radius: 3px;
     margin: auto;
@@ -19,7 +30,7 @@
 .jumbotron {
     padding: 2rem 1rem;
     margin: 2rem 10rem;
-    background-color: #cafafe;
+    background-color: #d3d8ef;
     border-radius: .3rem;
 }
 .credits {
@@ -29,6 +40,15 @@
 
 .credits-links {
     text-decoration: none;
+    color: #7386D5;
+}
+
+.credits-links:hover {
+    color: white;
+}
+
+.btn-credits:active {
+    background-color: #d3d8ef;
 }
 
 /* Bootstrap navbar dropdown with hover effect */
@@ -48,7 +68,14 @@
 }
 
 @media only screen and (max-width: 800px) {
+    html {
+        margin: 0;
+    }
     .jumbotron {
         margin: 2rem 1rem;
+    }
+
+    #navbar {
+        display: block;
     }
 }
