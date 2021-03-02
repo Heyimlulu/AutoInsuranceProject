@@ -7,7 +7,10 @@ An automobile insurance management application using Spring Boot, Maven and Boot
 - [Technologies](#technologies)
 - [Setup](#setup)
   - [Prerequisite](#prerequisites)
-  - [Database-setup](#database-setup)
+  - [Database](#database)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Technologies
 
@@ -25,7 +28,7 @@ To run this project, you need to do the following
   - MySQL port is default
   - Add a new database `assurance_db` with default parameters
 
-### Database-setup
+### Database
 
 In the `./src/main/resources/application.properties` files, look for theses lines
 
@@ -41,11 +44,22 @@ server.port=8888
 - Make sure your username and password are correct in the `datasource.username` and `datasource.password` field
 - `server.port` default set is 8888, but you can change that
 
+## Usage
+
+Open your favorite browser and go to [localhost:8888](http://localhost:8888)
+
+The Back-end (database) is available at [localhost/phpmyadmin](http://localhost/phpmyadmin)
+
 ## Author
 
 - [namaio](https://github.com/namaio)
-
-## Contributors
-
 - [Heyimlulu](https://github.com/Heyimlulu)
 - [Dead-Bot](https://github.com/Dead-Bot)
+
+## Contributing
+
+None yet
+
+## License
+
+None yet
