@@ -58,8 +58,8 @@ The Back-end (database) is available at [localhost/phpmyadmin](http://localhost/
 
 ## Contributing
 
-None yet
+None
 
 ## License
 
-None yet
+None
