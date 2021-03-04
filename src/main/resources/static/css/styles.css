@@ -34,7 +34,7 @@ html {
 
 /* ================================ */
 
-button.btn-danger {
+button[type='submit'] {
     margin: auto;
 }
 
