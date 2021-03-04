@@ -20,23 +20,37 @@
 <div id="navbar"></div>
 <div id="sidebar"></div>
 <div class="container">
-    <div class="row">
+    <div>
         <div class="col-sm-7 form-design">
             <h3>Add new Payment Detail</h3>
-            <form id="add_new_paymentdetail">
-                <div class="form-group">
+            <form id="add_new_paymentdetail" class="row">
+                <div class="form-group col-12">
                     <label class="control-label" for="billID">Bill ID:</label>
                     <input type="number" class="form-control" id="billID" placeholder="Enter Bill ID" name="billID" required></input>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-6">
+                    <label class="control-label" for="createdDate">Created Date:</label>
+                    <input type="date" class="form-control" id="createdDate" placeholder="Enter Creation Date" name="createdDate" required></input>
+                </div>
+                <div class="form-group col-6">
                     <label class="control-label" for="paidDate">Due Date:</label>
                     <input type="date" class="form-control" id="paidDate" placeholder="Enter Paid Date" name="paidDate" min="" required></input>
                 </div>
-                <div class="form-group">
+
+                <h4 class="subtitle"><span>General Informations</span></h4>
+                <div class="form-group col-md-6">
+                    <label class="control-label" for="payerFirstname">Payer Firstname:</label>
+                    <input type="text" class="form-control" id="payerFirstname" placeholder="Enter Payer Firstname" name="payerFirstname" required></input>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="control-label" for="payerLastname">Payer Lastname:</label>
+                    <input type="text" class="form-control" id="payerLastname" placeholder="Enter Payer Lastname" name="payerLastname" required></input>
+                </div>
+                <div class="form-group col-12">
                     <label class="control-label" for="amount">Amount:</label>
                     <input type="number" class="form-control" id="amount" placeholder="Enter Amount" name="amount" min="" required></input>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-12">
                     <label for="paymentMethod">Payment Method:</label>
                     <select id="paymentMethod" class="form-select" aria-label="Default select">
                         <option value="6 months payment">6 months payment</option>
@@ -44,70 +58,61 @@
                         <option value="Full payment">Full payment</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" for="payerFirstname">Payer Firstname:</label>
-                    <input type="text" class="form-control" id="payerFirstname" placeholder="Enter Payer Firstname" name="payerFirstname" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="payerLastname">Payer Lastname:</label>
-                    <input type="text" class="form-control" id="payerLastname" placeholder="Enter Payer Lastname" name="payerLastname" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="cardNumber">Card Number:</label>
-                    <input type="number" class="form-control" id="cardNumber" placeholder="Enter Card Number" name="cardNumber" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="zipCode">Zip Code:</label>
-                    <input type="number" class="form-control" id="zipCode" placeholder="Enter Zip Code" name="zipCode" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="cardExpireDate">Card Expire Date:</label>
-                    <input type="date" class="form-control" id="cardExpireDate" placeholder="Enter Card Expire Date" name="cardExpireDate" required></input>
-                </div>
-                <div class="form-group">
-                    <label for="cardType">Card Type:</label>
-                    <select id="cardType" class="form-select" aria-label="Default select">
-                        <option value="Mastercard">Mastercard</option>
-                        <option value="Visa">Visa</option>
-                        <option value="Maestro">Maestro</option>
-                    </select>
-                </div>
-                <div class="form-group">
+                <div class="form-group col-12">
                     <label for="debitCredit">Debit or Credit:</label>
                     <select id="debitCredit" class="form-select" aria-label="Default select">
                         <option value="Debit">Debit</option>
                         <option value="Credit">Credit</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" for="bankName">Bank Name:</label>
-                    <input type="text" class="form-control" id="bankName" placeholder="Enter Bank Name" name="bankName" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="accountNumber">Account Number:</label>
-                    <input type="number" class="form-control" id="accountNumber" placeholder="Enter Account Number" name="accountNumber" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="routingNumber">Routing Number:</label>
-                    <input type="number" class="form-control" id="routingNumber" placeholder="Enter Routing Number" name="routingNumber" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="checkNumber">Check Number:</label>
-                    <input type="number" class="form-control" id="checkNumber" placeholder="Enter Check Number" name="checkNumber" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="checkImage">Check Image:</label>
-                    <input type="file" class="form-control" id="checkImage" name="checkImage" required></input>
-                </div>
-                <div class="form-group">
+                <div class="form-group col-12">
                     <label class="control-label" for="additionalInfo">Additional Info:</label>
                     <input type="text" class="form-control" id="additionalInfo" placeholder="Enter Additional Info" name="additionalInfo" required></input>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" for="createdDate">Created Date:</label>
-                    <input type="date" class="form-control" id="createdDate" placeholder="Enter Creation Date" name="createdDate" required></input>
+
+                <h4 class="subtitle"><span>Credit Card Informations</span></h4>
+                <div class="form-group col-9">
+                    <label class="control-label" for="cardNumber">Card Number:</label>
+                    <input type="number" class="form-control" id="cardNumber" placeholder="Enter Card Number" name="cardNumber" required></input>
                 </div>
-                <button type="submit" class="btn btn-danger" id="btn-add-new-policy">Create</button>
+                <div class="form-group col-3">
+                    <label class="control-label" for="zipCode">Zip Code:</label>
+                    <input type="number" class="form-control" id="zipCode" placeholder="Enter Zip Code" name="zipCode" required></input>
+                </div>
+                <div class="form-group col-12">
+                    <label class="control-label" for="cardExpireDate">Card Expire Date:</label>
+                    <input type="date" class="form-control" id="cardExpireDate" placeholder="Enter Card Expire Date" name="cardExpireDate" required></input>
+                </div>
+                <div class="form-group col-12">
+                    <label for="cardType">Card Type:</label>
+                    <select id="cardType" class="form-select" aria-label="Default select">
+                        <option value="Mastercard">Mastercard</option>
+                        <option value="Visa">Visa</option>
+                    </select>
+                </div>
+
+                <h4 class="subtitle"><span>Bank Informations</span></h4>
+                <div class="form-group col-12">
+                    <label class="control-label" for="bankName">Bank Name:</label>
+                    <input type="text" class="form-control" id="bankName" placeholder="Enter Bank Name" name="bankName" required></input>
+                </div>
+                <div class="form-group col-4">
+                    <label class="control-label" for="routingNumber">Routing Number:</label>
+                    <input type="number" class="form-control" id="routingNumber" placeholder="Enter Routing Number" name="routingNumber" required></input>
+                </div>
+                <div class="form-group col-4">
+                    <label class="control-label" for="accountNumber">Account Number:</label>
+                    <input type="number" class="form-control" id="accountNumber" placeholder="Enter Account Number" name="accountNumber" required></input>
+                </div>
+                <div class="form-group col-4">
+                    <label class="control-label" for="checkNumber">Check Number:</label>
+                    <input type="number" class="form-control" id="checkNumber" placeholder="Enter Check Number" name="checkNumber" required></input>
+                </div>
+                <div class="form-group col-12">
+                    <label class="control-label" for="checkImage">Check Image:</label>
+                    <input type="file" class="form-control" id="checkImage" name="checkImage" required></input>
+                </div>
+                <button type="submit" class="btn btn-danger col-3" id="btn-add-new-policy">Create</button>
             </form>
             <div id="response" style="display:none; margin-top:10px"></div>
         </div>
