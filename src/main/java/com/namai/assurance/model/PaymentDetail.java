@@ -133,7 +133,7 @@ public class PaymentDetail {
 	public void setCardNumber(long cardNumber) { this.cardNumber = cardNumber; }
 	
 	public long getZipCode() { return zipCode; }
-	public void setZipCode(long zipCode) { this.cardNumber = zipCode; }
+	public void setZipCode(long zipCode) { this.zipCode = zipCode; }
 	
 	public Date getCardExpireDate() { return cardExpireDate; }
 	public void setCardExpireDate(Date cardExpireDate) { this.cardExpireDate = cardExpireDate; }

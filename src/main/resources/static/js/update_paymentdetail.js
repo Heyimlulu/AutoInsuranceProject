@@ -2,26 +2,29 @@ $(document).ready(function(){
     $("#update_paymentdetail_form").submit(function(evt) {
         evt.preventDefault();
         try {
-            let paymentDetailId = $("#bill_id").val();
+            let paymentDetailId = $("#billID").val();
 
             // PREPARE FORM DATA
             let formData = {
-                dueDate :  $("#dueDate").val(),
-                minimumPayment: $("#minimumPayment").val(),
-                createdDate: $("#createdDate").val(),
-                balance: $("#balance").val(),
-                status: $("#status").val(),
-            }
+                createdDate :  $("#createdDate").val(),
+                paidDate: $("#paidDate").val(),
 
-            // If the dates are all the same
-            if(Date.parse($("#dueDate").val()) == Date.parse($("#createdDate").val())){
-                let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
-                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
-                    '<strong>' + 'Error: Invalid dates' + '</strong>' +
-                    '</div>'
-                $("#response").append(errorAlert);
-                $("#response").css({"display": "block"});
-                return;
+                payerFirstName: $("#payerFirstname").val(),
+                payerLastName: $("#payerLastname").val(),
+                amount: $("#amount").val(),
+                paymentMethod: $("#paymentMethod").val(),
+                debitCredit: $("#debitCredit").val(),
+                additionalInfo: $("#additionalInfo").val(),
+
+                cardNumber: $("#cardNumber").val(),
+                zipCode: $("#zipCode").val(),
+                cardExpireDate: $("#cardExpireDate").val(),
+                cardType: $("#cardType").val(),
+
+                bankName: $("#bankName").val(),
+                routingNumber: $("#routingNumber").val(),
+                accountNumber: $("#accountNumber").val(),
+                checkNumber: $("#checkNumber").val(),
             }
 
             $.ajax({
@@ -43,7 +46,7 @@ $(document).ready(function(){
                     $("#response").css({"display": "block"});
 
                     setTimeout( () => {
-                        window.location = "/bill/bills.html";
+                        window.location = "/paymentdetails/paymentdetails.html";
                     }, 2500);
                 },
 
@@ -81,6 +84,7 @@ $(document).ready(function(){
 
                 $("#payerFirstName").val(paymentDetail.payerFirstName);
                 $("#payerLastname").val(paymentDetail.payerLastname);
+                $("#amount").val(paymentDetail.amount),
                 $("#paymentMethod").val(paymentDetail.paymentMethod);
                 $("#debitCredit").val(paymentDetail.debitCredit);
                 $("#additionalInfo").val(paymentDetail.additionalInfo);
@@ -102,6 +106,7 @@ $(document).ready(function(){
 
                     "&payerFirstName=" + paymentDetail.payerFirstName +
                     "&payerLastname=" + paymentDetail.payerLastname +
+                    "&amount=" + paymentDetail.amount +
                     "&paymentMethod=" + paymentDetail.paymentMethod +
                     "&debitCredit=" + paymentDetail.debitCredit +
                     "&additionalInfo=" + paymentDetail.additionalInfo +
@@ -115,7 +120,6 @@ $(document).ready(function(){
                     "&routingNumber=" + paymentDetail.routingNumber +
                     "&accountNumber=" + paymentDetail.accountNumber +
                     "&checkNumber=" + paymentDetail.checkNumber
-                    /*"&checkImage=" + paymentDetail.checkImage*/
 
                 window.location.href = url;
 

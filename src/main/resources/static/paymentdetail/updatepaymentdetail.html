@@ -34,8 +34,9 @@
             document.getElementById('createdDate').value = decodeURI(data.createdDate);
             document.getElementById('paidDate').value = decodeURI(data.paidDate);
 
-            document.getElementById('payerFirstname').value = decodeURI(data.payerFirstname);
+            document.getElementById('payerFirstname').value = decodeURI(data.payerFirstName);
             document.getElementById('payerLastname').value = decodeURI(data.payerLastname);
+            document.getElementById('amount').value = decodeURI(data.amount);
             document.getElementById('paymentMethod').value = decodeURI(data.paymentMethod);
             document.getElementById('debitCredit').value = decodeURI(data.debitCredit);
             document.getElementById('additionalInfo').value = decodeURI(data.additionalInfo);
@@ -49,7 +50,6 @@
             document.getElementById('routingNumber').value = decodeURI(data.routingNumber);
             document.getElementById('accountNumber').value = decodeURI(data.accountNumber);
             document.getElementById('checkNumber').value = decodeURI(data.checkNumber);
-            /*document.getElementById('checkImage').value = decodeURI(data.checkImage);*/
         }
     </script>
 </head>
@@ -144,11 +144,7 @@
                     <label class="control-label" for="checkNumber">Check Number:</label>
                     <input type="number" class="form-control" id="checkNumber" placeholder="Enter Check Number" name="checkNumber" required></input>
                 </div>
-                <div class="form-group col-12">
-                    <label class="control-label" for="checkImage">Check Image:</label>
-                    <input type="file" class="form-control" id="checkImage" name="checkImage" required></input>
-                </div>
-                <button type="submit" class="btn btn-danger col-3" id="btn-add-new-policy">Create</button>
+                <button type="submit" class="btn btn-danger col-3" id="btn-add-new-policy">Submit</button>
             </form>
             <div id="response" style="display: none; margin: 10px"></div>
         </div>

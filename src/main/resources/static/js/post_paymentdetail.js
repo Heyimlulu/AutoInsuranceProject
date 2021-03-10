@@ -12,6 +12,7 @@ $(document).ready(function() {
 
             payerFirstName: $("#payerFirstname").val(),
             payerLastName: $("#payerLastname").val(),
+            amount: $("#amount").val(),
             paymentMethod: $("#paymentMethod").val(),
             debitCredit: $("#debitCredit").val(),
             additionalInfo: $("#additionalInfo").val(),
