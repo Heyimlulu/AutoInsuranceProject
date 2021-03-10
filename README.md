@@ -52,9 +52,9 @@ The Back-end (database) is available at [localhost/phpmyadmin](http://localhost/
 
 ## Author
 
-- [namaio](https://github.com/namaio)
 - [Heyimlulu](https://github.com/Heyimlulu)
 - [Dead-Bot](https://github.com/Dead-Bot)
+- [namaio](https://github.com/namaio)
 
 ## Contributing
 
