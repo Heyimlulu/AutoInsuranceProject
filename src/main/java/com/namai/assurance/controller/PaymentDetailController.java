@@ -24,13 +24,13 @@ public class PaymentDetailController {
 	@PostMapping("/create/{id}")
 	public ResponseEntity<Message> addNewPaymentDetail(@RequestBody PaymentDetail paymentDetail, @PathVariable long id) {
 		try {
-			Bill p = paymentDetailServices.getBillServices().getBillById(id).get();
-			paymentDetail.setBill(p);
+			Bill b = paymentDetailServices.getBillServices().getBillById(id).get();
+			paymentDetail.setBill(b);
 			PaymentDetail returnedBill = paymentDetailServices.savePaymentDetail(paymentDetail);
 
 			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, Arrays.asList(returnedBill), ""), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Bill!", null, null, null, e.getMessage()),	HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail to post a new Payment Detail!", null, null, null, e.getMessage()),	HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -40,7 +40,7 @@ public class PaymentDetailController {
 		try {
 			List<PaymentDetail> paymentDetailInfos = paymentDetailServices.getPaymentDetailInfos();
 
-			return new ResponseEntity<Message>(new Message("Get Bill's Infos!",	null, null, paymentDetailInfos, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Payment Detail's Infos!",	null, null, paymentDetailInfos, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -52,9 +52,9 @@ public class PaymentDetailController {
 			Optional<PaymentDetail> optBill = paymentDetailServices.getPaymentDetailById(id);
 
 			if (optBill.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Bill by id = " + id, null, null, Arrays.asList(optBill.get()), ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Payment Detail by id = " + id, null, null, Arrays.asList(optBill.get()), ""), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Bill by id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Payment Detail by id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure", null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -62,41 +62,41 @@ public class PaymentDetailController {
 	}
 
 	@PutMapping("/updatebyid/{id}")
-	public ResponseEntity<Message> updateBillById(@RequestBody Bill _bill, @PathVariable long id) {
+	public ResponseEntity<Message> updateBillById(@RequestBody PaymentDetail _paymentDetail, @PathVariable long id) {
 		try {
 			if (paymentDetailServices.checkExistedPaymentDetail(id)) {
 				PaymentDetail paymentDetail = paymentDetailServices.getPaymentDetailById(id).get();
 
 				// set new values for Payment Detail
-				paymentDetail.setPaidDate(paymentDetail.getPaidDate());
-				paymentDetail.setAmount(paymentDetail.getAmount());
-				paymentDetail.setPaymentMethod(paymentDetail.getPaymentMethod());
-				paymentDetail.setPayerFirstName(paymentDetail.getPayerFirstName());
-				paymentDetail.setPayerLastName(paymentDetail.getPayerLastName());
+				paymentDetail.setPaidDate(_paymentDetail.getPaidDate());
+				paymentDetail.setAmount(_paymentDetail.getAmount());
+				paymentDetail.setPaymentMethod(_paymentDetail.getPaymentMethod());
+				paymentDetail.setPayerFirstName(_paymentDetail.getPayerFirstName());
+				paymentDetail.setPayerLastName(_paymentDetail.getPayerLastName());
 				
-				paymentDetail.setCardNumber(paymentDetail.getCardNumber());
-				paymentDetail.setZipCode(paymentDetail.getZipCode());
-				paymentDetail.setCardExpireDate(paymentDetail.getCardExpireDate());
-				paymentDetail.setCardType(paymentDetail.getCardType());
-				paymentDetail.setDebitOrCredit(paymentDetail.getDebitOrCredit());
+				paymentDetail.setCardNumber(_paymentDetail.getCardNumber());
+				paymentDetail.setZipCode(_paymentDetail.getZipCode());
+				paymentDetail.setCardExpireDate(_paymentDetail.getCardExpireDate());
+				paymentDetail.setCardType(_paymentDetail.getCardType());
+				paymentDetail.setDebitOrCredit(_paymentDetail.getDebitOrCredit());
 				
-				paymentDetail.setBankName(paymentDetail.getBankName());
-				paymentDetail.setAccountNumber(paymentDetail.getAccountNumber());
-				paymentDetail.setRoutingNumber(paymentDetail.getRoutingNumber());
-				paymentDetail.setCheckNumber(paymentDetail.getCheckNumber());
-				paymentDetail.setCheckImage(paymentDetail.getCheckImage());
+				paymentDetail.setBankName(_paymentDetail.getBankName());
+				paymentDetail.setAccountNumber(_paymentDetail.getAccountNumber());
+				paymentDetail.setRoutingNumber(_paymentDetail.getRoutingNumber());
+				paymentDetail.setCheckNumber(_paymentDetail.getCheckNumber());
+				paymentDetail.setCheckImage(_paymentDetail.getCheckImage());
 				
-				paymentDetail.setAdditionalInfos(paymentDetail.getAdditionalInfos());
-				paymentDetail.setCreatedDate(paymentDetail.getCreatedDate());
+				paymentDetail.setAdditionalInfos(_paymentDetail.getAdditionalInfos());
+				paymentDetail.setCreatedDate(_paymentDetail.getCreatedDate());
 
 				// save the change to database
 				paymentDetailServices.updatePaymentDetail(paymentDetail);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a Bill " + "with id = " + id, null, null, null, ""), null);
+						new Message("Successfully! Updated a Payment Detail " + "with id = " + id, null, null, null, ""), null);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Bill " + "with id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
+						new Message("Failer! Can NOT Found a Payment Detail " + "with id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure", null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -111,10 +111,10 @@ public class PaymentDetailController {
 				paymentDetailServices.deletePaymentDetailById(id);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Delete a Bill with id = " + id, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Delete a Payment Detail with id = " + id, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Bill " + "with id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
+						new Message("Failer! Can NOT Found a Payment Detail " + "with id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure", null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);

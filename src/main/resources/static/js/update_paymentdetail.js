@@ -105,7 +105,7 @@ $(document).ready(function(){
                     "&paidDate=" + paymentDetail.paidDate +
 
                     "&payerFirstName=" + paymentDetail.payerFirstName +
-                    "&payerLastname=" + paymentDetail.payerLastname +
+                    "&payerLastName=" + paymentDetail.payerLastName +
                     "&amount=" + paymentDetail.amount +
                     "&paymentMethod=" + paymentDetail.paymentMethod +
                     "&debitCredit=" + paymentDetail.debitCredit +
