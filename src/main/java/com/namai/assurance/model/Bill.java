@@ -8,10 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "bill")
@@ -43,7 +47,15 @@ public class Bill {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "bill", cascade = { CascadeType.ALL })
+	private List<PaymentDetail> paymentDetail;
 
+	// Payment Detail Model - GET/SET
+	public List<PaymentDetail> getBill() { return paymentDetail; }
+	public void setPaymentDetail(List<PaymentDetail> paymentDetail) { this.paymentDetail = paymentDetail; }
+	
 	public Policy getPolicy() { return policy; }
 	public void setPolicy(Policy policy) { this.policy = policy; }
 

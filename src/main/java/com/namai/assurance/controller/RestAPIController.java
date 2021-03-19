@@ -33,10 +33,10 @@ public class RestAPIController {
 			Policy returnedPolicy = policyServices.savePolicy(policy);
 			
 			return new ResponseEntity<Message>(new Message("Upload Successfully!", 
-											Arrays.asList(returnedPolicy), null, null, ""), HttpStatus.OK);
+											Arrays.asList(returnedPolicy), null, null, null, ""), HttpStatus.OK);
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail to post a new Policy!", 
-											null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
+											null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
 		}
 	}
 	
@@ -47,10 +47,10 @@ public class RestAPIController {
 			List<Policy> policyInfos = policyServices.getPolicyInfos();
 			
 			return new ResponseEntity<Message>(new Message("Get Policys' Infos!", 
-												policyInfos, null, null, ""), HttpStatus.OK);
+												policyInfos, null, null, null, ""), HttpStatus.OK);
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!",
-												null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+												null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -61,14 +61,14 @@ public class RestAPIController {
 			
 			if(optPolicy.isPresent()) {
 				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a policy by id = " + id,
-															Arrays.asList(optPolicy.get()), null, null, ""), HttpStatus.OK);
+															Arrays.asList(optPolicy.get()), null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a policy by id = " + id,
-						null, null, ""), HttpStatus.NOT_FOUND);
+						null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure",
-					null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+					null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -93,15 +93,15 @@ public class RestAPIController {
 				// save the change to database
 				policyServices.updatePolicy(policy);
 				
-				return new ResponseEntity<Message>(new Message("Successfully! Updated a Policy " + "with id = " + id, Arrays.asList(policy), null, null, ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Updated a Policy " + "with id = " + id, Arrays.asList(policy), null, null, null, ""), HttpStatus.OK);
 			}else {
 				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Policy "
 						+ "with id = " + id,
-					null, null, ""), HttpStatus.NOT_FOUND);
+					null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure",
-					null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
+					null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
 		}
 	}
 	
@@ -113,14 +113,14 @@ public class RestAPIController {
 				policyServices.deletePolicyById(id);
 				
 				return new ResponseEntity<Message> (new Message("Successfully! Delete a Policy with id = " + id, 
-														null, null, ""), HttpStatus.OK);
+														null, null, null, ""), HttpStatus.OK);
 			}else {
 				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Policy "
-														+ "with id = " + id, null, null, ""), HttpStatus.NOT_FOUND);
+														+ "with id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure",
-					null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+					null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }

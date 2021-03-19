@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Auto Insurance Application | Add Payment Detail</title>
+    <title>Auto Insurance Application | Update Payment Detail</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 5.0 CSS -->
@@ -11,23 +11,56 @@
     <!-- Bootstrap 5.0 Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <!-- Script files -->
-    <script type="text/javascript" src="../js/post_paymentdetail.js"></script>
+    <script type="text/javascript" src="/js/update_paymentdetail.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="../js/navbar.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
+    <script>
+        /* Get input field parameter in URL */
+        window.onload = function () {
+            var url = document.location.href,
+                params = url.split('?')[1].split('&'),
+                data = {}, tmp;
+            for (var i = 0, l = params.length; i < l; i++) {
+                tmp = params[i].split('=');
+                data[tmp[0]] = tmp[1];
+            }
+
+            /* Decode input field to avoid URL syntax */
+            document.getElementById('billID').value = decodeURI(data.id);
+            document.getElementById('createdDate').value = decodeURI(data.createdDate);
+            document.getElementById('paidDate').value = decodeURI(data.paidDate);
+
+            document.getElementById('payerFirstname').value = decodeURI(data.payerFirstName);
+            document.getElementById('payerLastname').value = decodeURI(data.payerLastName);
+            document.getElementById('amount').value = decodeURI(data.amount);
+            document.getElementById('paymentMethod').value = decodeURI(data.paymentMethod);
+            document.getElementById('debitCredit').value = decodeURI(data.debitCredit);
+            document.getElementById('additionalInfo').value = decodeURI(data.additionalInfo);
+
+            document.getElementById('cardNumber').value = decodeURI(data.cardNumber);
+            document.getElementById('zipCode').value = decodeURI(data.zipCode);
+            document.getElementById('cardExpireDate').value = decodeURI(data.cardExpireDate);
+            document.getElementById('cardType').value = decodeURI(data.cardType);
+
+            document.getElementById('bankName').value = decodeURI(data.bankName);
+            document.getElementById('routingNumber').value = decodeURI(data.routingNumber);
+            document.getElementById('accountNumber').value = decodeURI(data.accountNumber);
+            document.getElementById('checkNumber').value = decodeURI(data.checkNumber);
+        }
+    </script>
 </head>
 <body>
 <div id="navbar"></div>
 <div id="sidebar"></div>
 <div class="container">
-    <div>
-        <div class="col-sm-7 form-design">
-            <h3>Add new Payment Detail</h3>
-            <form id="add_new_paymentdetail" class="row">
+    <div class="row">
+        <div class="col-sm-6 form-design" id="div_edit_log_policy_updating">
+            <form id="update_paymentdetail_form" class="row">
                 <div class="form-group col-12">
                     <label class="control-label" for="billID">Bill ID:</label>
-                    <input type="number" class="form-control" id="billID" placeholder="Enter Bill ID" name="billID" required></input>
+                    <input type="number" class="form-control" id="billID" placeholder="Enter Bill ID" name="billID" readonly></input>
                 </div>
                 <div class="form-group col-6">
                     <label class="control-label" for="createdDate">Created Date:</label>
@@ -109,17 +142,12 @@
                     <label class="control-label" for="checkNumber">Check Number:</label>
                     <input type="number" class="form-control" id="checkNumber" placeholder="Enter Check Number" name="checkNumber" required></input>
                 </div>
-                <div class="form-group col-12">
-                    <label class="control-label" for="checkImage">Check Image:</label>
-                    <input type="file" class="form-control" id="checkImage" name="checkImage" required></input>
-                </div>
-                <button type="submit" class="btn btn-danger col-3" id="btn-add-new-policy">Create</button>
+                <button type="submit" class="btn btn-danger col-3" id="btn-add-new-policy">Submit</button>
             </form>
-            <div id="response" style="display:none; margin-top:10px"></div>
+            <div id="response" style="display: none; margin: 10px"></div>
         </div>
     </div>
     <hr>
 </div>
-
 </body>
 </html>
