@@ -53,7 +53,7 @@ $(document).ready(function(){
                 error: function (response) {
                     let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
                         '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
-                        '<strong> There was an error updating this policy, please try again </strong>' +
+                        '<strong> There was an error updating this payment detail, please try again </strong>' +
                     '</div>';
 
                     $("#response").empty();

@@ -93,7 +93,7 @@ public class PaymentDetailController {
 				paymentDetailServices.updatePaymentDetail(paymentDetail);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a Payment Detail " + "with id = " + id, null, null, Arrays.asList(paymentDetail), ""), null);
+						new Message("Successfully! Updated a Payment Detail " + "with id = " + id, null, null, null, ""), null);
 			} else {
 				return new ResponseEntity<Message>(
 						new Message("Failer! Can NOT Found a Payment Detail " + "with id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
