@@ -31,7 +31,7 @@ $(document).ready(function(){
                     $("#response").css({"display": "block"});
 
                     setTimeout( () => {
-                        window.location = "/policy/updatepolicyeditlog.html";
+                        window.location = "/policy/policieseditlog.html";
                     }, 2500);
                 },
 

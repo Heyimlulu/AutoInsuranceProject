@@ -43,7 +43,7 @@ $(document).ready(function(){
                     $("#response").css({"display": "block"});
 
                     setTimeout( () => {
-                        window.location = "/bill/bills.html";
+                        window.location = "/paymentdetail/bills.html";
                     }, 2500);
                 },
 

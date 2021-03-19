@@ -78,7 +78,7 @@ public class BillController {
 				billServices.updateBill(bill);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a Bill " + "with id = " + id, null, null, null, ""), null);
+						new Message("Successfully! Updated a Bill " + "with id = " + id, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
 						new Message("Failer! Can NOT Found a Bill " + "with id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);
