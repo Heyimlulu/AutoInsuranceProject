@@ -13,8 +13,8 @@ $(document).ready(function(){
                 payerLastName: $("#payerLastname").val(),
                 amount: $("#amount").val(),
                 paymentMethod: $("#paymentMethod").val(),
-                debitCredit: $("#debitCredit").val(),
-                additionalInfo: $("#additionalInfo").val(),
+                debitOrCredit: $("#debitCredit").val(),
+                additionalInfos: $("#additionalInfo").val(),
 
                 cardNumber: $("#cardNumber").val(),
                 zipCode: $("#zipCode").val(),
@@ -86,8 +86,8 @@ $(document).ready(function(){
                 $("#payerLastname").val(paymentDetail.payerLastname);
                 $("#amount").val(paymentDetail.amount),
                 $("#paymentMethod").val(paymentDetail.paymentMethod);
-                $("#debitCredit").val(paymentDetail.debitCredit);
-                $("#additionalInfo").val(paymentDetail.additionalInfo);
+                $("#debitCredit").val(paymentDetail.debitOrCredit);
+                $("#additionalInfo").val(paymentDetail.additionalInfos);
 
                 $("#cardNumber").val(paymentDetail.cardNumber);
                 $("#zipCode").val(paymentDetail.zipCode);
@@ -108,8 +108,8 @@ $(document).ready(function(){
                     "&payerLastName=" + paymentDetail.payerLastName +
                     "&amount=" + paymentDetail.amount +
                     "&paymentMethod=" + paymentDetail.paymentMethod +
-                    "&debitCredit=" + paymentDetail.debitCredit +
-                    "&additionalInfo=" + paymentDetail.additionalInfo +
+                    "&debitCredit=" + paymentDetail.debitOrCredit +
+                    "&additionalInfo=" + paymentDetail.additionalInfos +
 
                     "&cardNumber=" + paymentDetail.cardNumber +
                     "&zipCode=" + paymentDetail.zipCode +

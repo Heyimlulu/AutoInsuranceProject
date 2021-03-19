@@ -14,8 +14,8 @@ $(document).ready(function() {
             payerLastName: $("#payerLastname").val(),
             amount: $("#amount").val(),
             paymentMethod: $("#paymentMethod").val(),
-            debitCredit: $("#debitCredit").val(),
-            additionalInfo: $("#additionalInfo").val(),
+            debitOrCredit: $("#debitCredit").val(),
+            additionalInfos: $("#additionalInfo").val(),
 
             cardNumber: $("#cardNumber").val(),
             zipCode: $("#zipCode").val(),
