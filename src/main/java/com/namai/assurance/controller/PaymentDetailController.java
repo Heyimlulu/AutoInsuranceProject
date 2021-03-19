@@ -84,7 +84,6 @@ public class PaymentDetailController {
 				paymentDetail.setAccountNumber(_paymentDetail.getAccountNumber());
 				paymentDetail.setRoutingNumber(_paymentDetail.getRoutingNumber());
 				paymentDetail.setCheckNumber(_paymentDetail.getCheckNumber());
-				paymentDetail.setCheckImage(_paymentDetail.getCheckImage());
 				
 				paymentDetail.setAdditionalInfos(_paymentDetail.getAdditionalInfos());
 				paymentDetail.setCreatedDate(_paymentDetail.getCreatedDate());
@@ -93,7 +92,7 @@ public class PaymentDetailController {
 				paymentDetailServices.updatePaymentDetail(paymentDetail);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a Payment Detail " + "with id = " + id, null, null, null, ""), null);
+						new Message("Successfully! Updated a Payment Detail " + "with id = " + id, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
 						new Message("Failer! Can NOT Found a Payment Detail " + "with id = " + id, null, null, null, ""), HttpStatus.NOT_FOUND);

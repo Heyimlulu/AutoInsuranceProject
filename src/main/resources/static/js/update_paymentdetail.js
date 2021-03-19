@@ -38,7 +38,7 @@ $(document).ready(function(){
                 success: function (response) {
                     let successAlert = '<div class="alert alert-success alert-dismissible fade show" role="alert">' +
                         '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
-                        '<strong> Payment detail N°' + paymentDetailId + ' has been successfully updated! Redirecting to all bill page... </strong>' +
+                        '<strong> Payment detail N°' + paymentDetailId + ' has been successfully updated! Redirecting to all payment detail page... </strong>' +
                     '</div>'
 
                     $("#response").empty();
@@ -46,7 +46,7 @@ $(document).ready(function(){
                     $("#response").css({"display": "block"});
 
                     setTimeout( () => {
-                        window.location = "/paymentdetails/paymentdetails.html";
+                        window.location = "/paymentdetail/paymentdetails.html";
                     }, 2500);
                 },
 
