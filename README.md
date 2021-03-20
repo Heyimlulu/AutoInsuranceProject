@@ -1,6 +1,6 @@
 # InsuranceProject
 
-An automobile insurance management application using Spring Boot, Maven and Bootstrap 
+An automobile insurance management application using the Spring Boot, Maven and Bootstrap frameworks
 
 ## Table of Contents
 
@@ -50,7 +50,7 @@ Open your favorite browser and go to [localhost:8888](http://localhost:8888)
 
 The Back-end (database) is available at [localhost/phpmyadmin](http://localhost/phpmyadmin)
 
-## Author
+## Authors
 
 - [Heyimlulu](https://github.com/Heyimlulu)
 - [Dead-Bot](https://github.com/Dead-Bot)
@@ -58,8 +58,8 @@ The Back-end (database) is available at [localhost/phpmyadmin](http://localhost/
 
 ## Contributing
 
-None
+None as it is a personal project
 
 ## License
 
-None
+None (Copyright)
