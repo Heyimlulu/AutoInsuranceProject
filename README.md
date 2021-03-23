@@ -52,6 +52,10 @@ Open your favorite browser and go to [localhost:8888](http://localhost:8888)
 
 The Back-end (database) is available at [localhost/phpmyadmin](http://localhost/phpmyadmin)
 
+The public instances hosted on Heroku is also available
+
+- Front-End : https://autoinsuranceproject.herokuapp.com/
+
 ## Authors
 
 - [Heyimlulu](https://github.com/Heyimlulu)
