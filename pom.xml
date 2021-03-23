@@ -71,18 +71,11 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
+				<configuration>
+					<fork>true</fork>
+					<executable>C:\Program Files (x86)\Java\jdk1.8.0_161\bin\javac.exe</executable>
+				</configuration>
 			</plugin>
-    		<plugin>
-      			<groupId>com.heroku.sdk</groupId>
-      			<artifactId>heroku-maven-plugin</artifactId>
-      			<version>3.0.4</version>
-      			<configuration>
-        			<appName>${heroku.appName}</appName>
-        			<processTypes>
-          				<web>java $JAVA_OPTS -cp target/classes:target/dependency/* com.namai.Main</web>
-        			</processTypes>
-      			</configuration>
-    		</plugin>
 		</plugins>
 	</build>
 
