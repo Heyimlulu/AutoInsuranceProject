@@ -76,6 +76,11 @@
 					<executable>C:\Program Files (x86)\Java\jdk1.8.0_161\bin\javac.exe</executable>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+        		<artifactId>heroku-maven-plugin</artifactId>
+        		<version>3.0.3</version>
+      		</plugin>
 		</plugins>
 	</build>
 
