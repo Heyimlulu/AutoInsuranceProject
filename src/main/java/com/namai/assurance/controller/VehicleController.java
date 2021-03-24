@@ -30,7 +30,7 @@ public class VehicleController {
 
 			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, Arrays.asList(returnedVehicle), ""), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Vehicle!", null, null, null, null, e.getMessage()),	HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail to post a new Vehicle!", null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
