@@ -28,7 +28,8 @@ To run this project, you need to do the following
 
 - Install Xampp and setup a Web Server with Apache & MySQL
   - MySQL port is default
-  - Add a new database `assurance_db` with default parameters
+  - Add the default database `assurance_db or YourNewDatabaseName` with default parameters
+    - Don't forget to change your database name in the `application.properties` file if you changed it
 
 ### Database
 
