@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import java.sql.Date;
 
 @Entity
-@Table(name = "paymentdetail")
+@Table(name = "vehicle")
 public class Vehicle {
 
 	@Id
