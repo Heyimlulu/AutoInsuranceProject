@@ -4,8 +4,9 @@
 
 An automobile insurance management application using the Spring Boot, Maven and Bootstrap frameworks
 
-The `Heroku` branch is only in use for the public instance available below
+The `Heroku` branch is use by the public instance [Link available below]
 
-- https://autoinsuranceproject.herokuapp.com/
+- Front-End: https://autoinsuranceproject.herokuapp.com/
+- Back-End: This branch use PostGreSQL instead of MySQL
 
 <img height="200px" src="https://bilalbudhani.com/content/images/2017/11/heroku.png">
