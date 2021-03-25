@@ -1,20 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Auto Insurance Application | Add Driver</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Bootstrap 5.0 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<!-- JQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap 5.0 Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-<!-- Script files -->
-<script src="../js/sidebar.js"></script>
-<script src="../js/navbar.js"></script>
-<!-- Custom CSS -->
-<link rel="stylesheet" href="../css/styles.css">
+    <title>Auto Insurance Application | Update Drivers</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5.0 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap 5.0 Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <!-- Script files -->
+    <script type="text/javascript" src="/js/update_paymentdetail.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/navbar.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+        /* Get input field parameter in URL */
+        window.onload = function () {
+            var url = document.location.href,
+                params = url.split('?')[1].split('&'),
+                data = {}, tmp;
+            for (var i = 0, l = params.length; i < l; i++) {
+                tmp = params[i].split('=');
+                data[tmp[0]] = tmp[1];
+            }
+
+            /* Decode input field to avoid URL syntax */
+            document.getElementById('policyID').value = decodeURI(data.id);
+            
+            document.getElementById('Title').value = decodeURI(data.createdDate);
+            
+            document.getElementById('FirstName').value = decodeURI(data.paidDate);
+            document.getElementById('LastName').value = decodeURI(data.payerFirstName);
+            document.getElementById('MiddleInitial').value = decodeURI(data.payerLastName);
+            document.getElementById('DoB').value = decodeURI(data.amount);
+            
+            document.getElementById('Email').value = decodeURI(data.paymentMethod);
+            document.getElementById('PhoneNumber').value = decodeURI(data.debitCredit);
+            document.getElementById('CellNumber').value = decodeURI(data.additionalInfo);
+
+            document.getElementById('SSN').value = decodeURI(data.cardNumber);
+            document.getElementById('LicenseIssuedDate').value = decodeURI(data.zipCode);
+            document.getElementById('LicenseNumber').value = decodeURI(data.cardExpireDate);
+            document.getElementById('IsPrimaryPolicyHolder').value = decodeURI(data.cardType);
+
+            document.getElementById('RelationWithPrimaryPolicyHolder').value = decodeURI(data.bankName);
+            document.getElementById('Gender').value = decodeURI(data.routingNumber);
+            document.getElementById('MaritalStatuts').value = decodeURI(data.accountNumber);
+            document.getElementById('CreatedDate').value = decodeURI(data.checkNumber);
+            document.getElementById('active').value = decodeURI(data.checkNumber);
+        }
+    </script>
 </head>
 <body>
 <div id="navbar"></div>
@@ -22,12 +60,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-7 form-design">
-				<h3>Add new Driver</h3>
-				<form id="add_new_driver">
+				<h3>Update Driver</h3>
+				<form id="update_driver">
 				<div class="form-group">
 						<label class="control-label" for="policyID">Policy ID:</label>
 						<input type="number" class="form-control" id="policyID"
-								placeholder="Enter Policy ID" name="policyID" required></input>
+								placeholder="Enter Policy ID" name="policyID" readonly></input>
                     </div>
 				<div class="form-group">
 						<label for="Title">Title :</label>
@@ -141,6 +179,5 @@
 		</div>
 		<hr>		
 	</div>
-
 </body>
 </html>
