@@ -102,13 +102,13 @@ public class VehicleController {
 				vehicleServices.deleteVehicleById(id);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Delete a Vehicle with id = " + id, null, null, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Delete a Vehicle with id = " + id, null, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Vehicle " + "with id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+						new Message("Failer! Can NOT Found a Vehicle " + "with id = " + id, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null,  null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }
