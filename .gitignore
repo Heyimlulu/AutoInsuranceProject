@@ -190,3 +190,6 @@ hs_err_pid*
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+pom.xml
+README.md
+src/main/resources/application.properties

@@ -9,6 +9,7 @@ public class Message {
 	private List<PolicyEditLog> editLogPolicies = new ArrayList<PolicyEditLog>();
 	private List<Bill> bill = new ArrayList<Bill>();
 	private List<PaymentDetail> paymentDetail = new ArrayList<PaymentDetail>();
+	private List<Vehicle> vehicle = new ArrayList<Vehicle>();
 	private String error = "";
 	
 	public String getMessage() { return this.message; }
@@ -32,22 +33,28 @@ public class Message {
 	public List<PaymentDetail> getPaymentDetail() { return paymentDetail; }
 	public void setPaymentDetail(List<PaymentDetail> paymentDetail) { this.paymentDetail = paymentDetail; }
 	
+	public List<Vehicle> getVehicle() { return vehicle; }
+	public void setVehicle(List<Vehicle> vehicle) { this.vehicle = vehicle; }
+	
 
-	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, String error) {
+	// On success
+	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, String error) {
 		this.message = message;
 		this.policies = policies;
 		this.editLogPolicies = editLogPolicies;
 		this.bill = bill;
 		this.paymentDetail = paymentDetail;
+		this.vehicle = vehicle;
 		this.error = error;
 	}
 
-	
-	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, String error) {
+	// On error
+	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, String error) {
 		this.message = message;
 		this.editLogPolicies = editLogPolicies;
 		this.bill = bill;
 		this.paymentDetail = paymentDetail;
+		this.vehicle = vehicle;
 		this.error = error;
 	}
 }
