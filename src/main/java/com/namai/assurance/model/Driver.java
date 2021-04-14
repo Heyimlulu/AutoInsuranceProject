@@ -40,10 +40,10 @@ public class Driver {
 	private String Email;
 	
 	@Column
-	private Long PhoneNumber;
+	private long PhoneNumber;
 	
 	@Column
-	private Long CellNumber;
+	private long CellNumber;
 	
 	@Column
 	private String SSN; // Social security number
@@ -52,7 +52,7 @@ public class Driver {
 	private Date LicenseIssuedDate;
 	
 	@Column
-	private Long LicenseNumber;
+	private long LicenseNumber;
 	
 	@Column
 	private Boolean IsPrimaryPolicyHolder;
@@ -113,7 +113,7 @@ public class Driver {
 	public void setId(long id) { this.id = id; }
 
 	public String getTitle() { return Title; }
-	public void set(String Title) { this.Title = Title; }
+	public void setTitle(String Title) { this.Title = Title; }
 	
 	public String getFirstName() { return FirstName; }
 	public void setFirstName(String FirstName) { this.FirstName = FirstName; }
@@ -127,8 +127,8 @@ public class Driver {
 	public Date getDoB() { return DoB; }
 	public void setDoB(Date DoB) { this.DoB = DoB; }
 	
-	public String getMileEmail() { return Email; }
-	public void setMileEmail(String Email) { this.Email = Email; }
+	public String getEmail() { return Email; }
+	public void setEmail(String Email) { this.Email = Email; }
 	
 	public long getPhoneNumber() { return PhoneNumber; }
 	public void setPhoneNumber(long PhoneNumber) { this.PhoneNumber = PhoneNumber; }
@@ -143,7 +143,7 @@ public class Driver {
 	public void setLicenseIssuedDate(Date LicenseIssuedDate) { this.LicenseIssuedDate = LicenseIssuedDate; }
 	
 	public Long getLicenseNumber() { return LicenseNumber; }
-	public void set(Long LicenseNumber) { this.LicenseNumber = LicenseNumber; }
+	public void setLicenseNumber(Long LicenseNumber) { this.LicenseNumber = LicenseNumber; }
 	
 	public Boolean getIsPrimaryPolicyHolder() { return IsPrimaryPolicyHolder; }
 	public void setIsPrimaryPolicyHolder(Boolean IsPrimaryPolicyHolder) { this.IsPrimaryPolicyHolder = IsPrimaryPolicyHolder; }
@@ -154,7 +154,7 @@ public class Driver {
 	public String getMaritalStatuts() { return MaritalStatuts; }
 	public void setMaritalStatuts(String MaritalStatuts) { this.MaritalStatuts = MaritalStatuts; }
 	
-	public String get() { return Gender; }
+	public String getGender() { return Gender; }
 	public void setGender(String Gender) { this.Gender = Gender; }
 	
 	public boolean getActive() { return active; }
