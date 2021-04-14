@@ -49,7 +49,7 @@ server.port=8888
 
 ## Usage
 
-Open your favorite browser and go to [localhost:8888](http://localhost:8888)
+Open your favorite browser [Must not be IE] and go to [localhost:8888](http://localhost:8888)
 
 The Back-end (database) is available at [localhost/phpmyadmin](http://localhost/phpmyadmin)
 

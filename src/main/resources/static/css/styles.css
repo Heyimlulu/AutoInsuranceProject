@@ -69,6 +69,10 @@ button[type='submit'] {
     background-color: #d3d8ef;
     border-radius: .3rem;
 }
+.disclaimer {
+    font-weight: bold;
+    color: red;
+}
 .credits {
     margin: 0.4rem 0;
     font-size: 1rem;

@@ -43,6 +43,9 @@ public class Message {
 
 	// On success
 	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, String error) {
+
+	// On success
+	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, String error) {
 		this.message = message;
 		this.policies = policies;
 		this.editLogPolicies = editLogPolicies;
@@ -55,6 +58,7 @@ public class Message {
 
 	// On error
 	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, String error) {
+	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, String error) {
 		this.message = message;
 		this.editLogPolicies = editLogPolicies;
 		this.bill = bill;
@@ -63,6 +67,7 @@ public class Message {
 		this.driver = driver;
 		this.error = error;
 	}
+    
 	public Message(String message, List<Driver> driver, String error) {
 		this.message = message;
 		this.driver = driver;

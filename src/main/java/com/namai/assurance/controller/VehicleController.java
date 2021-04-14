@@ -31,6 +31,9 @@ public class VehicleController {
 			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, Arrays.asList(returnedVehicle), null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail to post a new Vehicle!", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, Arrays.asList(returnedVehicle), ""), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Message>(new Message("Fail to post a new Vehicle!", null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -43,6 +46,9 @@ public class VehicleController {
 			return new ResponseEntity<Message>(new Message("Get Vehicle's Infos!", null, null, null, null, paymentDetailInfos, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Get Vehicle's Infos!", null, null, null, null, paymentDetailInfos, ""), HttpStatus.OK);
+		} catch (Exception e) {
+			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -58,6 +64,12 @@ public class VehicleController {
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Vehicle by id = " + id, null, null, null, Arrays.asList(optBill.get()), ""), HttpStatus.OK);
+			} else {
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Vehicle by id = " + id, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+			}
+		} catch (Exception e) {
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -91,6 +103,13 @@ public class VehicleController {
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+						new Message("Successfully! Updated a Vehicle " + "with id = " + id, null, null, null, null, ""), HttpStatus.OK);
+			} else {
+				return new ResponseEntity<Message>(
+						new Message("Failer! Can NOT Found a Vehicle " + "with id = " + id, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+			}
+		} catch (Exception e) {
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -109,6 +128,13 @@ public class VehicleController {
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+						new Message("Successfully! Delete a Vehicle with id = " + id, null, null, null, null, ""), HttpStatus.OK);
+			} else {
+				return new ResponseEntity<Message>(
+						new Message("Failer! Can NOT Found a Vehicle " + "with id = " + id, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+			}
+		} catch (Exception e) {
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }
