@@ -1,10 +1,12 @@
 $(document).ready(function() {
     $("#add_new_driver").submit(function(evt) {
         evt.preventDefault();
-	let policyId = $("#policy_id_artifact").val();
+
+        let policyId = $("#policyID").val();
+
         // PREPARE FORM DATA
         let formData = {
-        	policyId : $("#policy_id_artifact").val(),
+        	policyId : $("#policyID").val(),
             dob : $("#dob").val(),
             gender : $("#gender").val(),
             email_adress :  $("#email_adress").val(),
@@ -22,10 +24,8 @@ $(document).ready(function() {
            	relation_withPrimary_policy_holder: $("#relation_withPrimary_policy_holder").val(),
            	license_issue_state: $("#license_issue_state").val(),
            	ssn: $("#ssn").val(),
-            
         }
 
-		alert(policyId);
         $.ajax({
             url: '/api/driver/create/' + policyId,
             type: 'POST',
@@ -35,32 +35,17 @@ $(document).ready(function() {
             async: false,
             cache: false,
             success: function (response) {
-            alert(formData.title);
-			window.location.href = "/driver/drivers.html";
-			HEAD
-
-			    
-                resetUploadForm();
+                window.location.href = "/driver/drivers.html";
             },
             error: function (response) {
-                let errorAlert = '<div class="alert alert-danger alert-dismissible">' + 
-                                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                    '<strong>' + response.message + '</strong>' + ' ,Error: ' + message.error + 
-                                '</div>'
+                let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                        '<strong> There was an error adding this driver, please make sure the ID is correct </strong>' +
+                    '</div>';
+
                 $("#response").append(errorAlert);
                 $("#response").css({"display": "block"});
-
-                location.replace("https://www.w3schools.com");
             }
         });
     });
-
-    (function(){
-        let pathname = window.location.pathname;
-        if(pathname === "/"){
-            $(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/drivers.html") {
-            $(".nav .nav-item a:last").addClass("active");
-        }
-    })();
 });

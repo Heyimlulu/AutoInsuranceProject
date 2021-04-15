@@ -12,7 +12,7 @@ public class Message {
 	private List<Vehicle> vehicle = new ArrayList<Vehicle>();
 	private List<Driver> driver = new ArrayList<Driver>();
 	private String error = "";
-	
+
 	public String getMessage() { return this.message; }
 	public void setMessage(String message) { this.message = message; }
 	
@@ -39,13 +39,9 @@ public class Message {
 	
 	public List<Driver> getDrivers() { return driver; }
 	public void setDriver(List<Driver> driver) { this.driver = driver; }
-	
 
 	// On success
 	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, String error) {
-
-	// On success
-	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, String error) {
 		this.message = message;
 		this.policies = policies;
 		this.editLogPolicies = editLogPolicies;
@@ -58,7 +54,6 @@ public class Message {
 
 	// On error
 	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, String error) {
-	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, String error) {
 		this.message = message;
 		this.editLogPolicies = editLogPolicies;
 		this.bill = bill;
@@ -67,12 +62,5 @@ public class Message {
 		this.driver = driver;
 		this.error = error;
 	}
-    
-	public Message(String message, List<Driver> driver, String error) {
-		this.message = message;
-		this.driver = driver;
-		this.error = error;
-	}
-	
 
 }

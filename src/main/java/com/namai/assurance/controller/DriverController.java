@@ -20,7 +20,6 @@ import com.namai.assurance.model.Policy;
 import com.namai.assurance.model.Driver;
 import com.namai.assurance.model.Message;
 import com.namai.assurance.service.DriverServices;
-import com.namai.assurance.service.PolicyServices;
 
 @RestController
 @RequestMapping("/api/driver")
@@ -37,10 +36,10 @@ public class DriverController {
 			Driver returnedDriver = driverServices.saveDriver(driver);
 			
 			return new ResponseEntity<Message>(new Message("Upload Successfully!", 
-											Arrays.asList(returnedDriver), null), HttpStatus.OK);
-		}catch(Exception e) {
+											null, null, null, null, null, Arrays.asList(returnedDriver), ""), HttpStatus.OK);
+		} catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail to post a new Policy!", 
-											null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
+											null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -51,10 +50,10 @@ public class DriverController {
 			List<Driver> driverInfos = driverServices.getDriverInfos();
 			
 			return new ResponseEntity<Message>(new Message("Get Policys' Infos!", 
-												driverInfos, null), HttpStatus.OK);
+												null, null, null, null, null, driverInfos, null), HttpStatus.OK);
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!",
-												null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+												null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -65,14 +64,14 @@ public class DriverController {
 			
 			if(optDriver.isPresent()) {
 				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a policy by id = " + id,
-															Arrays.asList(optDriver.get()), null), HttpStatus.OK);
+															null, null, null, null, Arrays.asList(optDriver.get()), ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a policy by id = " + id,
-						null, ""), HttpStatus.NOT_FOUND);
+						null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure",
-					null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+					null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -105,16 +104,14 @@ public class DriverController {
 				driverServices.updateDriver(driver);
 				
 				return new ResponseEntity<Message>(new Message("Successfully! Updated a Policy "
-																		+ "with id = " + id,
-																	Arrays.asList(driver), null), HttpStatus.OK);
+																		+ "with id = " + id, null, null, null, null, Arrays.asList(driver), ""), HttpStatus.OK);
 			}else {
-				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Policy "
-						+ "with id = " + id,
-					null, ""), HttpStatus.NOT_FOUND);
+				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Policy " + "with id = " + id,
+					null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure",
-					null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
+					null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
 		}
 	}
 	
@@ -126,14 +123,14 @@ public class DriverController {
 				driverServices.deleteDriverById(id);
 				
 				return new ResponseEntity<Message> (new Message("Successfully! Delete a Policy with id = " + id, 
-														null, ""), HttpStatus.OK);
+														null, null, null, null, null, ""), HttpStatus.OK);
 			}else {
 				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Policy "
-														+ "with id = " + id, null, ""), HttpStatus.NOT_FOUND);
+														+ "with id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Failure",
-					null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+					null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }

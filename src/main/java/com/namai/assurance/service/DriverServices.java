@@ -17,18 +17,9 @@ public class DriverServices {
 	@Autowired DriverRepository repository;
 	@Autowired private PolicyServices policyServices;
 	
-	public DriverRepository getRepository() {
-		return repository;
-	}
-
-	public void setRepository(DriverRepository repository) {
-		this.repository = repository;
-	}
-
 	public PolicyServices getPolicyServices() {
 		return policyServices;
 	}
-
 	public void setPolicyServices(PolicyServices policyServices) {
 		this.policyServices = policyServices;
 	}
