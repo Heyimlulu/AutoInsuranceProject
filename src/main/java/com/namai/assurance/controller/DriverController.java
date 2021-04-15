@@ -85,19 +85,19 @@ public class DriverController {
 				
 				//set new values for policy
 				driver.setTitle(_driver.getTitle());
-				driver.setFirstName(_driver.getFirstName());
-				driver.setLastName(_driver.getLastName());
+				driver.setFirst_name(_driver.getFirst_name());
+				driver.setLast_name(_driver.getLast_name());
 				driver.setMiddleInitial(_driver.getMiddleInitial());
-				driver.setDoB(driver.getDoB());
-				driver.setEmail(driver.getEmail());
-				driver.setPhoneNumber(driver.getPhoneNumber());
+				driver.setDob(driver.getDob());
+				driver.setEmail_adress(driver.getEmail_adress());
+				driver.setPhone_number(driver.getPhone_number());
 				driver.setCellNumber(driver.getCellNumber());
-				driver.setSSN(driver.getSSN());
-				driver.setLicenseIssuedDate(driver.getLicenseIssuedDate());
-				driver.setLicenseNumber(driver.getLicenseNumber());
-				driver.setIsPrimaryPolicyHolder(driver.getIsPrimaryPolicyHolder());
-				driver.setRelationWithPrimaryPolicyHolder(driver.getRelationWithPrimaryPolicyHolder());
-				driver.setMaritalStatuts(driver.getMaritalStatuts());
+				driver.setSsn(driver.getSsn());
+				driver.setLicense_issue_date(driver.getLicense_issue_date());
+				driver.setLicense_number(driver.getLicense_number());
+				driver.setIs_primary_policy_holder(driver.getIs_primary_policy_holder());
+				driver.setRelation_withPrimary_policy_holder(driver.getRelation_withPrimary_policy_holder());
+				driver.setMarital_statut(driver.getMarital_statut());
 				driver.setGender(driver.getGender());
 				driver.setActive(driver.getActive());
 	

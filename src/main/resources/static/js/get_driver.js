@@ -4,7 +4,7 @@ $(document).ready(function(){
             type : "GET",
             url : "/api/driver/retrieveinfos",
             success: function(response){
-              $.each(response.policys, (i, driver) => { 
+              $.each(response.driver, (i, driver) => { 
 
               /*  <button type="button" class="btn btn-danger btn_delete" data-toggle="modal" data-target="#myModal">
                 Open modal
@@ -12,31 +12,36 @@ $(document).ready(function(){
 
                 let deleteButton = '<button ' +
                                         'id=' +
-                                        '\"' + 'btn_delete_' + policy.id + '\"'+
-                                        ' type="button" class="btn btn-danger btn_delete" data-bs-toggle="modal" data-bs-target="#delete-modal">' +
-                                        '&times</button>';
+                                        '\"' + 'btn_delete_' + driver.id + '\"'+
+                                        ' type="button" class="btn btn-danger btn_delete" data-toggle="modal" data-target="#delete-modal"' +
+                                        '>&times</button>';
 
                 let get_More_Info_Btn = '<button' +
-                                            ' id=' + '\"' + 'btn_id_' + policy.id + '\"' +
+                                            ' id=' + '\"' + 'btn_id_' + driver.id + '\"' +
                                             ' type="button" class="btn btn-info btn_id">' + 
-                                            policy.id +
+                                            driver.id +
                                             '</button>';
                 
                 let tr_id = 'tr_' + policy.id;
-                let policyRow = '<tr id=\"' + tr_id + "\"" + '>' +
+                let driverRow = '<tr id=\"' + tr_id + "\"" + '>' +
                           '<td>' + get_More_Info_Btn + '</td>' +
-                          '<td class=\"td_first_name\">' + driver.FirstName.toUpperCase() + '</td>' +
-                          '<td class=\"td_last_name\">' + driver.LastName + '</td>' +
-                          '<td class=\"td_creation_date\">' + driver.CreatedDate + '</td>' +
+                          '<td class=\"td_creation_date\">' + driver.creationDate + '</td>' +
                           '<td>' + deleteButton + '</td>' +
                           '</tr>';              
-                $('#driverTable tbody').append(policyRow);
+                $('#driverTable tbody').append(driverRow);
               });
             },
             error : function(e) {
               alert("ERROR: ", e);
               console.log("ERROR: ", e);
             }
-        });      
+        });
+    })();        
+    
+    (function(){
+        let pathname = window.location.pathname;
+        if (pathname == "/all_driver.html") {
+            $(".nav .nav-item a:last").addClass("active");
+        }
     })();
 });

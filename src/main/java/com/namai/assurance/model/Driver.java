@@ -22,52 +22,58 @@ public class Driver {
 	private long id;
 
 	@Column
-	private String Title;
+	private Date dob;
 	
 	@Column
-	private String FirstName;
+	private long policy_id_artifact;
+
+	@Column
+	private String email_adress;
+
+	@Column
+	private String first_name;
 	
 	@Column
-	private String LastName;
+	private String last_name;
 	
 	@Column
-	private String MiddleInitial;
+	private long phone_number;
+
+	@Column
+	private String ssn;
 	
 	@Column
-	private Date DoB; // date of birth 
+	private String title;
 	
 	@Column
-	private String Email;
+	private String middleInitial;
 	
 	@Column
-	private long PhoneNumber;
+	private Date license_issue_date;
+
+	@Column
+	private String license_issue_state;
 	
 	@Column
-	private long CellNumber;
+	private long license_number;
+
+	@Column
+	private String gender;
+
+	@Column
+	private String marital_statut;
+
+	@Column
+	private Boolean is_primary_policy_holder;
+
+	@Column
+	private String relation_withPrimary_policy_holder;
 	
 	@Column
-	private String SSN; // Social security number
+	private Date created_date;
 	
-	@Column
-	private Date LicenseIssuedDate;
-	
-	@Column
-	private long LicenseNumber;
-	
-	@Column
-	private Boolean IsPrimaryPolicyHolder;
-	
-	@Column
-	private String RelationWithPrimaryPolicyHolder;
-	
-	@Column
-	private String Gender;
-	
-	@Column
-	private String MaritalStatuts;
-	
-	@Column
-	private Date CreatedDate;
+	@Column 
+	private long cellNumber;
 	
 	@Column
 	private Boolean active;
@@ -82,90 +88,161 @@ public class Driver {
 
 	public Driver() {}
 
-	public Driver(long id, String Title, String FirstName, String LastName, String MiddleInitial, Date DoB, String Email, Long PhoneNumber, Long CellNumber, String SSN, Date LicenseIssuedDate, 
-							Long LicenseNumber, Boolean IsPrimaryPolicyHolder, String RelationWithPrimaryPolicyHolder, String Gender, String MaritalStatuts, Date CreatedDate, Boolean active, Policy policy) {
+	public Driver(long id, String title, String first_name, String last_name, String middleInitial, Date dob, String email_adress, long phone_number, long cellNumber, String ssn, Date license_issue_date, 
+							long license_number, String license_issue_state, long policy_id_artifact, Boolean is_primary_policy_holder, String relation_withPrimary_policy_holder, String gender, String marital_statut, Date created_date, Boolean active , Policy policy) {
 		
 		
-		super();
 		this.id = id;
-		this.Title = Title;
-		this.FirstName = FirstName;
-		this.LastName = LastName;
-		this.MiddleInitial = MiddleInitial;
-		this.DoB = DoB;
-		this.Email = Email;
-		this.PhoneNumber = PhoneNumber;
-		this.CellNumber = CellNumber;
-		this.SSN = SSN;
-		this.LicenseIssuedDate = LicenseIssuedDate;
-		this.LicenseNumber = LicenseNumber;
-		this.IsPrimaryPolicyHolder = IsPrimaryPolicyHolder;
-		this.RelationWithPrimaryPolicyHolder = RelationWithPrimaryPolicyHolder;
-		this.Gender = Gender;
-		this.MaritalStatuts = MaritalStatuts;
-		this.CreatedDate = CreatedDate;
+		this.dob = dob;
+		this.email_adress = email_adress;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.phone_number = phone_number;
+		this.ssn = ssn;
+		this.title = title;
+		this.middleInitial = middleInitial;
+		this.license_issue_date = license_issue_date;
+		this.license_number = license_number;
+		this.license_issue_state = license_issue_state;
+		this.gender = gender;
+		this.marital_statut = marital_statut;
+		this.created_date = created_date;
+		this.is_primary_policy_holder = is_primary_policy_holder;
+		this.relation_withPrimary_policy_holder = relation_withPrimary_policy_holder;
+		this.policy_id_artifact = policy_id_artifact;
 		this.active = active;
-		
+		this.cellNumber = cellNumber;
 		this.policy = policy;
 	}
 
-	public long getId() { return this.id; }
-	public void setId(long id) { this.id = id; }
+	
+	
 
-	public String getTitle() { return Title; }
-	public void setTitle(String Title) { this.Title = Title; }
-	
-	public String getFirstName() { return FirstName; }
-	public void setFirstName(String FirstName) { this.FirstName = FirstName; }
-	
-	public String getLastName() { return LastName; }
-	public void setLastName(String LastName) { this.LastName = LastName; }
-	
-	public String getMiddleInitial() { return MiddleInitial; }
-	public void setMiddleInitial(String MiddleInitial) { this.MiddleInitial = MiddleInitial; }
-	
-	public Date getDoB() { return DoB; }
-	public void setDoB(Date DoB) { this.DoB = DoB; }
-	
-	public String getEmail() { return Email; }
-	public void setEmail(String Email) { this.Email = Email; }
-	
-	public long getPhoneNumber() { return PhoneNumber; }
-	public void setPhoneNumber(long PhoneNumber) { this.PhoneNumber = PhoneNumber; }
-	
-	public long getCellNumber() { return CellNumber; }
-	public void setCellNumber(long CellNumber) { this.CellNumber = CellNumber; }
-	
-	public String getSSN() { return SSN; }
-	public void setSSN(String SSN) { this.SSN = SSN; }
-	
-	public Date getLicenseIssuedDate() { return LicenseIssuedDate; }
-	public void setLicenseIssuedDate(Date LicenseIssuedDate) { this.LicenseIssuedDate = LicenseIssuedDate; }
-	
-	public Long getLicenseNumber() { return LicenseNumber; }
-	public void setLicenseNumber(Long LicenseNumber) { this.LicenseNumber = LicenseNumber; }
-	
-	public Boolean getIsPrimaryPolicyHolder() { return IsPrimaryPolicyHolder; }
-	public void setIsPrimaryPolicyHolder(Boolean IsPrimaryPolicyHolder) { this.IsPrimaryPolicyHolder = IsPrimaryPolicyHolder; }
-	
-	public String getRelationWithPrimaryPolicyHolder() { return RelationWithPrimaryPolicyHolder; }
-	public void setRelationWithPrimaryPolicyHolder(String RelationWithPrimaryPolicyHolder) { this.RelationWithPrimaryPolicyHolder = RelationWithPrimaryPolicyHolder; }
-	
-	public String getMaritalStatuts() { return MaritalStatuts; }
-	public void setMaritalStatuts(String MaritalStatuts) { this.MaritalStatuts = MaritalStatuts; }
-	
-	public String getGender() { return Gender; }
-	public void setGender(String Gender) { this.Gender = Gender; }
-	
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public Date getDob() {
+		return dob;
+	}
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+	public long getPolicy_id_artifact() {
+		return policy_id_artifact;
+	}
+	public void setPolicy_id_artifact(long policy_id_artifact) {
+		this.policy_id_artifact = policy_id_artifact;
+	}
+	public String getEmail_adress() {
+		return email_adress;
+	}
+	public void setEmail_adress(String email_adress) {
+		this.email_adress = email_adress;
+	}
+	public String getFirst_name() {
+		return first_name;
+	}
+	public void setFirst_name(String first_name) {
+		this.first_name = first_name;
+	}
+	public String getLast_name() {
+		return last_name;
+	}
+	public void setLast_name(String last_name) {
+		this.last_name = last_name;
+	}
+	public long getPhone_number() {
+		return phone_number;
+	}
+	public void setPhone_number(long phone_number) {
+		this.phone_number = phone_number;
+	}
+	public String getSsn() {
+		return ssn;
+	}
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getMiddleInitial() {
+		return middleInitial;
+	}
+	public void setMiddleInitial(String middleInitial) {
+		this.middleInitial = middleInitial;
+	}
+	public Date getLicense_issue_date() {
+		return license_issue_date;
+	}
+	public void setLicense_issue_date(Date license_issue_date) {
+		this.license_issue_date = license_issue_date;
+	}
+	public String getLicense_issue_state() {
+		return license_issue_state;
+	}
+	public void setLicense_issue_state(String license_issue_state) {
+		this.license_issue_state = license_issue_state;
+	}
+	public long getLicense_number() {
+		return license_number;
+	}
+	public void setLicense_number(long license_number) {
+		this.license_number = license_number;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public String getMarital_statut() {
+		return marital_statut;
+	}
+	public void setMarital_statut(String marital_statut) {
+		this.marital_statut = marital_statut;
+	}
+	public Boolean getIs_primary_policy_holder() {
+		return is_primary_policy_holder;
+	}
+	public void setIs_primary_policy_holder(Boolean is_primary_policy_holder) {
+		this.is_primary_policy_holder = is_primary_policy_holder;
+	}
+	public String getRelation_withPrimary_policy_holder() {
+		return relation_withPrimary_policy_holder;
+	}
+	public void setRelation_withPrimary_policy_holder(String relation_withPrimary_policy_holder) {
+		this.relation_withPrimary_policy_holder = relation_withPrimary_policy_holder;
+	}
+	public Date getCreated_date() {
+		return created_date;
+	}
+	public void setCreated_date(Date created_date) {
+		this.created_date = created_date;
+	}
+	public long getCellNumber() {
+		return cellNumber;
+	}
+	public void setCellNumber(long cellNumber) {
+		this.cellNumber = cellNumber;
+	}
+	public void setActive(Boolean active) {
+		this.active = active;
+	}
 	public boolean getActive() { return active; }
 	public void setActive(boolean active) { this.active = active; }
 
 
 	@Override
 	public String toString() {
-		return "Vehicle [id=" + id + ", Title=" + Title	+ ", FirstName=" + FirstName + ", LastName=" + LastName + ", MiddleInitial=" + MiddleInitial + ", DoB=" + DoB +
-				", Email=" + Email + ", PhoneNumber=" + PhoneNumber + ", CellNumber=" + CellNumber + 
-				", SSN" + SSN + ", LicenseIssuedDate=" + LicenseIssuedDate + ", LicenseNumber=" + LicenseNumber +  ", IsPrimaryPolicyHolder=" + IsPrimaryPolicyHolder + 
-				", RelationWithPrimaryPolicyHolder=" + RelationWithPrimaryPolicyHolder + ", MaritalStatuts=" + MaritalStatuts + ", Gender=" + Gender + ", Active=" + active + "]";
+		return "Vehicle [id=" + id + ", title=" + title	+ ", first_name=" + first_name + ", last_name=" + last_name + ", middleInitial=" + middleInitial + ", dob=" + dob +
+				", email_adress=" + email_adress + ", phone_number=" + phone_number + ", cellNumber=" + cellNumber + ", ssn" + ssn + ", license_issue_date=" + license_issue_date + ", license_number=" + license_number +  ", is_primary_policy_holder=" + is_primary_policy_holder + 
+				", relation_withPrimary_policy_holder=" + relation_withPrimary_policy_holder + ", marital_statut=" + marital_statut + ", gender=" + gender + ", policy_id_artifact=" + policy_id_artifact + ", license_issue_state=" + license_issue_state + ", Active=" + active + "]";
 	}
 }
