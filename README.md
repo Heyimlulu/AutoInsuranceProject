@@ -9,4 +9,9 @@ The `Heroku` branch is use by the public instance [Link available below]
 - Front-End: https://autoinsuranceproject.herokuapp.com/
 - Back-End: This branch use PostGreSQL instead of MySQL
 
-<img height="200px" src="https://bilalbudhani.com/content/images/2017/11/heroku.png">
+<a href="https://github.com/Heyimlulu/InsuranceProject/tree/heroku">
+  <img height="200px" align="center" src="https://bilalbudhani.com/content/images/2017/11/heroku.png">
+</a>
+<a href="https://github.com/Heyimlulu/InsuranceProject/tree/heroku">
+  <img height="200px" align="center" src="https://miro.medium.com/max/1200/1*PR3N41Yzq0bEQw9imFmrJQ.png">
+</a>
