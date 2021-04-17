@@ -190,6 +190,9 @@ hs_err_pid*
 .idea/modules.xml
 .idea/vcs.xml
 .idea/workspace.xml
+
+# Don't want to override these files
+
 pom.xml
 README.md
 src/main/resources/application.properties
