@@ -11,11 +11,13 @@
 <!-- Bootstrap 5.0 Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 <!-- Script files -->
+<script type="text/javascript" src="../js/post_driver.js"></script>
 <script src="../js/sidebar.js"></script>
 <script src="../js/navbar.js"></script>
 <!-- Custom CSS -->
 <link rel="stylesheet" href="../css/styles.css">
 </head>
+
 <body>
 <div id="navbar"></div>
 <div id="sidebar"></div>
@@ -23,97 +25,68 @@
 		<div class="row">
 			<div class="col-sm-7 form-design">
 				<h3>Add new Driver</h3>
-				<form id="add_new_police">
-				<div class="form-group">
+				<form id="add_new_driver" class="row">
+				<div class="form-group col-12">
 						<label class="control-label" for="policyID">Policy ID:</label>
 						<input type="number" class="form-control" id="policyID"
 								placeholder="Enter Policy ID" name="policyID" required></input>
-                    </div>
-				<div class="form-group">
-						<label for="Title">Title :</label>
-						<select id="Title" class="form-select" aria-label="Default select example">
+				</div>
+
+				<h4 class="subtitle"><span>Personal Informations</span></h4>
+
+				<div class="form-group col-12">
+						<label for="title">Title :</label>
+						<select id="title" class="form-select" aria-label="Default select example">
 							<option value="Mister">Mister</option>
 							<option value="Miss">Miss</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label class="control-label" for="policyEffectiveDate">First Name:</label>
-						<input type="text" class="form-control" id="FirstName"
-								placeholder="Enter First Name" name="FirstName" min="" required></input>
+					<div class="form-group col-5">
+						<label class="control-label" for="first_name">First Name:</label>
+						<input type="text" class="form-control" id="first_name"
+								placeholder="Enter First Name" name="first_name" min="" required></input>
 					</div>                    
-					<div class="form-group">
-						<label class="control-label" for="LastName">Last Name:</label>
-						<input type="text" class="form-control" id="LastName"
-								placeholder="Enter Last Name" name="LastName" min="" required></input>
+					<div class="form-group col-5">
+						<label class="control-label" for="last_name">Last Name:</label>
+						<input type="text" class="form-control" id="last_name"
+								placeholder="Enter Last Name" name="last_name" min="" required></input>
 					</div>
-					<div class="form-group">
-						<label class="control-label" for="MiddleInitial">Middle Initial:</label>
-						<input type="text" class="form-control" id="MiddleInitial"
-								placeholder="Enter Middle Initial" name="MiddleInitial" min="" required></input>
+					<div class="form-group col-2">
+						<label class="control-label" for="middleInitial">Middle Initial:</label>
+						<input type="text" class="form-control" id="middleInitial"
+								placeholder="Enter Middle Initial" name="middleInitial" min="" required></input>
 					</div>                    
-					<div class="form-group">
-						<label class="control-label" for="DoB">DoB:</label>
-						<input type="text" class="form-control" id="DoB"
-								placeholder="Enter DoB" name="DoB" required></input>
+					<div class="form-group col-6">
+						<label class="control-label" for="dob">Date of Birth:</label>
+						<input type="date" class="form-control" id="dob"
+								placeholder="Enter Date of birthday" name="dob" required></input>
 					</div>
-					<div class="form-group">
-						<label class="control-label" for="Email">Email:</label>
-						<input type="email" class="form-control" id="Email"
-								placeholder="Enter Email" name="Email" min="" required></input>
+					<div class="form-group col-6">
+						<label class="control-label" for="email_adress">Email:</label>
+						<input type="email" class="form-control" id="email_adress"
+								placeholder="Enter Email" name="email_adress" min="" required></input>
 					</div>
-					<div class="form-group">
-						<label class="control-label" for="PhoneNumber">Phone Number:</label>
-						<input type="number" class="form-control" id="PhoneNumber"
-								placeholder="Enter Phone Number" name="PhoneNumber" required></input>
+					<div class="form-group col-6">
+						<label class="control-label" for="phone_number">Phone Number:</label>
+						<input type="tel" class="form-control" id="phone_number"
+								placeholder="Enter Phone Number" name="phone_number" required></input>
 					</div>
-					<div class="form-group">
-						<label class="control-label" for="policyEffectiveDate">Cell Number:</label>
-						<input type="number" class="form-control" id="CellNumber"
-								placeholder="Enter Cell Number" name="CellNumber" min="" required></input>
+					<div class="form-group col-6">
+						<label class="control-label" for="cellNumber">Cell Number:</label>
+						<input type="tel" class="form-control" id="cellNumber"
+								placeholder="Enter Cell Number" name="cellNumber" min="" required></input>
 					</div>
-					<div class="form-group">
-						<label class="control-label" for="SSN">SSN:</label>
-						<input type="text" class="form-control" id="SSN"
-								placeholder="Enter SSN" name="SSN" required></input>
-                    </div>
-					<div class="form-group">
-						<label class="control-label" for="LicenseIssuedDate">License Issued Date:</label>
-						<input type="date" class="form-control" id="LicenseIssuedDate"
-								placeholder="Enter additional Infos" name="LicenseIssuedDate" required></input>
-					</div>
-					<div class="form-group">
-						<label class="control-label" for="LicenseIssuedState">License Issued State:</label>
-						<input type="date" class="form-control" id="LicenseIssuedState"
-								placeholder="Enter License Issued State" name="LicenseIssuedState" required></input>
-					</div> 
-					<div class="form-group">
-						<label class="control-label" for="LicenseNumber">License Number:</label>
-						<input type="text" class="form-control" id="LicenseNumber"
-								placeholder="Enter License Number" name="LicenseNumber" min="" required></input>
-					</div>
-					<div class="form-group">
-						<label for="IsPrimaryPolicyHolder">Is Primary Policy Holder :</label>
-						<select id="IsPrimaryPolicyHolder" class="form-select" aria-label="Default select example">
-							<option value="true">Yes</option>
-							<option value="false">No</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label class="control-label" for="RelationWithPrimaryPolicyHolder">Relation With Primary Policy Holder:</label>
-						<input type="text" class="form-control" id="RelationWithPrimaryPolicyHolder"
-								placeholder="Enter Relation With Primary Policy Holder" name="RelationWithPrimaryPolicyHolder" min="" required></input>
-					</div>
-					<div class="form-group">
-						<label for="Gender">Gender :</label>
-						<select id="Gender" class="form-select" aria-label="Default select example">
+					<div class="form-group col-6">
+						<label for="gender">Gender :</label>
+						<select id="gender" class="form-select" aria-label="Default select example">
 							<option value="Male">Male</option>
 							<option value="Female">Female</option>
 							<option value="Other">Other</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label for="MaritalStatuts">Marital Statuts :</label>
-						<select id="MaritalStatuts" class="form-select" aria-label="Default select example">
+					<div class="form-group col-6">
+						<label for="marital_statut">Marital Statuts :</label>
+						<select id="marital_statut" class="form-select" aria-label="Default select example">
 							<option value="Married">Married</option>
 							<option value="Divorced">Divorced</option>
 							<option value="Single">Single</option>
@@ -121,12 +94,47 @@
 							<option value="Engaged">Engaged</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label class="control-label" for="CreatedDate">Created Date:</label>
-						<input type="date" class="form-control" id="CreatedDate"
-								placeholder="Enter Createrd Date" name="CreatedDate" min="" required></input>
+
+					<h4 class="subtitle"><span>Driving license Informations</span></h4>
+
+					<div class="form-group col-12">
+						<label class="control-label" for="ssn">Social Security Number (SSN):</label>
+						<input type="text" class="form-control" id="ssn"
+								placeholder="Enter SSN" name="ssn" required></input>
+                    </div>
+					<div class="form-group col-4">
+						<label class="control-label" for="license_issue_date">License Issued Date:</label>
+						<input type="date" class="form-control" id="license_issue_date"
+								placeholder="Enter additional Infos" name="license_issue_date" required></input>
 					</div>
-					<div class="form-group">
+					<div class="form-group col-4">
+						<label class="control-label" for="license_issue_state">License Issued State:</label>
+						<input type="text" class="form-control" id="license_issue_state"
+								placeholder="Enter License Issued State" name="license_issue_state" required></input>
+					</div> 
+					<div class="form-group col-4">
+						<label class="control-label" for="license_number">License Number:</label>
+						<input type="text" class="form-control" id="license_number"
+								placeholder="Enter License Number" name="license_number" min="" required></input>
+					</div>
+					<div class="form-group col-6">
+						<label for="is_primary_policy_holder">Is Primary Policy Holder :</label>
+						<select id="is_primary_policy_holder" class="form-select" aria-label="Default select example">
+							<option value="true">Yes</option>
+							<option value="false">No</option>
+						</select>
+					</div>
+					<div class="form-group col-6">
+						<label class="control-label" for="relation_withPrimary_policy_holder">Relation With Primary Policy Holder:</label>
+						<input type="text" class="form-control" id="relation_withPrimary_policy_holder"
+								placeholder="Enter Relation With Primary Policy Holder" name="relation_withPrimary_policy_holder" min="" required></input>
+					</div>
+					<div class="form-group col-12">
+						<label class="control-label" for="created_date">Created Date:</label>
+						<input type="date" class="form-control" id="created_date"
+								placeholder="Enter Created Date" name="created_date" min="" required></input>
+					</div>
+					<div class="form-group col-12">
 						<label for="active">Active?</label>
 						<select id="active" class="form-select" aria-label="Default select example">
 							<option value="true">Yes</option>
@@ -134,7 +142,7 @@
 						</select>
 					</div>
 					                   
-					<button type="submit" class="btn btn-danger" id="btn-add-new-policy">Create</button>
+					<button type="submit" class="btn btn-danger col-3" id="btn-add-new-driver">Create</button>
 				</form>
 				<div id="response" style="display:none; margin-top:10px"></div>
 			</div>

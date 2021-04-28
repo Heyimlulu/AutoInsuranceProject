@@ -47,11 +47,11 @@ public class Policy {
 	private Date creationDate;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same policyID
 	private List<PolicyEditLog> policyEditLogs;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same policyID
 	private List<Bill> bill;
 	
 	// Policy Edit Log Model - GET/SET

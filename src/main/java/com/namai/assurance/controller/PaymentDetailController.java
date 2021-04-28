@@ -28,7 +28,7 @@ public class PaymentDetailController {
 			paymentDetail.setBill(b);
 			PaymentDetail returnedBill = paymentDetailServices.savePaymentDetail(paymentDetail);
 
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, Arrays.asList(returnedBill), null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, Arrays.asList(returnedBill), null, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail to post a new Payment Detail!", null, null, null, null, null, e.getMessage()),	HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -40,7 +40,7 @@ public class PaymentDetailController {
 		try {
 			List<PaymentDetail> paymentDetailInfos = paymentDetailServices.getPaymentDetailInfos();
 
-			return new ResponseEntity<Message>(new Message("Get Payment Detail's Infos!", null, null, null, paymentDetailInfos, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Payment Detail's Infos!", null, null, null, paymentDetailInfos, null, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -52,7 +52,7 @@ public class PaymentDetailController {
 			Optional<PaymentDetail> optBill = paymentDetailServices.getPaymentDetailById(id);
 
 			if (optBill.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Payment Detail by id = " + id, null, null, null, Arrays.asList(optBill.get()), null, ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Payment Detail by id = " + id, null, null, null, Arrays.asList(optBill.get()), null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Payment Detail by id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
