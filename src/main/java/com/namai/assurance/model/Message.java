@@ -40,7 +40,6 @@ public class Message {
 	public List<Driver> getDrivers() { return driver; }
 	public void setDriver(List<Driver> driver) { this.driver = driver; }
 
-	// On success
 	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, String error) {
 		this.message = message;
 		this.policies = policies;
@@ -52,7 +51,6 @@ public class Message {
 		this.error = error;
 	}
 
-	// On error
 	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, String error) {
 		this.message = message;
 		this.editLogPolicies = editLogPolicies;
