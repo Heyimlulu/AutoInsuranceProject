@@ -1,4 +1,4 @@
-# InsuranceProject
+# Auto Insurance Project
 
 ![](https://img.shields.io/badge/Apache%20Maven%3A%20Build-passing-success?logo=github) ![](https://img.shields.io/badge/Spring%20Boot%20Back--End%3A%20Build%20--%20Test%20--%20Deploy-passing-success?logo=github) ![](https://img.shields.io/badge/Bootstrap%20Frond--End%3A%20Deploy-passing-success?logo=github)
 
