@@ -11,7 +11,7 @@
     <!-- Bootstrap 5.0 Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <!-- Script files -->
-    <script type="text/javascript" src="/js/update_paymentdetail.js"></script>
+    <script type="text/javascript" src="/js/update_driver.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="../js/navbar.js"></script>
     <!-- Custom CSS -->
@@ -27,30 +27,28 @@
                 data[tmp[0]] = tmp[1];
             }
 
+            console.log(data);
+
             /* Decode input field to avoid URL syntax */
             document.getElementById('policyID').value = decodeURI(data.id);
-            
-            document.getElementById('Title').value = decodeURI(data.createdDate);
-            
-            document.getElementById('FirstName').value = decodeURI(data.paidDate);
-            document.getElementById('LastName').value = decodeURI(data.payerFirstName);
-            document.getElementById('MiddleInitial').value = decodeURI(data.payerLastName);
-            document.getElementById('DoB').value = decodeURI(data.amount);
-            
-            document.getElementById('Email').value = decodeURI(data.paymentMethod);
-            document.getElementById('PhoneNumber').value = decodeURI(data.debitCredit);
-            document.getElementById('CellNumber').value = decodeURI(data.additionalInfo);
-
-            document.getElementById('SSN').value = decodeURI(data.cardNumber);
-            document.getElementById('LicenseIssuedDate').value = decodeURI(data.zipCode);
-            document.getElementById('LicenseNumber').value = decodeURI(data.cardExpireDate);
-            document.getElementById('IsPrimaryPolicyHolder').value = decodeURI(data.cardType);
-
-            document.getElementById('RelationWithPrimaryPolicyHolder').value = decodeURI(data.bankName);
-            document.getElementById('Gender').value = decodeURI(data.routingNumber);
-            document.getElementById('MaritalStatuts').value = decodeURI(data.accountNumber);
-            document.getElementById('CreatedDate').value = decodeURI(data.checkNumber);
-            document.getElementById('active').value = decodeURI(data.checkNumber);
+            document.getElementById('Title').value = decodeURI(data.title);
+            document.getElementById('FirstName').value = decodeURI(data.firstname);
+            document.getElementById('LastName').value = decodeURI(data.lastname);
+            document.getElementById('MiddleInitial').value = decodeURI(data.middleinitial);
+            document.getElementById('DoB').value = decodeURI(data.dob);
+            document.getElementById('Email').value = decodeURI(data.email);
+            document.getElementById('PhoneNumber').value = decodeURI(data.phonenumber);
+            document.getElementById('CellNumber').value = decodeURI(data.cellnumber);
+            document.getElementById('SSN').value = decodeURI(data.ssn);
+            document.getElementById('LicenseIssuedDate').value = decodeURI(data.licenseissueddate);
+			document.getElementById('LicenseIssuedState').value = decodeURI(data.licenseissuedstate);
+            document.getElementById('LicenseNumber').value = decodeURI(data.licensenumber);
+            document.getElementById('IsPrimaryPolicyHolder').value = decodeURI(data.isprimarypolicyholder)
+            document.getElementById('RelationWithPrimaryPolicyHolder').value = decodeURI(data.relationwithprimarypolicyholder);
+            document.getElementById('Gender').value = decodeURI(data.gender);
+            document.getElementById('MaritalStatuts').value = decodeURI(data.maritalstatus);
+            document.getElementById('CreatedDate').value = decodeURI(data.createddate);
+            document.getElementById('active').value = decodeURI(data.active);
         }
     </script>
 </head>
@@ -61,7 +59,7 @@
 		<div class="row">
 			<div class="col-sm-7 form-design">
 				<h3>Update Driver</h3>
-				<form id="update_driver">
+				<form id="update_driver_form">
 				<div class="form-group">
 						<label class="control-label" for="policyID">Policy ID:</label>
 						<input type="number" class="form-control" id="policyID"
@@ -75,7 +73,7 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label class="control-label" for="policyEffectiveDate">First Name:</label>
+						<label class="control-label" for="FirstName">First Name:</label>
 						<input type="text" class="form-control" id="FirstName"
 								placeholder="Enter First Name" name="FirstName" min="" required></input>
 					</div>                    
@@ -105,7 +103,7 @@
 								placeholder="Enter Phone Number" name="PhoneNumber" required></input>
 					</div>
 					<div class="form-group">
-						<label class="control-label" for="policyEffectiveDate">Cell Number:</label>
+						<label class="control-label" for="CellNumber">Cell Number:</label>
 						<input type="tel" class="form-control" id="CellNumber"
 								placeholder="Enter Cell Number" name="CellNumber" min="" required></input>
 					</div>
@@ -117,13 +115,13 @@
 					<div class="form-group">
 						<label class="control-label" for="LicenseIssuedDate">License Issued Date:</label>
 						<input type="date" class="form-control" id="LicenseIssuedDate"
-								placeholder="Enter additional Infos" name="LicenseIssuedDate" required></input>
+								placeholder="Enter License Issued Date" name="LicenseIssuedDate" required></input>
 					</div>
 					<div class="form-group">
 						<label class="control-label" for="LicenseIssuedState">License Issued State:</label>
 						<input type="text" class="form-control" id="LicenseIssuedState"
 								placeholder="Enter License Issued State" name="LicenseIssuedState" required></input>
-					</div> 
+					</div>
 					<div class="form-group">
 						<label class="control-label" for="LicenseNumber">License Number:</label>
 						<input type="text" class="form-control" id="LicenseNumber"
@@ -162,7 +160,7 @@
 					<div class="form-group">
 						<label class="control-label" for="CreatedDate">Created Date:</label>
 						<input type="date" class="form-control" id="CreatedDate"
-								placeholder="Enter Createrd Date" name="CreatedDate" min="" required></input>
+								placeholder="Enter Creation Date" name="CreatedDate" min="" required></input>
 					</div>
 					<div class="form-group">
 						<label for="active">Active?</label>
@@ -172,7 +170,7 @@
 						</select>
 					</div>
 					                   
-					<button type="submit" class="btn btn-danger" id="btn-add-new-policy">Create</button>
+					<button type="submit" class="btn btn-danger" id="btn-add-new-driver">Update</button>
 				</form>
 				<div id="response" style="display:none; margin-top:10px"></div>
 			</div>

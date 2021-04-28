@@ -38,7 +38,7 @@ public class DriverController {
 			return new ResponseEntity<Message>(new Message("Upload Successfully!", 
 											null, null, null, null, null, Arrays.asList(returnedDriver), ""), HttpStatus.OK);
 		} catch(Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Policy!", 
+			return new ResponseEntity<Message>(new Message("Fail to post a new Driver!",
 											null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -49,7 +49,7 @@ public class DriverController {
 		try {
 			List<Driver> driverInfos = driverServices.getDriverInfos();
 			
-			return new ResponseEntity<Message>(new Message("Get Policys' Infos!", 
+			return new ResponseEntity<Message>(new Message("Get Driver Infos!",
 												null, null, null, null, null, driverInfos, null), HttpStatus.OK);
 		}catch(Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!",
@@ -63,10 +63,10 @@ public class DriverController {
 			Optional<Driver> optDriver = driverServices.getPolicyById(id);
 			
 			if(optDriver.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a policy by id = " + id,
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a driver by id = " + id,
 															null, null, null, null, Arrays.asList(optDriver.get()), ""), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a policy by id = " + id,
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a driver by id = " + id,
 						null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
@@ -82,31 +82,32 @@ public class DriverController {
 			if(driverServices.checkExistedDriver(id)) {
 				Driver driver = driverServices.getPolicyById(id).get();
 				
-				//set new values for policy
+				//set new values for driver
 				driver.setTitle(_driver.getTitle());
 				driver.setFirst_name(_driver.getFirst_name());
 				driver.setLast_name(_driver.getLast_name());
 				driver.setMiddleInitial(_driver.getMiddleInitial());
-				driver.setDob(driver.getDob());
-				driver.setEmail_adress(driver.getEmail_adress());
-				driver.setPhone_number(driver.getPhone_number());
-				driver.setCellNumber(driver.getCellNumber());
-				driver.setSsn(driver.getSsn());
-				driver.setLicense_issue_date(driver.getLicense_issue_date());
-				driver.setLicense_number(driver.getLicense_number());
-				driver.setIs_primary_policy_holder(driver.getIs_primary_policy_holder());
-				driver.setRelation_withPrimary_policy_holder(driver.getRelation_withPrimary_policy_holder());
-				driver.setMarital_statut(driver.getMarital_statut());
-				driver.setGender(driver.getGender());
-				driver.setActive(driver.getActive());
+				driver.setDob(_driver.getDob());
+				driver.setEmail_adress(_driver.getEmail_adress());
+				driver.setPhone_number(_driver.getPhone_number());
+				driver.setCellNumber(_driver.getCellNumber());
+				driver.setSsn(_driver.getSsn());
+				driver.setLicense_issue_date(_driver.getLicense_issue_date());
+				driver.setLicense_issue_state(_driver.getLicense_issue_state());
+				driver.setLicense_number(_driver.getLicense_number());
+				driver.setIs_primary_policy_holder(_driver.getIs_primary_policy_holder());
+				driver.setRelation_withPrimary_policy_holder(_driver.getRelation_withPrimary_policy_holder());
+				driver.setMarital_statut(_driver.getMarital_statut());
+				driver.setGender(_driver.getGender());
+				driver.setActive(_driver.getActive());
 	
 				// save the change to database
 				driverServices.updateDriver(driver);
 				
-				return new ResponseEntity<Message>(new Message("Successfully! Updated a Policy "
+				return new ResponseEntity<Message>(new Message("Successfully! Updated a Driver "
 																		+ "with id = " + id, null, null, null, null, Arrays.asList(driver), ""), HttpStatus.OK);
 			}else {
-				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Policy " + "with id = " + id,
+				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Driver " + "with id = " + id,
 					null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
@@ -122,10 +123,10 @@ public class DriverController {
 			if(driverServices.checkExistedDriver(id)) {
 				driverServices.deleteDriverById(id);
 				
-				return new ResponseEntity<Message> (new Message("Successfully! Delete a Policy with id = " + id, 
+				return new ResponseEntity<Message> (new Message("Successfully! Delete a Driver with id = " + id,
 														null, null, null, null, null, ""), HttpStatus.OK);
 			}else {
-				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Policy "
+				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Driver "
 														+ "with id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {

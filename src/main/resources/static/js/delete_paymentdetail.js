@@ -1,7 +1,7 @@
 $(document).ready(function(){
     let paymentDetailId = 0;
 
-    $(document).on("click", "#div_policy_table table button.btn_delete", function() {
+    $(document).on("click", "#div_paymentdetail_table table button.btn_delete", function() {
         let btn_id = (event.srcElement.id);
         paymentDetailId = btn_id.split("_")[2];
 

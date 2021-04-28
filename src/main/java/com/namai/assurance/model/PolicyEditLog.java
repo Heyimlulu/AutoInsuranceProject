@@ -38,7 +38,7 @@ public class PolicyEditLog {
 	private String additionalInfos;
 
 	@JsonBackReference
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
 

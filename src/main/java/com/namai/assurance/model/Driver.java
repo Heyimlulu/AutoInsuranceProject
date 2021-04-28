@@ -76,7 +76,7 @@ public class Driver {
 	private boolean active;
 
 	@JsonBackReference
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
 

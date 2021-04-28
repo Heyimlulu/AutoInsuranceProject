@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("#update_policy_form").submit(function(evt) {
+    $("#update_driver_form").submit(function(evt) {
         evt.preventDefault();
         try {
             let policyId = $("#policyID").val();
@@ -7,23 +7,23 @@ $(document).ready(function(){
             // PREPARE FORM DATA
             let formData = {
            	policyID: $("#policyID").val(),
-        	Title: $("#Title").val(),
-        	FirstName: $("#FirstName").val(),
-        	LastName: $("#LastName").val(),
-            MiddleInital: $("#MiddleInitial").val(),
-            DoB: $("#DoB").val(),
-            Email: $("#Email").val(),
-            PhoneNumber: $("#PhoneNumber").val(),
-            CellNumber: $("#CellNumber").val(),
-            SSN: $("#SSN").val(),
-            LicenseIssuedDate: $("#LicenseIssuedDate").val(),
-            LicenseIssuedState: $("#LicenseIssuedState").val(),
-            LicenseNumber: $("#LicenseNumber").val(),
-            IsPrimaryPolicyHolder: $("#IsPrimaryPolicyHolder").val(),
-            RelationWithPrimaryPolicyHolder: $("#RelationWithPrimaryPolicyHolder").val(),
-            Gender: $("#Gender").val(),
-            MaritalStatuts: $("#MaritalStatuts").val(),
-            CreatedDate: $("#CreatedDate").val(),
+        	title: $("#Title").val(),
+        	first_name: $("#FirstName").val(),
+        	last_name: $("#LastName").val(),
+            middleInitial: $("#MiddleInitial").val(),
+            dob: $("#DoB").val(),
+            email_adress: $("#Email").val(),
+            phone_number: $("#PhoneNumber").val(),
+            cellNumber: $("#CellNumber").val(),
+            ssn: $("#SSN").val(),
+            license_issue_date: $("#LicenseIssuedDate").val(),
+            license_issue_state: $("#LicenseIssuedState").val(),
+            license_number: $("#LicenseNumber").val(),
+            is_primary_policy_holder: $("#IsPrimaryPolicyHolder").val(),
+            relation_withPrimary_policy_holder: $("#RelationWithPrimaryPolicyHolder").val(),
+            gender: $("#Gender").val(),
+            marital_statut: $("#MaritalStatuts").val(),
+            created_date: $("#CreatedDate").val(),
             active: $("#active").val()
             }
 
@@ -61,6 +61,7 @@ $(document).ready(function(){
                     $("#response").css({"display": "block"});
                 }
             });
+
         } catch(error){
             console.log(error);
             alert(error);
@@ -72,39 +73,52 @@ $(document).ready(function(){
         let policyId = id_of_button.split("_")[2];
   
         $.ajax({
-            url: '/api/policy/findone/' + policyId,
+            url: '/api/driver/findone/' + policyId,
             type: 'GET',
             success: function(response) {
-                let policy = response.policys[0];                
-                $("#policyID").val(policy.id);
-                $("#Title").val(Title);
-                $("#FirstName").val(FirstName);
-                $("#LastName").val(LastName);
-                $("#MiddleInital").val(MiddleInital);
-                $("#DoB").val(DoB);
-                $("#Email").val(Email);
-                $("#PhoneNumber").val(PhoneNumber);
-                $("#CellNumber").val(CellNumber);
-                $("#SSN").val(SSN);
-                $("#LicenseIssuedDate").val(LicenseIssuedDate);
-                $("#LicenseIssuedState").val(LicenseIssuedState);
-                $("#LicenseNumber").val(LicenseNumber);
-                $("#IsPrimaryPolicyHolder").val(IsPrimaryPolicyHolder);
-                $("#RelationWithPrimaryPolicyHolder").val(RelationWithPrimaryPolicyHolder);
-                $("#Gender").val(Gender);
-                $("#MaritalStatuts").val(MaritalStatuts);
-                $("#CreatedDate").val(CreatedDate);
-				$("#active").val(active);
+                let driver = response.drivers[0];
 
-                let url = "/driver/updatedriver.html?id=" + policy.id +
-                "&policynumber=" + policy.policyNumber + 
-                "&effectivedate=" + policy.policyEffectiveDate +
-                "&expiredate=" + policy.policyExpireDate +
-                "&paymentoption=" + policy.paymentOption +
-                "&totalamount=" + policy.totalAmount +
-                "&active=" + policy.active +
-                "&additionalinfos=" + policy.additionalInfos +
-                "&creationdate=" + policy.creationDate;
+                console.log(response.drivers[0]);
+
+                $("#policyID").val(driver.id);
+                $("#Title").val(driver.title);
+                $("#FirstName").val(driver.first_name);
+                $("#LastName").val(driver.last_name);
+                $("#MiddleInital").val(driver.middleInitial);
+                $("#DoB").val(driver.dob);
+                $("#Email").val(driver.email_adress);
+                $("#PhoneNumber").val(driver.phone_number);
+                $("#CellNumber").val(driver.cellNumber);
+                $("#SSN").val(driver.ssn);
+                $("#LicenseIssuedDate").val(driver.license_issue_date);
+                $("#LicenseIssuedState").val(driver.license_issue_state);
+                $("#LicenseNumber").val(driver.license_number);
+                $("#IsPrimaryPolicyHolder").val(driver.is_primary_policy_holder);
+                $("#RelationWithPrimaryPolicyHolder").val(driver.relation_withPrimary_policy_holder);
+                $("#Gender").val(driver.gender);
+                $("#MaritalStatuts").val(driver.marital_statut);
+                $("#CreatedDate").val(driver.created_date);
+				$("#active").val(driver.active);
+
+                let url = "/driver/updatedriver.html?id=" + driver.id +
+                "&title=" + driver.title +
+                "&firstname=" + driver.first_name +
+                "&lastname=" + driver.last_name +
+                "&middleinitial=" + driver.middleInitial +
+                "&dob=" + driver.dob +
+                "&email=" + driver.email_adress +
+                "&phonenumber=" + driver.phone_number +
+                "&cellnumber=" + driver.cellNumber +
+                "&ssn=" + driver.ssn +
+                "&licenseissueddate=" + driver.license_issue_date +
+                "&licenseissuedstate=" + driver.license_issue_state +
+                "&licensenumber=" + driver.license_number +
+                "&isprimarypolicyholder=" + driver.is_primary_policy_holder +
+                "&relationwithprimarypolicyholder=" + driver.relation_withPrimary_policy_holder +
+                "&gender=" + driver.gender +
+                "&maritalstatus=" + driver.marital_statut +
+                "&createddate=" + driver.created_date +
+                "&active=" + driver.active;
                 
                 window.location.href = url;
 
