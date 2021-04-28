@@ -12,45 +12,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <!-- Script files -->
     <script type="text/javascript" src="/js/update_driver.js"></script>
+	<script type="text/javascript" src="/js/load/driver.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="../js/navbar.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
-    <script>
-        /* Get input field parameter in URL */
-        window.onload = function () {
-            var url = document.location.href,
-                params = url.split('?')[1].split('&'),
-                data = {}, tmp;
-            for (var i = 0, l = params.length; i < l; i++) {
-                tmp = params[i].split('=');
-                data[tmp[0]] = tmp[1];
-            }
-
-            console.log(data);
-
-            /* Decode input field to avoid URL syntax */
-            document.getElementById('policyID').value = decodeURI(data.id);
-            document.getElementById('Title').value = decodeURI(data.title);
-            document.getElementById('FirstName').value = decodeURI(data.firstname);
-            document.getElementById('LastName').value = decodeURI(data.lastname);
-            document.getElementById('MiddleInitial').value = decodeURI(data.middleinitial);
-            document.getElementById('DoB').value = decodeURI(data.dob);
-            document.getElementById('Email').value = decodeURI(data.email);
-            document.getElementById('PhoneNumber').value = decodeURI(data.phonenumber);
-            document.getElementById('CellNumber').value = decodeURI(data.cellnumber);
-            document.getElementById('SSN').value = decodeURI(data.ssn);
-            document.getElementById('LicenseIssuedDate').value = decodeURI(data.licenseissueddate);
-			document.getElementById('LicenseIssuedState').value = decodeURI(data.licenseissuedstate);
-            document.getElementById('LicenseNumber').value = decodeURI(data.licensenumber);
-            document.getElementById('IsPrimaryPolicyHolder').value = decodeURI(data.isprimarypolicyholder)
-            document.getElementById('RelationWithPrimaryPolicyHolder').value = decodeURI(data.relationwithprimarypolicyholder);
-            document.getElementById('Gender').value = decodeURI(data.gender);
-            document.getElementById('MaritalStatuts').value = decodeURI(data.maritalstatus);
-            document.getElementById('CreatedDate').value = decodeURI(data.createddate);
-            document.getElementById('active').value = decodeURI(data.active);
-        }
-    </script>
 </head>
 <body>
 <div id="navbar"></div>
@@ -132,7 +98,7 @@
 					<h4 class="subtitle"><span>Driving license Informations</span></h4>
 
 					<div class="form-group col-12">
-						<label class="control-label" for="SSN">SSN:</label>
+						<label class="control-label" for="SSN">Social Security Number (SSN):</label>
 						<input type="text" class="form-control" id="SSN"
 							   placeholder="Enter SSN" name="ssn" required></input>
 					</div>
@@ -158,6 +124,7 @@
 							<option value="false">No</option>
 						</select>
 					</div>
+
 					<div class="form-group col-6">
 						<label class="control-label" for="RelationWithPrimaryPolicyHolder">Relation With Primary Policy Holder:</label>
 						<input type="text" class="form-control" id="RelationWithPrimaryPolicyHolder"

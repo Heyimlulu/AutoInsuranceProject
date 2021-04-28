@@ -5,8 +5,6 @@ $(document).ready(function(){
             url : "/api/driver/retrieveinfos",
             success: function(response){
 
-                console.log(response);
-
               $.each(response.drivers, (i, driver) => {
 
                 let deleteButton = '<button ' +
