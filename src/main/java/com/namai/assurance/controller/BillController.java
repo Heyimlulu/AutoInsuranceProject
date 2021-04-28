@@ -28,7 +28,7 @@ public class BillController {
 			bill.setPolicy(p);
 			Bill returnedPolicy = billServices.saveBill(bill);
 
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, Arrays.asList(returnedPolicy), null, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, Arrays.asList(returnedPolicy), null, null, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail to post a new Bill!", null, null, null, null, null, e.getMessage()),	HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -40,7 +40,7 @@ public class BillController {
 		try {
 			List<Bill> billInfos = billServices.getBillInfos();
 
-			return new ResponseEntity<Message>(new Message("Get Bill's Infos!",	null, null, billInfos, null, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Bill's Infos!",	null, null, billInfos, null, null, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -52,7 +52,7 @@ public class BillController {
 			Optional<Bill> optPolicy = billServices.getBillById(id);
 
 			if (optPolicy.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Bill by id = " + id, null, null, Arrays.asList(optPolicy.get()), null, null, ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Bill by id = " + id, null, null, Arrays.asList(optPolicy.get()), null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Bill by id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}

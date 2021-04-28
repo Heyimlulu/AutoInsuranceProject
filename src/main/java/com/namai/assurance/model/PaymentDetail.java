@@ -73,7 +73,7 @@ public class PaymentDetail {
 	private Date createdDate;
 
 	@JsonBackReference
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "bill_id")
 	private Bill bill;
 
