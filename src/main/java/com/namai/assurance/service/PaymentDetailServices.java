@@ -16,7 +16,6 @@ public class PaymentDetailServices {
 	@Autowired PaymentDetailRepository repository;
 	@Autowired private BillServices billServices;
 	
-	
 	public BillServices getBillServices() { return billServices; }
 	public void setBillServices(BillServices billServices) { this.billServices = billServices; }
 

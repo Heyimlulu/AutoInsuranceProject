@@ -1,8 +1,10 @@
+/*
 package com.namai.assurance.controller;
 
 import com.namai.assurance.model.Message;
 import com.namai.assurance.model.Coverage;
-import com.namai.assurance.service.CoverageServices;
+import com.namai.assurance.model.PolicyCoverage;
+import com.namai.assurance.service.PolicyCoverageServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,18 +16,20 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/coverage")
-public class CoverageController {
+@RequestMapping("/api/policycoverage")
+public class PolicyCoverageController {
 
 	@Autowired
-	CoverageServices coverageServices;
+	PolicyCoverageServices policyCoverageServices;
 
 	@PostMapping("/create/{id}")
-	public ResponseEntity<Message> addNewCoverage(@RequestBody Coverage coverage) {
+	public ResponseEntity<Message> addNewPolicyCoverage(@RequestBody PolicyCoverage policyCoverage, @PathVariable long id) {
 		try {
-			Coverage returnedCoverage = coverageServices.saveCoverage(coverage);
+			Coverage c = policyCoverageServices.getCoverageServices().getCoverageById(id).get();
+			policyCoverage.setPolicy(c);
+			PolicyCoverage returnedPolicyCoverage = policyCoverageServices.savePolicyCoverage(policyCoverage);
 
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", Arrays.asList(returnedCoverage), null, null, ""),
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, Arrays.asList(returnedPolicyCoverage), null, ""),
 					HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail to post a new Coverage!", null, null, null, e.getMessage()),
@@ -34,7 +38,7 @@ public class CoverageController {
 	}
 	
 	@GetMapping("/retrieveinfos")
-	public ResponseEntity<Message> retrieveCoverageInfo() {
+	public ResponseEntity<Message> retrievePolicyCoverageInfo() {
 
 		try {
 			List<Coverage> coverageInfos = coverageServices.getCoverageInfos();
@@ -46,7 +50,7 @@ public class CoverageController {
 	}
 
 	@GetMapping("/findone/{id}")
-	public ResponseEntity<Message> getCoverageId(@PathVariable long id) {
+	public ResponseEntity<Message> getPolicyCoverageId(@PathVariable long id) {
 		try {
 			Optional<Coverage> optCoverage = coverageServices.getCoverageById(id);
 
@@ -62,7 +66,7 @@ public class CoverageController {
 	}
 
 	@PutMapping("/updatebyid/{id}")
-	public ResponseEntity<Message> updateCoverageById(@RequestBody Coverage _coverage, @PathVariable long id) {
+	public ResponseEntity<Message> updatePolicyCoverageById(@RequestBody Coverage _coverage, @PathVariable long id) {
 		try {
 			if (coverageServices.checkExistedCoverage(id)) {
 				Coverage coverage = coverageServices.getCoverageById(id).get();
@@ -92,7 +96,7 @@ public class CoverageController {
 	}
 
 	@DeleteMapping("/deletebyid/{id}")
-	public ResponseEntity<Message> deleteCoverageById(@PathVariable long id) {
+	public ResponseEntity<Message> deletePolicyCoverageById(@PathVariable long id) {
 		try {
 			// checking the existed of a Policy with id
 			if (coverageServices.checkExistedCoverage(id)) {
@@ -111,3 +115,4 @@ public class CoverageController {
 		}
 	}
 }
+*/

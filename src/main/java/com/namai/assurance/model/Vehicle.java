@@ -8,10 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "vehicle")
@@ -58,10 +62,18 @@ public class Vehicle {
 	@ManyToOne
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same policyID
+	private List<VehicleCoverage> vehicleCoverage;
 
 	public Policy getPolicy() { return policy; }
 	public void setPolicy(Policy policy) { this.policy = policy; }
-
+	
+	// VehicleCoverage Model - GET/SET
+	public List<VehicleCoverage> getVehicleCoverage() { return vehicleCoverage; }
+	public void setVehicleCoverage(List<VehicleCoverage> vehicleCoverage) { this.vehicleCoverage = policyCoverage; }
+	
 	public Vehicle() {}
 
 	public Vehicle(long id, long year, String make, String model, String color, String trim, double mileAge, 

@@ -1,8 +1,10 @@
+/*
 package com.namai.assurance.controller;
 
 import com.namai.assurance.model.Message;
 import com.namai.assurance.model.Coverage;
-import com.namai.assurance.service.CoverageServices;
+import com.namai.assurance.model.VehicleCoverage;
+import com.namai.assurance.service.VehicleCoverageServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +16,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/coverage")
-public class CoverageController {
+@RequestMapping("/api/vehiclecoverage")
+public class VehicleCoverageController {
 
 	@Autowired
 	CoverageServices coverageServices;
@@ -111,3 +113,4 @@ public class CoverageController {
 		}
 	}
 }
+*/
