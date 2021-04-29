@@ -26,11 +26,11 @@ public class BillController {
 		try {
 			Policy p = billServices.getPolicyServices().getPolicyById(id).get();
 			bill.setPolicy(p);
-			Bill returnedPolicy = billServices.saveBill(bill);
+			Bill returnedBill = billServices.saveBill(bill);
 
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, Arrays.asList(returnedPolicy), null, null, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", Arrays.asList(returnedBill), null, ""), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Bill!", null, null, null, null, null, e.getMessage()),	HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail to post a new Bill!", null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -40,24 +40,24 @@ public class BillController {
 		try {
 			List<Bill> billInfos = billServices.getBillInfos();
 
-			return new ResponseEntity<Message>(new Message("Get Bill's Infos!",	null, null, billInfos, null, null, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Bill's Infos!",	billInfos, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail!", null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
 	@GetMapping("/findone/{id}")
 	public ResponseEntity<Message> getBillById(@PathVariable long id) {
 		try {
-			Optional<Bill> optPolicy = billServices.getBillById(id);
+			Optional<Bill> optBill = billServices.getBillById(id);
 
-			if (optPolicy.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Bill by id = " + id, null, null, Arrays.asList(optPolicy.get()), null, null, null, ""), HttpStatus.OK);
+			if (optBill.isPresent()) {
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Bill by id = " + id, Arrays.asList(optBill.get()), null, ""), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Bill by id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Bill by id = " + id, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -78,13 +78,13 @@ public class BillController {
 				billServices.updateBill(bill);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a Bill " + "with id = " + id, null, null, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Updated a Bill " + "with id = " + id, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Bill " + "with id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+						new Message("Failer! Can NOT Found a Bill " + "with id = " + id, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -96,13 +96,13 @@ public class BillController {
 				billServices.deleteBillById(id);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Delete a Bill with id = " + id, null, null, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Delete a Bill with id = " + id, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Bill " + "with id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+						new Message("Failer! Can NOT Found a Bill " + "with id = " + id, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }

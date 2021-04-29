@@ -28,7 +28,7 @@ public class VehicleController {
 			vehicle.setPolicy(p);
 			Vehicle returnedVehicle = vehicleServices.saveVehicle(vehicle);
 
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, Arrays.asList(returnedVehicle), null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, Arrays.asList(returnedVehicle), null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail to post a new Vehicle!", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -40,7 +40,7 @@ public class VehicleController {
 		try {
 			List<Vehicle> paymentDetailInfos = vehicleServices.getVehicleInfos();
 
-			return new ResponseEntity<Message>(new Message("Get Vehicle's Infos!", null, null, null, null, paymentDetailInfos, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Vehicle's Infos!", null, null, null, paymentDetailInfos, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -49,10 +49,10 @@ public class VehicleController {
 	@GetMapping("/findone/{id}")
 	public ResponseEntity<Message> getVehicleById(@PathVariable long id) {
 		try {
-			Optional<Vehicle> optBill = vehicleServices.getVehicleById(id);
+			Optional<Vehicle> optVehicle = vehicleServices.getVehicleById(id);
 
-			if (optBill.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Vehicle by id = " + id, null, null, null, Arrays.asList(optBill.get()), null, ""), HttpStatus.OK);
+			if (optVehicle.isPresent()) {
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Vehicle by id = " + id, null, null, null, Arrays.asList(optVehicle.get()), null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Vehicle by id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}

@@ -11,6 +11,7 @@ public class Message {
 	private List<PaymentDetail> paymentDetail = new ArrayList<PaymentDetail>();
 	private List<Vehicle> vehicle = new ArrayList<Vehicle>();
 	private List<Driver> driver = new ArrayList<Driver>();
+	private List<Coverage> coverage = new ArrayList<Coverage>();
 	private String error = "";
 
 	public String getMessage() { return this.message; }
@@ -39,26 +40,35 @@ public class Message {
 	
 	public List<Driver> getDrivers() { return driver; }
 	public void setDriver(List<Driver> driver) { this.driver = driver; }
-
-	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, String error) {
+	
+	public List<Coverage> getCoverage() { return coverage; }
+	public void setCoverage(List<Coverage> coverage) { this.coverage = coverage; }
+	
+	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<Vehicle> vehicle, List<Driver> driver, String error) {
 		this.message = message;
 		this.policies = policies;
 		this.editLogPolicies = editLogPolicies;
 		this.bill = bill;
-		this.paymentDetail = paymentDetail;
 		this.vehicle = vehicle;
 		this.driver = driver;
 		this.error = error;
 	}
-
-	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, String error) {
+	
+	public Message(String message, List<Bill> bill, List<PaymentDetail> paymentDetail, String error) {
+		super();
 		this.message = message;
-		this.editLogPolicies = editLogPolicies;
 		this.bill = bill;
 		this.paymentDetail = paymentDetail;
-		this.vehicle = vehicle;
-		this.driver = driver;
 		this.error = error;
 	}
+	
+	public Message(String message, List<Coverage> coverage, String error) {
+		super();
+		this.message = message;
+		this.coverage = coverage;
+		this.error = error;
+	}
+	
+	
 
 }
