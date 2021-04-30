@@ -54,11 +54,9 @@ public class Policy {
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same policyID
 	private List<Bill> bill;
 	
-	/*
 	@JsonManagedReference
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same policyID
 	private List<PolicyCoverage> policyCoverage;
-	*/
 	
 	// Policy Edit Log Model - GET/SET
 	public List<PolicyEditLog> getPolicyEditLogs() { return policyEditLogs; }
@@ -68,11 +66,9 @@ public class Policy {
 	public List<Bill> getBill() { return bill; }
 	public void setBill(List<Bill> bill) { this.bill = bill; }
 	
-	/*
 	// PolicyCoverage Model - GET/SET
 	public List<PolicyCoverage> getPolicyCoverage() { return policyCoverage; }
 	public void setPolicyCoverage(List<PolicyCoverage> policyCoverage) { this.policyCoverage = policyCoverage; }
-	*/
 	
 	public Policy()
 	{}

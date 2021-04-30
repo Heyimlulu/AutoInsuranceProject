@@ -28,6 +28,11 @@ h3 {
     line-height: 1.2;
 }
 
+.checkbox {
+    margin-bottom: .3em;
+    text-align: center;
+}
+
 /* ================ Subtitle ================ */
 
 .subtitle {

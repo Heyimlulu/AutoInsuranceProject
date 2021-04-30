@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Auto Insurance Application | Add Coverage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5.0 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap 5.0 Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <!-- Script files -->
+    <script type="text/javascript" src="../js/post_coverage.js"></script>
+    <script type="text/javascript" src="../js/script//covCategory.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/navbar.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div id="navbar"></div>
+<div id="sidebar"></div>
+<div class="container">
+    <div>
+        <div class="col-sm-7 form-design">
+            <h3>Add new Coverage</h3>
+            <form id="add_new_coverage" class="row">
+                <div class="form-group col-12">
+                    <label for="coverageName">Coverage Name</label>
+                    <select id="coverageName" class="form-select" aria-label="Default select">
+                        <option value="" disabled selected>-- Select category --</option>
+                    </select>
+                </div>
+                <div class="form-group col-12">
+                    <label for="coverageGroup">Coverage Group</label>
+                    <select id="coverageGroup" class="form-select" aria-label="Default select" onChange="changecat(this.value);">
+                        <option value="Personal auto coverages">Personal auto coverages</option>
+                        <option value="Vehicle coverages">Vehicle coverages</option>
+                    </select>
+                </div>
+                <div class="form-group col-12">
+                    <label class="control-label" for="code">Code:</label>
+                    <input type="text" class="form-control" id="code" placeholder="-- Select category --" name="code" disabled required></input>
+                </div>
+                <div class="checkbox">
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="policyCoverage" value="1">
+                        <label class="form-check-label" for="policyCoverage">Policy Coverage</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="vehicleCoverage" value="1" checked>
+                        <label class="form-check-label" for="vehicleCoverage">Vehicle Coverage</label>
+                    </div>
+                </div>
+                <div class="form-group col-12">
+                    <label class="control-label" for="description">Description:</label>
+                    <input type="text" class="form-control" id="description" placeholder="Enter Description" name="description" required></input>
+                </div>
+                <button type="submit" class="btn btn-danger col-3" id="btn-add-new-coverage">Create</button>
+            </form>
+            <div id="response" style="display:none; margin-top:10px"></div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+</body>
+</html>

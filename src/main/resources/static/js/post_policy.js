@@ -59,14 +59,13 @@ $(document).ready(function() {
                 window.location = "/policy/policies.html";
             },
             error: function (response) {
-                let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' + 
-                                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
-                                    '<strong>' + response.message + '</strong>' + ' ,Error: ' + message.error + 
-                                '</div>'
+                let errorAlert = '<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+                        '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                        '<strong> There was an error adding this policy </strong>' +
+                    '</div>';
+
                 $("#response").append(errorAlert);
                 $("#response").css({"display": "block"});
-
-                location.replace("https://www.w3schools.com");
             }
         });
     });

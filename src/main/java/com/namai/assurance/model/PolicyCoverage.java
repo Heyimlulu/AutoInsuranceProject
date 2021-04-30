@@ -14,12 +14,6 @@ public class PolicyCoverage {
 	private long id;
 
 	@Column
-	private long policyId;
-
-	@Column
-	private long coverageId;
-
-	@Column
 	private boolean active;
 
 	@Column
@@ -43,11 +37,9 @@ public class PolicyCoverage {
 
 	public PolicyCoverage() {}
 
-	public PolicyCoverage(long id, long policyId, long coverageId, boolean active, Date createdDate, Policy policy, Coverage coverage) {
+	public PolicyCoverage(long id, boolean active, Date createdDate, Policy policy, Coverage coverage) {
 		super();
 		this.id = id;
-		this.policyId = policyId;
-		this.coverageId = coverageId;
 		this.active = active;
 		this.createdDate = createdDate;
 		this.policy = policy;
@@ -59,20 +51,6 @@ public class PolicyCoverage {
 	}
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public long getPolicyId() {
-		return policyId;
-	}
-	public void setPolicyId(long policyId) {
-		this.policyId = policyId;
-	}
-
-	public long getCoverageId() {
-		return coverageId;
-	}
-	public void setCoverageId(long coverageId) {
-		this.coverageId = coverageId;
 	}
 
 	public boolean getActive() {
@@ -91,7 +69,6 @@ public class PolicyCoverage {
 
 	@Override
 	public String toString() {
-		return "Vehicle Coverage [id=" + id + ", policyId=" + policyId + ", coverageId=" + coverageId
-				+ ", active=" + active + ", createdDate=" + createdDate + "]";
+		return "Vehicle Coverage [id=" + id	+ ", active=" + active + ", createdDate=" + createdDate + "]";
 	}
 }

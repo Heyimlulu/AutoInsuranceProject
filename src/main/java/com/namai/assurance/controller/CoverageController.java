@@ -39,7 +39,7 @@ public class CoverageController {
 		try {
 			List<Coverage> coverageInfos = coverageServices.getCoverageInfos();
 
-			return new ResponseEntity<Message>(new Message("Get Coverage Edit Log' Infos!", coverageInfos, null, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Coverage Infos!", coverageInfos, null, null, ""), HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -79,7 +79,7 @@ public class CoverageController {
 				coverageServices.updateCoverage(coverage);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a <coverage " + "with id = " + id, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Updated a Coverage " + "with id = " + id, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
 						new Message("Failer! Can NOT Found a Coverage " + "with id = " + id, null, null, null, ""),
