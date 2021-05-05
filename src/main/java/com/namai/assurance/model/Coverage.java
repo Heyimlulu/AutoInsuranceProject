@@ -30,22 +30,6 @@ public class Coverage {
 	@Column
 	private String description;
 
-	@JsonManagedReference
-	@OneToMany(mappedBy = "coverage", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same coverageId
-	private List<PolicyCoverage> policyCoverage;
-	
-	@JsonManagedReference
-	@OneToMany(mappedBy = "coverage", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same coverageId
-	private List<VehicleCoverage> vehicleCoverage;
-	
-	// PolicyCoverage Model - GET/SET
-	public List<PolicyCoverage> getPolicyCoverage() { return policyCoverage; }
-	public void setPolicyCoverage(List<PolicyCoverage> policyCoverage) { this.policyCoverage = policyCoverage; }
-
-	// VehicleCoverage Model - GET/SET
-	public List<VehicleCoverage> getVehicleCoverage() { return vehicleCoverage; }
-	public void setVehicleCoverage(List<VehicleCoverage> vehicleCoverage) { this.vehicleCoverage = vehicleCoverage; }
-	
 	public Coverage() {}
 
 	public Coverage(long id, String coverageName, String coverageGroup, long code, boolean isPolicyCoverage, boolean isVehicleCoverage, String description) {

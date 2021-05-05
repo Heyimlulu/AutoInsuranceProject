@@ -20,15 +20,15 @@ public class CoverageController {
 	@Autowired
 	CoverageServices coverageServices;
 
-	@PostMapping("/create/{id}")
+	@PostMapping("/create")
 	public ResponseEntity<Message> addNewCoverage(@RequestBody Coverage coverage) {
 		try {
 			Coverage returnedCoverage = coverageServices.saveCoverage(coverage);
 
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", Arrays.asList(returnedCoverage), null, null, ""),
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, null, null, Arrays.asList(returnedCoverage), ""),
 					HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Coverage!", null, null, null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Fail to post a new Coverage!", null, null, null, null, null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -39,9 +39,9 @@ public class CoverageController {
 		try {
 			List<Coverage> coverageInfos = coverageServices.getCoverageInfos();
 
-			return new ResponseEntity<Message>(new Message("Get Coverage Infos!", coverageInfos, null, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Coverage Infos!", null, null, null, null, null, null, coverageInfos, ""), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -51,13 +51,13 @@ public class CoverageController {
 			Optional<Coverage> optCoverage = coverageServices.getCoverageById(id);
 
 			if (optCoverage.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a coverage by id = " + id, Arrays.asList(optCoverage.get()), null, null, ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a coverage by id = " + id, null, null, null, null, null, null, Arrays.asList(optCoverage.get()), ""), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a coverage by id = " + id, null, null, null, ""),
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a coverage by id = " + id, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -79,14 +79,14 @@ public class CoverageController {
 				coverageServices.updateCoverage(coverage);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a Coverage " + "with id = " + id, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Updated a Coverage " + "with id = " + id, null, null, null, null, null, null, Arrays.asList(coverage), ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Coverage " + "with id = " + id, null, null, null, ""),
+						new Message("Failer! Can NOT Found a Coverage " + "with id = " + id, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -99,14 +99,14 @@ public class CoverageController {
 				coverageServices.deleteCoverageById(id);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Delete a Coverage with id = " + id, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Delete a Coverage with id = " + id, null, null, null, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Coverage " + "with id = " + id, null, null, null, ""),
+						new Message("Failer! Can NOT Found a Coverage " + "with id = " + id, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 			
 		}
 	}

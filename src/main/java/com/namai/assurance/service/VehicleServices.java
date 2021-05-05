@@ -15,7 +15,6 @@ public class VehicleServices {
 	@Autowired VehicleRepository repository;
 	@Autowired private PolicyServices policyServices;
 	
-	
 	public PolicyServices getPolicyServices() { return policyServices; }
 	public void setPolicyServices(PolicyServices policyServices) { this.policyServices = policyServices; }
 

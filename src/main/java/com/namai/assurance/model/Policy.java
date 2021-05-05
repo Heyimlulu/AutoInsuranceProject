@@ -46,17 +46,27 @@ public class Policy {
 	@Column
 	private Date creationDate;
 	
+	/*
+	 * ======== Relations ========
+	 * 
+	 * ==== It will delete all rows mapped with the same policyID ====
+	 */
+	
 	@JsonManagedReference
-	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same policyID
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) 
 	private List<PolicyEditLog> policyEditLogs;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same policyID
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Bill> bill;
 	
 	@JsonManagedReference
-	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same policyID
-	private List<PolicyCoverage> policyCoverage;
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
+	private List<Driver> driver;
+	
+	@JsonManagedReference
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
+	private List<Vehicle> vehicle;
 	
 	// Policy Edit Log Model - GET/SET
 	public List<PolicyEditLog> getPolicyEditLogs() { return policyEditLogs; }
@@ -66,9 +76,13 @@ public class Policy {
 	public List<Bill> getBill() { return bill; }
 	public void setBill(List<Bill> bill) { this.bill = bill; }
 	
-	// PolicyCoverage Model - GET/SET
-	public List<PolicyCoverage> getPolicyCoverage() { return policyCoverage; }
-	public void setPolicyCoverage(List<PolicyCoverage> policyCoverage) { this.policyCoverage = policyCoverage; }
+	// Driver Model - GET/SET
+	public List<Driver> getDriver() { return driver; }
+	public void setDriver(List<Driver> driver) { this.driver = driver; }
+	
+	// Vehicle Model - GET/SET
+	public List<Vehicle> getVehicle() { return vehicle; }
+	public void setVehicle(List<Vehicle> vehicle) { this.vehicle = vehicle; }
 	
 	public Policy()
 	{}

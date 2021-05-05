@@ -35,9 +35,9 @@ public class DriverController {
 			driver.setPolicy(p);
 			Driver returnedDriver = driverServices.saveDriver(driver);
 			
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, Arrays.asList(returnedDriver), ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, null, Arrays.asList(returnedDriver), null, ""), HttpStatus.OK);
 		} catch(Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Driver!", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail to post a new Driver!", null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -47,9 +47,9 @@ public class DriverController {
 		try {
 			List<Driver> driverInfos = driverServices.getDriverInfos();
 			
-			return new ResponseEntity<Message>(new Message("Get Driver Infos!", null, null, null, null, driverInfos, null), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Driver Infos!", null, null, null, null, null, driverInfos, null, null), HttpStatus.OK);
 		}catch(Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail!",	null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail!",	null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -59,12 +59,12 @@ public class DriverController {
 			Optional<Driver> optDriver = driverServices.getPolicyById(id);
 			
 			if(optDriver.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a driver by id = " + id, null, null, null, null, Arrays.asList(optDriver.get()), ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a driver by id = " + id, null, null, null, null, null, Arrays.asList(optDriver.get()), null, ""), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a driver by id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a driver by id = " + id, null, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	
@@ -96,12 +96,12 @@ public class DriverController {
 				// save the change to database
 				driverServices.updateDriver(driver);
 				
-				return new ResponseEntity<Message>(new Message("Successfully! Updated a Driver " + "with id = " + id, null, null, null, null, Arrays.asList(driver), ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Updated a Driver " + "with id = " + id, null, null, null, null, null, Arrays.asList(driver), null, ""), HttpStatus.OK);
 			}else {
-				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Driver " + "with id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Driver " + "with id = " + id, null, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);			
 		}
 	}
 	
@@ -112,12 +112,12 @@ public class DriverController {
 			if(driverServices.checkExistedDriver(id)) {
 				driverServices.deleteDriverById(id);
 				
-				return new ResponseEntity<Message> (new Message("Successfully! Delete a Driver with id = " + id, null, null, null, null, null, ""), HttpStatus.OK);
+				return new ResponseEntity<Message> (new Message("Successfully! Delete a Driver with id = " + id, null, null, null, null, null, null, null, ""), HttpStatus.OK);
 			}else {
-				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Driver " + "with id = " + id, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
+				return new ResponseEntity<Message>(new Message("Failer! Can NOT Found a Driver " + "with id = " + id, null, null, null, null, null, null, ""), HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 }
