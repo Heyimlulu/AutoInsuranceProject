@@ -11,8 +11,8 @@
     <!-- Bootstrap 5.0 Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <!-- Script files -->
-    <script type="text/javascript" src="../js/post_coverage.js"></script>
-    <script type="text/javascript" src="../js/script//covCategory.js"></script>
+    <script type="text/javascript" src="../js/post/post_coverage.js"></script>
+    <script type="text/javascript" src="../js/script/covCategory.js"></script>
     <script src="../js/sidebar.js"></script>
     <script src="../js/navbar.js"></script>
     <!-- Custom CSS -->
@@ -35,6 +35,7 @@
                 <div class="form-group col-12">
                     <label for="coverageGroup">Coverage Group</label>
                     <select id="coverageGroup" class="form-select" aria-label="Default select" onChange="changecat(this.value);">
+                        <option value="" disabled selected>-- Select category --</option>
                         <option value="Personal auto coverages">Personal auto coverages</option>
                         <option value="Vehicle coverages">Vehicle coverages</option>
                     </select>
@@ -49,7 +50,7 @@
                         <label class="form-check-label" for="policyCoverage">Policy Coverage</label>
                     </div>
                     <div class="form-check-inline">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="vehicleCoverage" value="1" checked>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="vehicleCoverage" value="1">
                         <label class="form-check-label" for="vehicleCoverage">Vehicle Coverage</label>
                     </div>
                 </div>

@@ -2,16 +2,24 @@ $(document).ready(function() {
     $("#add_new_coverage").submit(function(evt) {
         evt.preventDefault();
 
-        if (!$("#policyCoverage").val()) $("#policyCoverage").val() = 0;
-        if (!$("#vehicleCoverage").val()) $("#vehicleCoverage").val() = 0;
-        
+        let policyCoverage = 0;
+        let vehicleCoverage = 0;
+
+        if(document.getElementById('policyCoverage').checked) {
+            policyCoverage = 1;
+        } else if(document.getElementById('vehicleCoverage').checked) {
+            vehicleCoverage = 1;
+        }
+
+        //return alert('Policy= ' + policyCoverage + '\n' + 'Vehicle= ' + vehicleCoverage);
+
         // PREPARE FORM DATA
         let formData = {
         	coverageName : $("#coverageName").val(),
             coverageGroup : $("#coverageGroup").val(),
             code :  $("#code").val(),
-            isPolicyCoverage: $("#policyCoverage").val(),
-            isVehicleCoverage: $("#vehicleCoverage").val(),
+            isPolicyCoverage: policyCoverage,
+            isVehicleCoverage: vehicleCoverage,
             description: $("#description").val()
         }
 		

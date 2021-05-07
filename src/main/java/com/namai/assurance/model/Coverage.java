@@ -78,10 +78,10 @@ public class Coverage {
 		this.isPolicyCoverage = isPolicyCoverage;
 	}
 
-	public boolean getSsVehicleCoverage() {
+	public boolean getIsVehicleCoverage() {
 		return isVehicleCoverage;
 	}
-	public void setSsVehicleCoverage(boolean isVehicleCoverage) {
+	public void setIsVehicleCoverage(boolean isVehicleCoverage) {
 		this.isVehicleCoverage = isVehicleCoverage;
 	}
 

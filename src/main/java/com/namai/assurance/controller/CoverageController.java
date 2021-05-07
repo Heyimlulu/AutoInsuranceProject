@@ -72,7 +72,7 @@ public class CoverageController {
 				coverage.setCoverageGroup(_coverage.getCoverageGroup());
 				coverage.setCode(_coverage.getCode());
 				coverage.setIsPolicyCoverage(_coverage.getIsPolicyCoverage());
-				coverage.setSsVehicleCoverage(_coverage.getSsVehicleCoverage());
+				coverage.setIsVehicleCoverage(_coverage.getIsVehicleCoverage());
 				coverage.setDescription(_coverage.getDescription());
 
 				// save the change to database
