@@ -18,7 +18,7 @@ An automobile insurance management application using the Spring Boot, Maven and 
 
 | Bootstrap  | HTML | CSS | Javascript |  Java | JQuery | Spring Boot | Maven | Hibernate
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 5.0 ✔️ | 5 ✔️ | 3 ✔️ | ES6 ✔️ | 1.8 ✔️ | 3.4.1 ✔️ | 2.3.1 ✔️ | 3.0 ✔️ | 5.4 ✔️ |
+| 5.0 | 5 | 3 | ES6 | 1.8 | 3.4.1 | 2.3.1 | 3.0 | 5.4 |
 
 ## Setup
 
