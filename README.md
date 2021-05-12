@@ -4,16 +4,6 @@
 
 An automobile insurance management application using the Spring Boot, Maven and Bootstrap frameworks
 
-## Table of Contents
-
-- [Technologies](#technologies)
-- [Setup](#setup)
-  - [Prerequisite](#prerequisites)
-  - [Database](#database)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Technologies
 
 | Languages   | Version       |
@@ -35,9 +25,11 @@ To run this project, you need to do the following
 
 ### Prerequisites
 
+> Windows
 - Install Xampp and setup a Web Server with Apache & MySQL
-  - MySQL port is default
-  - Add the default database `assurance_db or YourNewDatabaseName` with default parameters
+  - Set HTTP port to default (required for MySQL)  
+  - Set MySQL port to default
+  - Add the default database `assurance_db or YourDatabaseName` with default parameters
     - Don't forget to change your database name in the `application.properties` file if you changed it
 
 ### Database
