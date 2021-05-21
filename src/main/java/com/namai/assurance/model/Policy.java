@@ -67,6 +67,10 @@ public class Policy {
 	@JsonManagedReference
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Vehicle> vehicle;
+
+	@JsonManagedReference
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
+	private List<PolicyCoverage> policyCoverage;
 	
 	// Policy Edit Log Model - GET/SET
 	public List<PolicyEditLog> getPolicyEditLogs() { return policyEditLogs; }
@@ -83,7 +87,11 @@ public class Policy {
 	// Vehicle Model - GET/SET
 	public List<Vehicle> getVehicle() { return vehicle; }
 	public void setVehicle(List<Vehicle> vehicle) { this.vehicle = vehicle; }
-	
+
+	// PolicyCoverage Model - GET/SET
+	public List<PolicyCoverage> getPolicyCoverage() { return policyCoverage; }
+	public void setPolicyCoverage(List<PolicyCoverage> policyCoverage) { this.policyCoverage = policyCoverage; }
+
 	public Policy()
 	{}
 	

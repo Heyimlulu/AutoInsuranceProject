@@ -62,9 +62,17 @@ public class Vehicle {
 	@ManyToOne
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
+
+	@JsonManagedReference
+	@OneToMany(mappedBy = "vehicle", cascade = { CascadeType.ALL })
+	private List<VehicleCoverage> vehicleCoverage;
 	
 	public Policy getPolicy() { return policy; }
 	public void setPolicy(Policy policy) { this.policy = policy; }
+
+	// VehicleCoverage Model - GET/SET
+	public List<VehicleCoverage> getVehicleCoverage() { return vehicleCoverage; }
+	public void setVehicleCoverage(List<VehicleCoverage> vehicleCoverage) { this.vehicleCoverage = vehicleCoverage; }
 	
 	public Vehicle() {}
 

@@ -8,7 +8,6 @@ window.onload = function () {
         data[tmp[0]] = tmp[1];
     }
 
-    console.log('Hello');
     console.log(data);
 
     /* Decode input field to avoid URL syntax */
