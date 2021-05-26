@@ -1,6 +1,7 @@
 package com.namai.assurance.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -54,47 +55,29 @@ public class Policy {
 	
 	@JsonManagedReference
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) 
-	private List<PolicyEditLog> policyEditLogs;
+	private List<PolicyEditLog> policyEditLogs = new ArrayList<>();
 	
 	@JsonManagedReference
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
-	private List<Bill> bill;
+	private List<Bill> bill = new ArrayList<>();
 	
 	@JsonManagedReference
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
-	private List<Driver> driver;
+	private List<Driver> driver = new ArrayList<>();
 	
 	@JsonManagedReference
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
-	private List<Vehicle> vehicle;
+	private List<Vehicle> vehicle = new ArrayList<>();
 
 	@JsonManagedReference
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
-	private List<PolicyCoverage> policyCoverage;
-	
-	// Policy Edit Log Model - GET/SET
-	public List<PolicyEditLog> getPolicyEditLogs() { return policyEditLogs; }
-	public void setPolicyEditLogs(List<PolicyEditLog> policyEditLogs) { this.policyEditLogs = policyEditLogs; }
+	private List<PolicyCoverage> policyCoverage = new ArrayList<>();
 
-	// Bill Model - GET/SET
-	public List<Bill> getBill() { return bill; }
-	public void setBill(List<Bill> bill) { this.bill = bill; }
-	
-	// Driver Model - GET/SET
-	public List<Driver> getDriver() { return driver; }
-	public void setDriver(List<Driver> driver) { this.driver = driver; }
-	
-	// Vehicle Model - GET/SET
-	public List<Vehicle> getVehicle() { return vehicle; }
-	public void setVehicle(List<Vehicle> vehicle) { this.vehicle = vehicle; }
-
-	// PolicyCoverage Model - GET/SET
-	public List<PolicyCoverage> getPolicyCoverage() { return policyCoverage; }
-	public void setPolicyCoverage(List<PolicyCoverage> policyCoverage) { this.policyCoverage = policyCoverage; }
+	// Constructors
 
 	public Policy()
 	{}
-	
+
 	public Policy(long id, String policyNumber, Date policyEffectiveDate, Date policyExpireDate, String paymentOption, double totalAmount, boolean active, String additionalInfos, Date creationDate) {
 		super();
 		this.id = id;
@@ -108,16 +91,16 @@ public class Policy {
 		this.creationDate = creationDate;
 	}
 
-	public void setId(long id) { this.id = id; }
-	
+	// Getter and Setter
+
 	public long getId() {
-		return this.id;
+		return id;
 	}
+	public void setId(long id) { this.id = id; }
 		
 	public String getPolicyNumber() {
 		return policyNumber;
 	}
-
 	public void setPolicyNumber(String policyNumber) {
 		this.policyNumber = policyNumber;
 	}
@@ -125,7 +108,6 @@ public class Policy {
 	public Date getPolicyEffectiveDate() {
 		return policyEffectiveDate;
 	}
-
 	public void setPolicyEffectiveDate(Date policyEffectiveDate) {
 		this.policyEffectiveDate = policyEffectiveDate;
 	}
@@ -133,7 +115,6 @@ public class Policy {
 	public Date getPolicyExpireDate() {
 		return policyExpireDate;
 	}
-
 	public void setPolicyExpireDate(Date policyExpireDate) {
 		this.policyExpireDate = policyExpireDate;
 	}
@@ -141,7 +122,6 @@ public class Policy {
 	public String getPaymentOption() {
 		return paymentOption;
 	}
-
 	public void setPaymentOption(String paymentOption) {
 		this.paymentOption = paymentOption;
 	}
@@ -149,7 +129,6 @@ public class Policy {
 	public double getTotalAmount() {
 		return totalAmount;
 	}
-
 	public void setTotalAmount(double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
@@ -157,7 +136,6 @@ public class Policy {
 	public boolean isActive() {
 		return active;
 	}
-
 	public void setActive(boolean active) {
 		this.active = active;
 	}
@@ -165,7 +143,6 @@ public class Policy {
 	public String getAdditionalInfos() {
 		return additionalInfos;
 	}
-
 	public void setAdditionalInfos(String additionalInfos) {
 		this.additionalInfos = additionalInfos;
 	}
@@ -173,7 +150,6 @@ public class Policy {
 	public Date getCreationDate() {
 		return creationDate;
 	}
-
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}

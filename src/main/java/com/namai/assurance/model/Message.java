@@ -17,7 +17,7 @@ public class Message {
 	private String error = "";
 
 	/*
-	 * ======== Message, Error and Policys ========
+	 * ======== Message, Error and One to Many table ========
 	 */
 	
 	public String getMessage() { return this.message; }
@@ -28,6 +28,9 @@ public class Message {
 	
 	public List<Policy> getPolicys() { return this.policies; }
 	public void setPolicys(ArrayList<Policy> policys) { this.policies = policys; }
+
+	public List<Coverage> getCoverage() { return coverage; }
+	public void setCoverage(List<Coverage> coverage) { this.coverage = coverage; }
 	
 	/*
 	 * ======== Tables ========
@@ -50,9 +53,6 @@ public class Message {
 	
 	public List<Driver> getDrivers() { return driver; }
 	public void setDriver(List<Driver> driver) { this.driver = driver; }
-	
-	public List<Coverage> getCoverage() { return coverage; }
-	public void setCoverage(List<Coverage> coverage) { this.coverage = coverage; }
 
 	public List<PolicyCoverage> getPolicyCoverage() { return policyCoverage; }
 	public void setPolicyCoverage(List<PolicyCoverage> policyCoverage) { this.policyCoverage = policyCoverage; }
@@ -81,7 +81,7 @@ public class Message {
 	}
 	
 	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, 
-			List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, List<Coverage> coverage,
+			List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver,
 				   List<PolicyCoverage> policyCoverage, List<VehicleCoverage> vehicleCoverage, String error) {
 		this.message = message;
 		this.editLogPolicies = editLogPolicies;
@@ -89,7 +89,6 @@ public class Message {
 		this.paymentDetail = paymentDetail;
 		this.vehicle = vehicle;
 		this.driver = driver;
-		this.coverage = coverage;
 		this.policyCoverage = policyCoverage;
 		this.vehicleCoverage = vehicleCoverage;
 		this.error = error;
