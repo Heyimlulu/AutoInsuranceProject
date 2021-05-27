@@ -4,31 +4,33 @@ $(document).ready(function(){
             type : "GET",
             url : "/api/policy/retrieveinfos",
             success: function(response){
-              $.each(response.policys, (i, policy) => { 
-
-              /*  <button type="button" class="btn btn-danger btn_delete" data-toggle="modal" data-target="#myModal">
-                Open modal
-              </button>*/
+              $.each(response.policys, (i, policy) => {
 
                 let deleteButton = '<button ' +
                                         'id=' +
                                         '\"' + 'btn_delete_' + policy.id + '\"'+
                                         ' type="button" class="btn btn-danger btn_delete" data-bs-toggle="modal" data-bs-target="#delete-modal">' +
-                                        '&times</button>';
+                                        'Delete</button>';
 
                 let get_More_Info_Btn = '<button' +
                                             ' id=' + '\"' + 'btn_id_' + policy.id + '\"' +
-                                            ' type="button" class="btn btn-info btn_id">' + 
-                                            policy.id +
+                                            ' type="button" class="btn btn-warning btn_id">' +
+                                            'Edit' +
                                             '</button>';
                 
                 let tr_id = 'tr_' + policy.id;
                 let policyRow = '<tr id=\"' + tr_id + "\"" + '>' +
-                          '<td>' + get_More_Info_Btn + '</td>' +
-                          '<td class=\"td_policy_number\">' + policy.policyNumber.toUpperCase() + '</td>' +
-                          '<td class=\"td_creation_date\">' + policy.creationDate + '</td>' +
-                          '<td>' + deleteButton + '</td>' +
-                          '</tr>';              
+                    '<td>' + policy.id + '</td>' +
+                    '<td class=\"td_policy_number\">' + policy.policyNumber.toUpperCase() + '</td>' +
+                    '<td class=\"td_creation_date\">' + policy.creationDate + '</td>' +
+                    '<td class=\"td_effective_date\">' + policy.policyEffectiveDate + '</td>' +
+                    '<td class=\"td_expiration_date\">' + policy.policyExpireDate + '</td>' +
+                    '<td class=\"td_payment_option\">' + policy.paymentOption + '</td>' +
+                    '<td class=\"td_total_amount\">' + policy.totalAmount + '</td>' +
+                    '<td class=\"td_active\">' + policy.active + '</td>' +
+                    '<td class=\"td_additionalInfos\">' + policy.additionalInfos + '</td>' +
+                    '<td>' +  `${get_More_Info_Btn} <span class="separator">|</span> ${deleteButton}` + '</td>' +
+                    '</tr>';
                 $('#policyTable tbody').append(policyRow);
               });
             },

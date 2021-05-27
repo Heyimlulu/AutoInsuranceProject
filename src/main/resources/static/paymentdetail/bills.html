@@ -24,23 +24,30 @@
 <div id="sidebar"></div>
 <div class="container">
     <div id="div_bill_table">
-        <h1 style="text-align: center;">Bills Table</h1>
-        <div class="row col-md-6 table-responsive" style="margin: auto;">
-            <table id="billTable" class="table table-striped">
+        <h1 class="listing" style="text-align: center;">Bills Listing</h1>
+        <div class="table-responsive" style="margin: auto;">
+            <table id="billTable" class="table table-hover align-middle">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>creationDate</th>
-                    <th>status</th>
-                    <th></th>
+                    <th>Created Date</th>
+                    <th>Due Date</th>
+                    <th>Minimum Payment</th>
+                    <th>Balance</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>
+        <div class="add-form">
+            <button class="btn btn-success">
+                <a href="addbill.html">Insert New</a>
+            </button>
+        </div>
     </div>
-    <hr>
 
     <!-- Modal 5.0 -->
     <div class="modal fade" id="delete-modal" tabindex="-1">

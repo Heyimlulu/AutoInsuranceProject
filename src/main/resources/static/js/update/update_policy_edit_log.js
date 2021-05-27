@@ -7,7 +7,6 @@ $(document).ready(function(){
             // PREPARE FORM DATA
             let formData = {
             editedTableName : $("#edit_log_policy_edited_table").val(),
-                policy_id_artifact :  $("#policy_id_artifact").val(),
                 editedDate: $("#edit_log_policy_edited_date").val(),
                 editedBy: $("#edit_log_policy_edited_by").val(),
                 additionalInfos: $("#edit_log_additional_info").val()
@@ -63,14 +62,12 @@ $(document).ready(function(){
                 let policyEditLog = response.editLogPolicies[0];
                 $("#edit_log_policy_id").val(policyEditLog.id);
                 $("#edit_log_policy_edited_table").val(policyEditLog.editedTableName);
-                $("#policy_id_artifact").val(policyEditLog.policy_id_artifact);
                 $("#edit_log_policy_edited_date").val(policyEditLog.editedDate);
                 $("#edit_log_policy_edited_by").val(policyEditLog.editedBy);
                 $("#edit_log_additional_info").val(policyEditLog.additionalInfos);
 
                 let url = "/policy/updatepolicyeditlog.html?editlogid=" + policyEditLog.id +
                     "&editedtablename=" + policyEditLog.editedTableName +
-                    "&idartifact=" + policyEditLog.policy_id_artifact +
                     "&editeddate=" + policyEditLog.editedDate +
                     "&editedby=" + policyEditLog.editedBy +
                     "&additionalinfos=" + policyEditLog.additionalInfos;

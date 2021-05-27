@@ -15,7 +15,7 @@
 <script type="text/javascript" src="/js/delete/delete_edit_log_policy.js"></script>
 <script type="text/javascript" src="/js/get/get_edit_policy.js"></script>
 <script src="../js/sidebar.js"></script>
-	<script src="../js/navbar.js"></script>
+<script src="../js/navbar.js"></script>
 <!-- Custom CSS -->
 <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -24,24 +24,29 @@
 <div id="sidebar"></div>
 	<div class="container">
 		<div id="div_edit_log_policy_table">
-			<h1 style="text-align: center;">Edit Log Policies Table</h1>
-			<div class="row col-md-6 table-responsive" style="margin: auto;">
-				<table id="PolicyEditLogTable" class="table table-striped">
+			<h1 class="listing" style="text-align: center;">Policies Edit Log's Listing</h1>
+			<div class="table-responsive" style="margin: auto;">
+				<table id="PolicyEditLogTable" class="table table-hover align-middle">
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>editedBy</th>
-							<th>editedDate</th>
-							<th></th>
+							<th>Edited Table Name</th>
+							<th>Edited Date</th>
+							<th>Edited By</th>
+							<th>Additional Infos</th>
+							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 					</tbody>
 				</table>
 			</div>
+			<div class="add-form">
+				<button class="btn btn-success">
+					<a href="addpolicyeditlog.html">Insert New</a>
+				</button>
+			</div>
 		</div>
-
-		<hr>
 
 		<!-- Modal 5.0 -->
 		<div class="modal fade" id="delete-modal" tabindex="-1">

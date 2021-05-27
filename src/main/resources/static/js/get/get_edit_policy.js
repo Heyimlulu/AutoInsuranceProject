@@ -4,28 +4,27 @@ $(document).ready(function(){
             type : "GET",
             url : "/api/editLog/retrieveinfos",
             success: function(response){
-               $.each(response.editLogPolicies, (i, PolicyEditLog) => {  
-              /*  <button type="button" class="btn btn-danger btn_delete" data-toggle="modal" data-target="#myModal">
-                Open modal
-              </button>*/
+               $.each(response.editLogPolicies, (i, PolicyEditLog) => {
 
                 let deleteButton = '<button ' + 'id=' + '\"' + 'btn_delete_' + PolicyEditLog.id + '\"'+
                                         ' type="button" class="btn btn-danger btn_delete" data-bs-toggle="modal" data-bs-target="#delete-modal"' +
-                                        '>&times</button>';
+                                        '>Delete</button>';
 
                 let get_More_Info_Btn = '<button' +
-                                            ' id=' + '\"' + 'btn_id_' + PolicyEditLog.id + '\"' +
-                                            ' type="button" class="btn btn-info btn_id">' + 
-                                            PolicyEditLog.id +
-                                            '</button>';
+                    ' id=' + '\"' + 'btn_id_' + PolicyEditLog.id + '\"' +
+                    ' type="button" class="btn btn-warning btn_id">' +
+                    'Edit' +
+                    '</button>';
                 
                 let tr_id = 'tr_' + PolicyEditLog.id;
                 let policyEditRow = '<tr id=\"' + tr_id + "\"" + '>' +
-                          '<td>' + get_More_Info_Btn + '</td>' +
-                          '<td class=\"td_edited_by\">' + PolicyEditLog.editedBy.toUpperCase() + '</td>' +
-                          '<td class=\"td_edited_date\">' + PolicyEditLog.editedDate + '</td>' +
-                          '<td>' + deleteButton + '</td>' +
-                          '</tr>';           
+                    '<td>' + PolicyEditLog.id + '</td>' +
+                    '<td class=\"td_edited_tablename\">' + PolicyEditLog.editedTableName + '</td>' +
+                    '<td class=\"td_edited_date\">' + PolicyEditLog.editedDate + '</td>' +
+                    '<td class=\"td_edited_by\">' + PolicyEditLog.editedBy + '</td>' +
+                    '<td class=\"td_additionalInfos\">' + PolicyEditLog.additionalInfos + '</td>' +
+                    '<td>' +  `${get_More_Info_Btn} <span class="separator">|</span> ${deleteButton}` + '</td>' +
+                    '</tr>';
                 $('#PolicyEditLogTable tbody').append(policyEditRow);
               });
             },

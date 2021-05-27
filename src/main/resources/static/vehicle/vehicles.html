@@ -24,24 +24,36 @@
 <div id="sidebar"></div>
 <div class="container">
     <div id="div_vehicle_table">
-        <h1 style="text-align: center;">Vehicles Table</h1>
-        <div class="row col-md-6 table-responsive" style="margin: auto;">
-            <table id="vehicleTable" class="table table-striped">
+        <h1 class="listing" style="text-align: center;">Vehicle's Listing</h1>
+        <div class="table-responsive" style="margin: auto;">
+            <table id="vehicleTable" class="table table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Vehicle Number Plate</th>
-                    <th>Vehicle Registered State</th>
                     <th>Creation Date</th>
-                    <th></th>
+                    <th>Active</th>
+                    <th>Year</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Color</th>
+                    <th>Trim</th>
+                    <th>Mileage</th>
+                    <th>VIN</th>
+                    <th>Number Plate</th>
+                    <th>Registered State</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>
+        <div class="add-form">
+            <button class="btn btn-success">
+                <a href="addvehicle.html">Insert New</a>
+            </button>
+        </div>
     </div>
-    <hr>
 
     <!-- Modal 5.0 -->
     <div class="modal fade" id="delete-modal" tabindex="-1">

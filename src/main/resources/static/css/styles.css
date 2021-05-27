@@ -2,12 +2,12 @@ html {
     margin: 4rem 0 0 16rem;
 }
 
-h3 {
-    text-align: center;
+.listing {
+    margin: 0.7em 0;
 }
 
-.news h1 {
-    margin-top: .7em;
+h3 {
+    text-align: center;
 }
 
 .title {
@@ -16,16 +16,16 @@ h3 {
     line-height: 1.2;
 }
 
-.release-date {
-    font-size: 1.7rem;
-    font-weight: 400;
-    line-height: 1.2;
+table {
+    text-align: center;
 }
 
-.release-title {
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.2;
+.add-form {
+    margin-top: 1em;
+}
+
+.separator {
+    padding: 0 0.1em;
 }
 
 .checkbox {

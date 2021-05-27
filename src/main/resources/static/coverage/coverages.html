@@ -24,24 +24,31 @@
 <div id="sidebar"></div>
 <div class="container">
     <div id="div_coverage_table">
-        <h1 style="text-align: center;">Coverage Table</h1>
-        <div class="row col-md-6 table-responsive" style="margin: auto;">
-            <table id="coverageTable" class="table table-striped">
+        <h1 class="listing" style="text-align: center;">Coverage's Listing</h1>
+        <div class="table-responsive" style="margin: auto;">
+            <table id="coverageTable" class="table table-hover">
                 <thead>
                 <tr>
                     <th>Id</th>
                     <th>Coverage Name</th>
                     <th>Coverage Group</th>
                     <th>Code</th>
-                    <th></th>
+                    <th>Policy Coverage</th>
+                    <th>Vehicle Coverage</th>
+                    <th>Description</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>
+        <div class="add-form">
+            <button class="btn btn-success">
+                <a href="addcoverage.html">Insert New</a>
+            </button>
+        </div>
     </div>
-    <hr>
 
     <!-- Modal 5.0 -->
     <div class="modal fade" id="delete-modal" tabindex="-1">

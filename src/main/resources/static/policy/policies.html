@@ -24,23 +24,33 @@
 <div id="sidebar"></div>
 	<div class="container">
         <div id="div_policy_table">
-			<h1 style="text-align: center;">Policies Table</h1>
-			<div class="row col-md-6 table-responsive" style="margin: auto;">
-			  <table id="policyTable" class="table table-striped">
+			<h1 class="listing" style="text-align: center;">Policies Listing</h1>
+			<div class="table-responsive" style="margin: auto;">
+			  <table id="policyTable" class="table table-hover align-middle">
 				<thead>
 				  <tr>
-					<th>Id</th>
-					<th>policyNumber</th>
-					<th>creationDate</th>
-					<th></th>
+					  <th>Id</th>
+					  <th>Policy Number</th>
+					  <th>Creation Date</th>
+					  <th>Effective Date</th>
+					  <th>Expiration Date</th>
+					  <th>Payment Option</th>
+					  <th>Total Amount</th>
+					  <th>Active</th>
+					  <th>Additional Infos</th>
+					  <th>Actions</th>
 				  </tr>
 				</thead>
 				<tbody>
 				</tbody>
 			  </table>
 			</div>
+			<div class="add-form">
+				<button class="btn btn-success">
+					<a href="addpolicy.html">Insert New</a>
+				</button>
+			</div>
 		  </div>
-		<hr>
 
 		<!-- Modal 5.0 -->
 		<div class="modal fade" id="delete-modal" tabindex="-1">

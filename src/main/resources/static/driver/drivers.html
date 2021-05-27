@@ -24,24 +24,37 @@
 <div id="sidebar"></div>
 <div class="container">
     <div id="div_driver_table">
-        <h1 style="text-align: center;">Drivers Table</h1>
-        <div class="row col-md-6 table-responsive" style="margin: auto;">
-            <table id="driverTable" class="table table-striped">
+        <h1 class="listing" style="text-align: center;">Driver's Listing</h1>
+        <div class="table-responsive" style="margin: auto;">
+            <table id="driverTable" class="table table-hover">
                 <thead>
                 <tr>
                     <th>Id</th>
+                    <th>Creation Date</th>
+                    <th>Active</th>
+                    <th>Title</th>
                     <th>First Name</th>
                     <th>Last Name</th>
-                    <th>creationDate</th>
-                    <th></th>
+                    <th>Initial</th>
+                    <th>DoB</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>CellPhone</th>
+                    <th>Gender</th>
+                    <th>Marital Status</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>
+        <div class="add-form">
+            <button class="btn btn-success">
+                <a href="adddriver.html">Insert New</a>
+            </button>
+        </div>
     </div>
-    <hr>
 
     <!-- Modal 5.0 -->
     <div class="modal fade" id="delete-modal" tabindex="-1">

@@ -24,24 +24,33 @@
 <div id="sidebar"></div>
 <div class="container">
     <div id="div_paymentdetail_table">
-        <h1 style="text-align: center;">Payment Details Table</h1>
-        <div class="row col-md-6 table-responsive" style="margin: auto;">
-            <table id="paymentDetailTable" class="table table-striped">
+        <h1 class="listing" style="text-align: center;">Payment Details Listing</h1>
+        <div class="table-responsive" style="margin: auto;">
+            <table id="paymentDetailTable" class="table table-hover align-middle">
                 <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Created Date</th>
+                    <th>Due Date</th>
                     <th>Payer Firstname</th>
                     <th>Payer Lastname</th>
-                    <th>Creation Date</th>
-                    <th></th>
+                    <th>Amount</th>
+                    <th>Payment Method</th>
+                    <th>Type</th>
+                    <th>Additional Infos</th>
+                    <th>Actions</th>
                 </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>
+        <div class="add-form">
+            <button class="btn btn-success">
+                <a href="addpaymentdetail.html">Insert New</a>
+            </button>
+        </div>
     </div>
-    <hr>
 
     <!-- Modal 5.0 -->
     <div class="modal fade" id="delete-modal" tabindex="-1">

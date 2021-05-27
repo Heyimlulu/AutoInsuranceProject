@@ -11,21 +11,29 @@ $(document).ready(function(){
                         'id=' +
                         '\"' + 'btn_delete_' + vehicle.id + '\"'+
                         ' type="button" class="btn btn-danger btn_delete" data-bs-toggle="modal" data-bs-target="#delete-modal">' +
-                        '&times</button>';
+                        'Delete</button>';
 
                     let get_More_Info_Btn = '<button' +
                         ' id=' + '\"' + 'btn_id_' + vehicle.id + '\"' +
-                        ' type="button" class="btn btn-info btn_id">' +
-                        vehicle.id +
+                        ' type="button" class="btn btn-warning btn_id">' +
+                        'Edit' +
                         '</button>';
 
                     let tr_id = 'tr_' + vehicle.id;
                     let vehicleRow = '<tr id=\"' + tr_id + "\"" + '>' +
-                        '<td>' + get_More_Info_Btn + '</td>' +
-                        '<td class=\"td_vehicle_number_plate\">' + vehicle.vehicleNumberPlate + '</td>' +
-                        '<td class=\"td_vehicle_registered_state\">' + vehicle.vehicleRegisteredState + '</td>' +
+                        '<td>' + vehicle.id + '</td>' +
                         '<td class=\"td_created_date\">' + vehicle.createdDate + '</td>' +
-                        '<td>' + deleteButton + '</td>' +
+                        '<td class=\"td_active\">' + vehicle.active + '</td>' +
+                        '<td class=\"td_year\">' + vehicle.year + '</td>' +
+                        '<td class=\"td_brand\">' + vehicle.make + '</td>' +
+                        '<td class=\"td_model\">' + vehicle.model + '</td>' +
+                        '<td class=\"td_color\">' + vehicle.color + '</td>' +
+                        '<td class=\"td_trim\">' + vehicle.trim + '</td>' +
+                        '<td class=\"td_mileage\">' + vehicle.mileAge + '</td>' +
+                        '<td class=\"td_vinnumber\">' + vehicle.vinNumber + '</td>' +
+                        '<td class=\"td_number_plate\">' + vehicle.vehicleNumberPlate + '</td>' +
+                        '<td class=\"td_registered_state\">' + vehicle.vehicleRegisteredState + '</td>' +
+                        '<td>' +  `${get_More_Info_Btn} <span class="separator">|</span> ${deleteButton}` + '</td>' +
                         '</tr>';
                     $('#vehicleTable tbody').append(vehicleRow);
                 });
