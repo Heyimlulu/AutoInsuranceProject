@@ -1,64 +1,125 @@
-<link rel="stylesheet" href="./css/sidebar.css">
 <link rel="stylesheet" href="../css/sidebar.css">
 
 <div class="wrapper">
 
-    <!-- Sidebar -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <a href="/"><h3>Auto Insurance</h3></a>
-        </div><!-- Sidebar header -->
+  <div id="sidebar" class="sidebar flex-shrink-0 p-3 bg-white">
 
-        <ul class="list-unstyled components">
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="#sidebarDropdown-policy" id="navbarDropdown-policy" data-bs-toggle="collapse" aria-expanded="false">Policy</a>
-                <ul class="collapse list-unstyled" id="sidebarDropdown-policy">
-                    <li><a href="/policy/policies.html">Policy</a></li>
-                    <li><a href="/policy/policieseditlog.html">Policy Edit Log</a></li>
-                </ul>
-            </li><!-- Policy pages -->
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="#navbarDropdown-coverage" data-bs-toggle="collapse" aria-expanded="false">Coverage</a>
-                <ul class="collapse list-unstyled" id="navbarDropdown-coverage">
-                    <li><a href="/coverage/coverages.html">Coverage</a></li>
-                    <li><a href="/coverage/policiescoverage.html">Policy Coverage</a></li>
-                    <li><a href="/coverage/vehiclescoverage.html">Vehicle Coverage</a></li>
-                </ul>
-            </li><!-- Coverage pages -->
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="#navbarDropdown-vehicle" data-bs-toggle="collapse" aria-expanded="false">Vehicle</a>
-                <ul class="collapse list-unstyled" id="navbarDropdown-vehicle">
-                    <li><a href="/vehicle/vehicles.html">Vehicle</a></li>
-                    <li><a href="">Vehicle Driver</a></li>
-                </ul>
-            </li><!-- Vehicle pages -->
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="#navbarDropdown-traffic-violation" data-bs-toggle="collapse" aria-expanded="false">Traffic Violation</a>
-                <ul class="collapse list-unstyled" id="navbarDropdown-traffic-violation">
-                    <li><a href="">Traffic Violation Codes</a></li>
-                    <li><a href="">Traffic Violation Records</a></li>
-                </ul>
-            </li><!-- Traffic Violation pages -->
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="#navbarDropdown-driver" data-bs-toggle="collapse" aria-expanded="false">Driver</a>
-                <ul class="collapse list-unstyled" id="navbarDropdown-driver">
-                    <li><a href="/driver/drivers.html">Driver</a></li>
-                    <li><a href="">Driver Addresses</a></li>
-                </ul>
-            </li><!-- Driver pages -->
-            <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="#navbarDropdown-payment-detail" data-bs-toggle="collapse" aria-expanded="false">Payment Detail</a>
-                <ul class="collapse list-unstyled" id="navbarDropdown-payment-detail">
-                    <li><a href="/paymentdetail/paymentdetails.html">Payment Detail</a></li>
-                    <li><a href="/paymentdetail/bills.html">Bill</a></li>
-                </ul>
-            </li><!-- Payment Detail pages -->
-        </ul>
-    </nav>
+    <!-- Close Menu -->
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+      <span>&times;</span>
+    </a>
+
+    <!-- Sidebar title -->
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+      <span class="fs-5 fw-semibold">Home</span>
+    </a>
+
+    <ul class="list-unstyled ps-0">
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#policy-collapse" aria-expanded="false">
+          Policy
+        </button>
+
+        <div class="collapse" id="policy-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="/policy/policies.html" class="link-dark rounded">Policy</a></li>
+            <li><a href="/policy/policieseditlog.html" class="link-dark rounded">Policy Edit Log</a></li>
+          </ul>
+        </div>
+      </li><!-- Policy -->
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#coverage-collapse" aria-expanded="false">
+          Coverage
+        </button>
+
+        <div class="collapse" id="coverage-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="/coverage/coverages.html" class="link-dark rounded">Coverage</a></li>
+            <li><a href="/coverage/policiescoverage.html" class="link-dark rounded">Policy Coverage</a></li>
+            <li><a href="/coverage/vehiclescoverage.html" class="link-dark rounded">Vehicle Coverage</a></li>
+          </ul>
+        </div>
+      </li><!-- Coverage -->
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#vehicle-collapse" aria-expanded="false">
+          Vehicle
+        </button>
+
+        <div class="collapse" id="vehicle-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="/vehicle/vehicles.html" class="link-dark rounded">Vehicle</a></li>
+            <li><a href="#" class="link-dark rounded">Vehicle's Driver</a></li>
+          </ul>
+        </div>
+      </li><!-- Vehicle -->
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#trafficViolation-collapse" aria-expanded="false">
+          Traffic Violation
+        </button>
+
+        <div class="collapse" id="trafficViolation-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Traffic Violation Codes</a></li>
+            <li><a href="#" class="link-dark rounded">Traffic Violation Records</a></li>
+          </ul>
+        </div>
+      </li><!-- Traffic Violation -->
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#driver-collapse" aria-expanded="false">
+          Driver
+        </button>
+
+        <div class="collapse" id="driver-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="/driver/drivers.html" class="link-dark rounded">Driver</a></li>
+            <li><a href="#" class="link-dark rounded">Driver Addresses</a></li>
+          </ul>
+        </div>
+      </li><!-- Driver -->
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#paymentDetail-collapse" aria-expanded="false">
+          Payment Detail
+        </button>
+
+        <div class="collapse" id="paymentDetail-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="/paymentdetail/paymentdetails.html" class="link-dark rounded">Payment Detail</a></li>
+            <li><a href="/paymentdetail/bills.html" class="link-dark rounded">Bill</a></li>
+          </ul>
+        </div>
+      </li><!-- Payment Detail -->
+
+      <li class="border-top my-3"></li>
+
+      <li class="mb-1">
+
+        <div>
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#" class="link-dark rounded">Sign out</a></li>
+          </ul>
+        </div>
+      </li><!-- Admin -->
+
+    </ul>
+  </div>
+
+  <!-- Open Menu -->
+  <span id="openMenu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
 </div>
 <script src="/js/active.js"></script>
 <script>
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
+  function openNav() {
+    document.getElementById("sidebar").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("sidebar").style.width = "0";
+  }
 </script>

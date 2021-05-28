@@ -1,7 +1,3 @@
-html {
-    margin: 4rem 0 0 16rem;
-}
-
 .listing {
     margin: 0.7em 0;
 }
@@ -69,10 +65,6 @@ button[type='submit'] {
     margin: auto;
 }
 
-#navbar {
-    display: none;
-}
-
 /* form style */
 .form-group, .form-check {
     margin-bottom: 1rem;
@@ -93,64 +85,17 @@ button[type='submit'] {
     margin: auto;
 }
 
-/* jumbotron style */
-.jumbotron {
-    padding: 2rem 1rem;
-    margin: 2rem 10rem;
-    background-color: #d3d8ef;
-    border-radius: .3rem;
-}
-.disclaimer {
-    font-weight: bold;
-    color: red;
-}
+/* Credits - Creator */
 .credits {
-    margin: 0.4rem 0;
-    font-size: 1rem;
-}
-
-.credits-links {
     text-decoration: none;
     color: #7386D5;
 }
 
-.credits-links:hover {
-    color: white;
-}
-
-.btn-credits:active {
-    background-color: #d3d8ef;
-}
-
-/* Bootstrap navbar dropdown with hover effect */
-@media all and (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: none;
-    }
-    .navbar .nav-item:hover .nav-link {
-        color: rgba(0,0,0,.7);
-    }
-    .navbar .nav-item:hover .dropdown-menu {
-        display: block;
-    }
-    .navbar .nav-item .dropdown-menu {
-        margin-top:0;
-    }
+.credits:hover {
+    color: #d2f4ea;
 }
 
 @media only screen and (max-width: 800px) {
-    html {
-        margin: 0;
-    }
-
-    .jumbotron {
-        margin: 2rem 1rem;
-    }
-
-    #navbar {
-        display: block;
-    }
-
     .subtitle span::before,
     .subtitle span::after {
         width: 30px;
