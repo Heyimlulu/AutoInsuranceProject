@@ -17,8 +17,9 @@ var keyHandler = function (event) {
     if (pattern.length === current) {
         current = 0;
         $('#secret').append(
-            '<h1 style="font-weight:bold;color:beige;font-size:4.5rem;position:absolute;top:50rem;left:30rem;">Hello ;)</h1>' +
-            '<img style="width:20%;position:absolute;top:45rem;left:5rem;" src="../img/cartoon-raccoon.png" alt="Cartoon raccoon"/>'
+            '<h1 style="font-weight:bold;color:beige;font-size:4.5rem;position:absolute;top:45rem;left:32rem;">Hi 👋</h1>' +
+            '<p style="font-weight:bold;color:beige;font-size:1.5rem;position:absolute;top:51rem;left:32rem;">🎮 Are you a geek too? 🦝 ;)</p>' +
+            '<img style="width:25%;position:absolute;top:40rem;left:0;" src="../img/cartoon-raccoon.png" alt="Cartoon raccoon"/>'
         );
         document.getElementById("secret").style.display = "block";
     }
