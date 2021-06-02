@@ -1,3 +1,4 @@
+/*
 package com.namai.assurance.service;
 
 import com.namai.assurance.model.PolicyCoverage;
@@ -44,3 +45,5 @@ public class PolicyCoverageServices {
 		repository.deleteById(id);
 	}
 }
+
+ */

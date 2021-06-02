@@ -1,3 +1,4 @@
+/*
 package com.namai.assurance.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -34,6 +35,7 @@ public class PolicyCoverage {
 
 	public Coverage getCoverage() { return coverage; }
 	public void setCoverage(Coverage coverage) { this.coverage = coverage; }
+
 
 	public PolicyCoverage() {}
 
@@ -72,3 +74,6 @@ public class PolicyCoverage {
 		return "Vehicle Coverage [id=" + id	+ ", active=" + active + ", createdDate=" + createdDate + "]";
 	}
 }
+
+
+ */

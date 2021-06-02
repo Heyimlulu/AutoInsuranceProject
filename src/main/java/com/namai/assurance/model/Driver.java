@@ -34,7 +34,7 @@ public class Driver {
 	private String last_name;
 	
 	@Column
-	private long phone_number;
+	private String phone_number;
 
 	@Column
 	private String ssn;
@@ -70,12 +70,12 @@ public class Driver {
 	private Date created_date;
 	
 	@Column 
-	private long cellNumber;
+	private String cellNumber;
 	
 	@Column
 	private boolean active;
 
-	@JsonBackReference
+	@JsonBackReference(value = "driver")
 	@ManyToOne
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
@@ -86,7 +86,7 @@ public class Driver {
 	public Driver() {}
 
 	public Driver(long id, String title, String first_name, String last_name, String middleInitial, Date dob,
-				  String email_address, long phone_number, long cellNumber, String ssn, Date license_issue_date,
+				  String email_address, String phone_number, String cellNumber, String ssn, Date license_issue_date,
 				  long license_number, String license_issue_state, Boolean is_primary_policy_holder,
 				  String relation_withPrimary_policy_holder, String gender,
 				  String marital_statut, Date created_date, boolean active , Policy policy) {
@@ -148,10 +148,10 @@ public class Driver {
 		this.last_name = last_name;
 	}
 
-	public long getPhone_number() {
+	public String getPhone_number() {
 		return phone_number;
 	}
-	public void setPhone_number(long phone_number) {
+	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
 	}
 
@@ -232,10 +232,10 @@ public class Driver {
 		this.created_date = created_date;
 	}
 
-	public long getCellNumber() {
+	public String getCellNumber() {
 		return cellNumber;
 	}
-	public void setCellNumber(long cellNumber) {
+	public void setCellNumber(String cellNumber) {
 		this.cellNumber = cellNumber;
 	}
 
@@ -245,7 +245,7 @@ public class Driver {
 
 	@Override
 	public String toString() {
-		return "Vehicle [id=" + id + ", title=" + title	+ ", first_name=" + first_name + ", last_name=" + last_name + ", middleInitial=" + middleInitial + ", dob=" + dob +
+		return "Driver [id=" + id + ", title=" + title	+ ", first_name=" + first_name + ", last_name=" + last_name + ", middleInitial=" + middleInitial + ", dob=" + dob +
 				", email_adress=" + email_adress + ", phone_number=" + phone_number + ", cellNumber=" + cellNumber + ", ssn" + ssn + ", license_issue_date=" + license_issue_date + ", license_number=" + license_number +  ", is_primary_policy_holder=" + is_primary_policy_holder + 
 				", relation_withPrimary_policy_holder=" + relation_withPrimary_policy_holder + ", marital_statut=" + marital_statut + ", gender=" + gender + ", license_issue_state=" + license_issue_state + ", Active=" + active + "]";
 	}

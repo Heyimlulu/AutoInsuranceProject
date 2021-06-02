@@ -30,11 +30,12 @@ public class Coverage {
 	@Column
 	private String description;
 
-	@JsonManagedReference
+	/*
+	@JsonManagedReference(value = "policycoverage")
 	@OneToMany(mappedBy = "coverage", cascade = { CascadeType.ALL })
 	private List<PolicyCoverage> policyCoverage;
 
-	@JsonManagedReference
+	@JsonManagedReference(value = "vehiclecoverage")
 	@OneToMany(mappedBy = "coverage", cascade = { CascadeType.ALL })
 	private List<VehicleCoverage> vehicleCoverage;
 
@@ -45,6 +46,8 @@ public class Coverage {
 	// VehicleCoverage Model - GET/SET
 	public List<VehicleCoverage> getVehicleCoverage() { return vehicleCoverage; }
 	public void setVehicleCoverage(List<VehicleCoverage> vehicleCoverage) { this.vehicleCoverage = vehicleCoverage; }
+
+	 */
 
 	public Coverage() {}
 

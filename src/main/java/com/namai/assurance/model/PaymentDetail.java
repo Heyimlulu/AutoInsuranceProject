@@ -72,7 +72,7 @@ public class PaymentDetail {
 	@Column
 	private Date createdDate;
 
-	@JsonBackReference
+	@JsonBackReference(value = "paymentdetail")
 	@ManyToOne
 	@JoinColumn(name = "bill_id")
 	private Bill bill;

@@ -12,8 +12,8 @@ public class Message {
 	private List<Vehicle> vehicle = new ArrayList<Vehicle>();
 	private List<Driver> driver = new ArrayList<Driver>();
 	private List<Coverage> coverage = new ArrayList<Coverage>();
-	private List<PolicyCoverage> policyCoverage = new ArrayList<PolicyCoverage>();
-	private List<VehicleCoverage> vehicleCoverage = new ArrayList<VehicleCoverage>();
+	//private List<PolicyCoverage> policyCoverage = new ArrayList<PolicyCoverage>();
+	//private List<VehicleCoverage> vehicleCoverage = new ArrayList<VehicleCoverage>();
 	private String error = "";
 
 	/*
@@ -54,11 +54,14 @@ public class Message {
 	public List<Driver> getDrivers() { return driver; }
 	public void setDriver(List<Driver> driver) { this.driver = driver; }
 
+	/*
 	public List<PolicyCoverage> getPolicyCoverage() { return policyCoverage; }
 	public void setPolicyCoverage(List<PolicyCoverage> policyCoverage) { this.policyCoverage = policyCoverage; }
 
 	public List<VehicleCoverage> getVehicleCoverage() { return vehicleCoverage; }
 	public void setVehicleCoverage(List<VehicleCoverage> vehicleCoverage) { this.vehicleCoverage = vehicleCoverage; }
+
+	 */
 
 	/*
 	 * ======== Constructors ========
@@ -66,7 +69,7 @@ public class Message {
 	
 	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, 
 			List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, List<Coverage> coverage,
-				   List<PolicyCoverage> policyCoverage, List<VehicleCoverage> vehicleCoverage, String error) {
+				   String error) {
 		this.message = message;
 		this.policies = policies;
 		this.editLogPolicies = editLogPolicies;
@@ -75,22 +78,23 @@ public class Message {
 		this.vehicle = vehicle;
 		this.driver = driver;
 		this.coverage = coverage;
-		this.policyCoverage = policyCoverage;
-		this.vehicleCoverage = vehicleCoverage;
+		//this.policyCoverage = policyCoverage;
+		//this.vehicleCoverage = vehicleCoverage;
 		this.error = error;
 	}
 	
 	public Message(String message, List<PolicyEditLog> editLogPolicies, List<Bill> bill, 
-			List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver,
-				   List<PolicyCoverage> policyCoverage, List<VehicleCoverage> vehicleCoverage, String error) {
+			List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, List<Coverage> coverage,
+				   String error) {
 		this.message = message;
 		this.editLogPolicies = editLogPolicies;
 		this.bill = bill;
 		this.paymentDetail = paymentDetail;
 		this.vehicle = vehicle;
 		this.driver = driver;
-		this.policyCoverage = policyCoverage;
-		this.vehicleCoverage = vehicleCoverage;
+		this.coverage = coverage;
+		//this.policyCoverage = policyCoverage;
+		//this.vehicleCoverage = vehicleCoverage;
 		this.error = error;
 	}
 

@@ -1,3 +1,4 @@
+/*
 package com.namai.assurance.controller;
 
 import com.namai.assurance.model.Message;
@@ -32,7 +33,7 @@ public class VehicleCoverageController {
 			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, null, null, null, null, Arrays.asList(returnedVehicleCoverage), ""),
 					HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Vehicle Coverage!", null, null, null, null, null, null, null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Fail to post a new Vehicle Coverage!", null, null, null, null, null, null, null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -45,7 +46,7 @@ public class VehicleCoverageController {
 
 			return new ResponseEntity<Message>(new Message("Get Vehicle Coverage Infos!", null, null, null, null, null, null, null, null, vehicleCoverageInfos, ""), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -55,13 +56,13 @@ public class VehicleCoverageController {
 			Optional<VehicleCoverage> optVehicleCoverage = vehicleCoverageServices.getVehicleCoverageById(id);
 
 			if (optVehicleCoverage.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Vehicle coverage by id = " + id, null, null, null, null, null, null, Arrays.asList(optVehicleCoverage.get()), ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Vehicle coverage by id = " + id, null, null, null, null, null, null, null, null, Arrays.asList(optVehicleCoverage.get()), ""), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Vehicle coverage by id = " + id, null, null, null, null, null, null, null, ""),
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Vehicle coverage by id = " + id, null, null, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -79,14 +80,14 @@ public class VehicleCoverageController {
 				vehicleCoverageServices.updateVehicleCoverage(vehicleCoverage);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a Vehicle coverage " + "with id = " + id, null, null, null, null, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Updated a Vehicle coverage " + "with id = " + id, null, null, null, null, null, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Vehicle Coverage " + "with id = " + id, null, null, null, null, null, null, null, ""),
+						new Message("Failer! Can NOT Found a Vehicle Coverage " + "with id = " + id, null, null, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -99,15 +100,17 @@ public class VehicleCoverageController {
 				vehicleCoverageServices.deleteVehicleCoverageById(id);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Delete a Vehicle Coverage with id = " + id, null, null, null, null, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Delete a Vehicle Coverage with id = " + id, null, null, null, null, null, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Vehicle Coverage " + "with id = " + id, null, null, null, null, null, null, null, ""),
+						new Message("Failer! Can NOT Found a Vehicle Coverage " + "with id = " + id, null, null, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 			
 		}
 	}
 }
+
+ */

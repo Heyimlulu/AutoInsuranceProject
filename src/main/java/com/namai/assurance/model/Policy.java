@@ -53,25 +53,28 @@ public class Policy {
 	 * ==== It will delete all rows mapped with the same policyID ====
 	 */
 	
-	@JsonManagedReference
-	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL }) 
+	@JsonManagedReference(value = "editlog")
+	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<PolicyEditLog> policyEditLogs = new ArrayList<>();
 	
-	@JsonManagedReference
+	@JsonManagedReference(value = "bill")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Bill> bill = new ArrayList<>();
 	
-	@JsonManagedReference
+	@JsonManagedReference(value = "driver")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Driver> driver = new ArrayList<>();
 	
-	@JsonManagedReference
+	@JsonManagedReference(value = "vehicle")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Vehicle> vehicle = new ArrayList<>();
 
-	@JsonManagedReference
+	/*
+	@JsonManagedReference(value = "policycoverage")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<PolicyCoverage> policyCoverage = new ArrayList<>();
+
+	 */
 
 	// Constructors
 

@@ -1,3 +1,4 @@
+/*
 package com.namai.assurance.repository;
 
 import com.namai.assurance.model.VehicleCoverage;
@@ -12,3 +13,5 @@ public interface VehicleCoverageRepository extends JpaRepository<VehicleCoverage
     List<VehicleCoverage> findByCoverageId(Long vehicleCoverageId);
     Optional<VehicleCoverage> findByIdAndCoverageId(Long id, Long vehicleCoverageId);
 }
+
+ */

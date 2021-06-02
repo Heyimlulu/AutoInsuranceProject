@@ -1,3 +1,4 @@
+/*
 package com.namai.assurance.service;
 
 import com.namai.assurance.model.VehicleCoverage;
@@ -44,3 +45,5 @@ public class VehicleCoverageServices {
 		repository.deleteById(id);
 	}
 }
+
+ */

@@ -43,12 +43,12 @@ public class Bill {
 	@Column
 	private String status;
 
-	@JsonBackReference
+	@JsonBackReference(value = "bill")
 	@ManyToOne
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
 	
-	@JsonManagedReference
+	@JsonManagedReference(value = "paymentdetail")
 	@OneToMany(mappedBy = "bill", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same billID
 	private List<PaymentDetail> paymentDetail;
 

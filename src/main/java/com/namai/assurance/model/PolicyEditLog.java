@@ -37,7 +37,7 @@ public class PolicyEditLog {
 	@Column
 	private String additionalInfos;
 
-	@JsonBackReference
+	@JsonBackReference(value = "editlog")
 	@ManyToOne
 	@JoinColumn(name = "policy_id")
 	private Policy policy;

@@ -15,7 +15,6 @@ public class PolicyEditLogServices {
 	@Autowired PolicyEditLogRepository repository;
 	@Autowired private PolicyServices policyServices;
 	
-	
 	public PolicyServices getPolicyServices() {
 		return policyServices;
 	}

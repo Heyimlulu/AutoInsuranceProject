@@ -31,6 +31,10 @@
     color: black;
 }
 
+.closebtn:hover {
+    color: #d2f4ea;
+}
+
 .closebtn span {
     font-size: 36px;
 }
