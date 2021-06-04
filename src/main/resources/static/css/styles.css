@@ -30,6 +30,13 @@ h3 {
     line-height: 1.2;
 }
 
+#content-title {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+}
+
 table {
     text-align: center;
 }
@@ -79,7 +86,7 @@ table {
 
 /* ================================ */
 
-button[type='submit'] {
+button {
     margin: auto;
 }
 
