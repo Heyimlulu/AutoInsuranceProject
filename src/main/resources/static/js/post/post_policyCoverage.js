@@ -2,6 +2,8 @@ $(document).ready(function() {
     $("#add_new_policyCoverage").submit(function(evt) {
         evt.preventDefault();
 
+        let policyId = $("#policyID").val();
+
         // PREPARE FORM DATA
         let formData = {
         	active : $("#active").val(),
@@ -9,7 +11,7 @@ $(document).ready(function() {
         }
 		
         $.ajax({
-            url: '/api/policycoverage/create/',
+            url: '/api/policycoverage/create/' + policyId,
             type: 'POST',
             contentType : "application/json",
             data: JSON.stringify(formData),

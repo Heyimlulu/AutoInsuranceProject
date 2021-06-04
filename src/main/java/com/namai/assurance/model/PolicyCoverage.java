@@ -1,4 +1,3 @@
-/*
 package com.namai.assurance.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -20,12 +19,12 @@ public class PolicyCoverage {
 	@Column
 	private Date createdDate;
 
-	@JsonBackReference
+	@JsonBackReference(value = "policycoverage")
 	@ManyToOne
 	@JoinColumn(name = "policy_id")
 	private Policy policy;
 
-	@JsonBackReference
+	@JsonBackReference(value = "pcoverage")
 	@ManyToOne
 	@JoinColumn(name = "coverage_id")
 	private Coverage coverage;
@@ -74,6 +73,3 @@ public class PolicyCoverage {
 		return "Vehicle Coverage [id=" + id	+ ", active=" + active + ", createdDate=" + createdDate + "]";
 	}
 }
-
-
- */

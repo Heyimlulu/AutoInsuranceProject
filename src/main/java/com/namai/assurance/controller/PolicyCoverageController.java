@@ -1,4 +1,3 @@
-/*
 package com.namai.assurance.controller;
 
 import com.namai.assurance.model.Message;
@@ -29,10 +28,10 @@ public class PolicyCoverageController {
 			policyCoverage.setCoverage(c);
 			PolicyCoverage returnedPolicyCoverage = policyCoverageServices.savePolicyCoverage(policyCoverage);
 
-			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, null, null, null, Arrays.asList(returnedPolicyCoverage), null, ""),
+			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, null, null, null, Arrays.asList(returnedPolicyCoverage), ""),
 					HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail to post a new Policy Coverage!", null, null, null, null, null, null, null, null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Fail to post a new Policy Coverage!", null, null, null, null, null, null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -43,9 +42,9 @@ public class PolicyCoverageController {
 		try {
 			List<PolicyCoverage> policyCoverageInfos = policyCoverageServices.getPolicyCoverageInfos();
 
-			return new ResponseEntity<Message>(new Message("Get Policy Coverage Infos!", null, null, null, null, null, null, null, policyCoverageInfos, null, ""), HttpStatus.OK);
+			return new ResponseEntity<Message>(new Message("Get Policy Coverage Infos!", null, null, null, null, null, null, null, policyCoverageInfos, ""), HttpStatus.OK);
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Fail!", null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -55,13 +54,13 @@ public class PolicyCoverageController {
 			Optional<PolicyCoverage> optPolicyCoverage = policyCoverageServices.getPolicyCoverageById(id);
 
 			if (optPolicyCoverage.isPresent()) {
-				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Policy coverage by id = " + id, null, null, null, null, null, null, Arrays.asList(optPolicyCoverage.get()), null, ""), HttpStatus.OK);
+				return new ResponseEntity<Message>(new Message("Successfully! Retrieve a Policy coverage by id = " + id, null, null, null, null, null, null, Arrays.asList(optPolicyCoverage.get()), ""), HttpStatus.OK);
 			} else {
-				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Policy coverage by id = " + id, null, null, null, null, null, null, null, null, ""),
+				return new ResponseEntity<Message>(new Message("Failure -> NOT Found a Policy coverage by id = " + id, null, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -79,14 +78,14 @@ public class PolicyCoverageController {
 				policyCoverageServices.updatePolicyCoverage(policyCoverage);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Updated a Policy coverage " + "with id = " + id,  null, null, null, null, null, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Updated a Policy coverage " + "with id = " + id,  null, null, null, null, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Policy Coverage " + "with id = " + id, null, null, null, null, null, null, null, null, ""),
+						new Message("Failer! Can NOT Found a Policy Coverage " + "with id = " + id, null, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, null, e.getMessage()),
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, e.getMessage()),
 					HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
@@ -99,17 +98,15 @@ public class PolicyCoverageController {
 				policyCoverageServices.deletePolicyCoverageById(id);
 
 				return new ResponseEntity<Message>(
-						new Message("Successfully! Delete a Policy Coverage with id = " + id, null, null, null, null, null, null, null, null, ""), HttpStatus.OK);
+						new Message("Successfully! Delete a Policy Coverage with id = " + id, null, null, null, null, null, null, null, ""), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Message>(
-						new Message("Failer! Can NOT Found a Policy Coverage " + "with id = " + id, null, null, null, null, null, null, null, null, ""),
+						new Message("Failer! Can NOT Found a Policy Coverage " + "with id = " + id, null, null, null, null, null, null, null, ""),
 						HttpStatus.NOT_FOUND);
 			}
 		} catch (Exception e) {
-			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<Message>(new Message("Failure", null, null, null, null, null, null, null, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
 			
 		}
 	}
 }
-
- */

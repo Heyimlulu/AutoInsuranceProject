@@ -4,7 +4,7 @@ $(document).ready(function(){
             type : "GET",
             url : "/api/vehicle/retrieveinfos",
             success: function(response){
-                console.log(response);
+
                 $.each(response.vehicle, (i, vehicle) => {
 
                     let deleteButton = '<button ' +

@@ -69,12 +69,9 @@ public class Policy {
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Vehicle> vehicle = new ArrayList<>();
 
-	/*
 	@JsonManagedReference(value = "policycoverage")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<PolicyCoverage> policyCoverage = new ArrayList<>();
-
-	 */
 
 	// Constructors
 

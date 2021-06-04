@@ -5,8 +5,6 @@ $(document).ready(function(){
             url : "/api/coverage/retrieveinfos",
             success: function(response){
 
-                console.log(response);
-
               $.each(response.coverage  , (i, coverage) => {
 
                 let deleteButton = '<button ' +

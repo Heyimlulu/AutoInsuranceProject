@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 5.0 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="/resources/bootstrap-5.0.1-dist/css/bootstrap.css" rel="stylesheet">
     <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/resources/jquery-3.4.1.min.js"></script>
     <!-- Bootstrap 5.0 Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
     <!-- Script files -->
     <script type="text/javascript" src="/js/update/update_policyCoverage.js"></script>
     <script type="text/javascript" src="/js/load/policyCoverage.js"></script>
@@ -25,13 +25,17 @@
         <div class="col-sm-6 form-design" id="div_policyCoverage_updating">
             <h3>Update Policy Coverage</h3>
             <form id="update_policyCoverage_form" class="row">
-                <div class="form-group col-6">
-                    <label class="control-label" for="policyID">Policy ID:</label>
-                    <input type="number" class="form-control" id="policyID" name="policyID" disabled></input>
-                </div>
-                <div class="form-group col-6">
+                <div class="form-group col-12">
                     <label class="control-label" for="coverageID">Coverage ID:</label>
                     <input type="number" class="form-control" id="coverageID" name="coverageID" disabled></input>
+                </div>
+                <div class="form-group col-6">
+                    <label class="control-label" for="policyID">Policy ID:</label>
+                    <input type="number" class="form-control" id="policyID" name="policyID"></input>
+                </div>
+                <div class="form-group col-6">
+                    <label class="control-label" for="policyCoverageID">Policy Coverage ID:</label>
+                    <input type="number" class="form-control" id="policyCoverageID" name="policyCoverageID"></input>
                 </div>
                 <div class="form-group col-12">
                     <label for="coverageGroup">Active?</label>
