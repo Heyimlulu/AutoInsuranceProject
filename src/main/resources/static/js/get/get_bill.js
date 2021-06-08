@@ -21,8 +21,8 @@ $(document).ready(function(){
                     let tr_id = 'tr_' + bill.id;
                     let billRow = '<tr id=\"' + tr_id + "\"" + '>' +
                         '<td>' + bill.id + '</td>' +
-                        '<td class=\"td_created_date\">' + bill.createdDate + '</td>' +
-                        '<td class=\"td_due_date\">' + bill.dueDate + '</td>' +
+                        '<td class=\"td_created_date\">' + getDate(bill.createdDate) + '</td>' +
+                        '<td class=\"td_due_date\">' + getDate(bill.dueDate) + '</td>' +
                         '<td class=\"td_minimum_payment\">' + bill.minimumPayment + '</td>' +
                         '<td class=\"td_balance\">' + bill.balance + '</td>' +
                         '<td class=\"td_status\">' + bill.status + '</td>' +

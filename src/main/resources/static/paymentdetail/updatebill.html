@@ -25,27 +25,27 @@
         <div class="col-sm-6 form-design" id="div_edit_log_policy_updating">
             <h3>Update Bill</h3>
             <form id="update_bill_form" class="row">
-                <div class="form-group">
+                <div class="form-group col-12">
                     <label for="bill_id">Id:</label>
                     <input type="number" class="form-control" id="bill_id" readonly>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" for="dueDate">Due Date:</label>
-                    <input type="date" class="form-control" id="dueDate" placeholder="Enter Due Date" name="dueDate" min="" required></input>
-                </div>
-                <div class="form-group">
-                    <label class="control-label" for="minimumPayment">Minimum Payment:</label>
-                    <input type="number" class="form-control" id="minimumPayment" placeholder="Enter Minimum Payment" name="minimumPayment" min="" required></input>
-                </div>
-                <div class="form-group">
+                <div class="form-group col-6">
                     <label class="control-label" for="createdDate">Created Date:</label>
                     <input type="date" class="form-control" id="createdDate" placeholder="Enter Created Date" name="createdDate" required></input>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-6">
+                    <label class="control-label" for="dueDate">Due Date:</label>
+                    <input type="date" class="form-control" id="dueDate" placeholder="Enter Due Date" name="dueDate" min="" required></input>
+                </div>
+                <div class="form-group col-12">
+                    <label class="control-label" for="minimumPayment">Minimum Payment:</label>
+                    <input type="number" class="form-control" id="minimumPayment" placeholder="Enter Minimum Payment" name="minimumPayment" min="" required></input>
+                </div>
+                <div class="form-group col-12">
                     <label class="control-label" for="balance">Balance:</label>
                     <input type="number" class="form-control" id="balance" placeholder="Enter Balance" name="balance" required></input>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-12">
                     <label for="status">Status</label>
                     <select id="status" class="form-select" aria-label="Default select">
                         <option value="Done">Done</option>
@@ -54,7 +54,7 @@
                     </select>
                 </div>
                 <button type="button" onclick="window.history.back();" class="btn btn-secondary col-4">Cancel</button>
-                <button type="submit" class="btn btn-primary col-4">Submit</button>
+                <button type="submit" class="btn btn-primary col-4">Update</button>
             </form>
             <div id="response" style="display: none; margin: 10px"></div>
         </div>

@@ -21,8 +21,8 @@ $(document).ready(function(){
                     let tr_id = 'tr_' + paymentDetail.id;
                     let paymentDetailRow = '<tr id=\"' + tr_id + "\"" + '>' +
                         '<td>' + paymentDetail.id + '</td>' +
-                        '<td class=\"td_created_date\">' + paymentDetail.createdDate + '</td>' +
-                        '<td class=\"td_due_date\">' + paymentDetail.paidDate + '</td>' +
+                        '<td class=\"td_created_date\">' + getDate(paymentDetail.createdDate) + '</td>' +
+                        '<td class=\"td_due_date\">' + getDate(paymentDetail.paidDate) + '</td>' +
                         '<td class=\"td_payer_firstname\">' + paymentDetail.payerFirstName + '</td>' +
                         '<td class=\"td_payer_lastname\">' + paymentDetail.payerLastName + '</td>' +
                         '<td class=\"td_amount\">' + paymentDetail.amount + '</td>' +

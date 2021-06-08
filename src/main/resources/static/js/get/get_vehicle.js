@@ -19,11 +19,18 @@ $(document).ready(function(){
                         'Edit' +
                         '</button>';
 
+                    let active;
+                    if (vehicle.active == true) {
+                        active = 'Yes';
+                    } else if (vehicle.active == false) {
+                        active = 'No';
+                    }
+
                     let tr_id = 'tr_' + vehicle.id;
                     let vehicleRow = '<tr id=\"' + tr_id + "\"" + '>' +
                         '<td>' + vehicle.id + '</td>' +
-                        '<td class=\"td_created_date\">' + vehicle.createdDate + '</td>' +
-                        '<td class=\"td_active\">' + vehicle.active + '</td>' +
+                        '<td class=\"td_created_date\">' + getDate(vehicle.createdDate) + '</td>' +
+                        '<td class=\"td_active\">' + active + '</td>' +
                         '<td class=\"td_year\">' + vehicle.year + '</td>' +
                         '<td class=\"td_brand\">' + vehicle.make + '</td>' +
                         '<td class=\"td_model\">' + vehicle.model + '</td>' +

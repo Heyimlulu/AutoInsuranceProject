@@ -18,12 +18,19 @@ $(document).ready(function(){
                     ' type="button" class="btn btn-warning btn_id">' +
                     'Edit' +
                     '</button>';
-                
+
+                  let active;
+                  if (driver.active == true) {
+                      active = 'Yes';
+                  } else if (driver.active == false) {
+                      active = 'No';
+                  }
+
                 let tr_id = 'tr_' + driver.id;
                 let driverRow = '<tr id=\"' + tr_id + "\"" + '>' +
                     '<td>' + driver.id + '</td>' +
-                    '<td class=\"td_creation_date\">' + driver.created_date + '</td>' +
-                    '<td class=\"td_active\">' + driver.active + '</td>' +
+                    '<td class=\"td_creation_date\">' + getDate(driver.created_date) + '</td>' +
+                    '<td class=\"td_active\">' + active + '</td>' +
                     '<td class=\"td_title\">' + driver.title + '</td>' +
                     '<td class=\"td_first_name\">' + driver.first_name + '</td>' +
                     '<td class=\"td_last_name\">' + driver.last_name + '</td>' +

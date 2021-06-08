@@ -17,17 +17,24 @@ $(document).ready(function(){
                                             ' type="button" class="btn btn-warning btn_id">' +
                                             'Edit' +
                                             '</button>';
-                
+
+                let active;
+                if (policy.active == true) {
+                    active = 'Yes';
+                } else if (policy.active == false) {
+                    active = 'No';
+                }
+
                 let tr_id = 'tr_' + policy.id;
                 let policyRow = '<tr id=\"' + tr_id + "\"" + '>' +
                     '<td>' + policy.id + '</td>' +
                     '<td class=\"td_policy_number\">' + policy.policyNumber.toUpperCase() + '</td>' +
-                    '<td class=\"td_creation_date\">' + policy.creationDate + '</td>' +
-                    '<td class=\"td_effective_date\">' + policy.policyEffectiveDate + '</td>' +
-                    '<td class=\"td_expiration_date\">' + policy.policyExpireDate + '</td>' +
+                    '<td class=\"td_creation_date\">' + getDate(policy.creationDate) + '</td>' +
+                    '<td class=\"td_effective_date\">' + getDate(policy.policyEffectiveDate) + '</td>' +
+                    '<td class=\"td_expiration_date\">' + getDate(policy.policyExpireDate) + '</td>' +
                     '<td class=\"td_payment_option\">' + policy.paymentOption + '</td>' +
                     '<td class=\"td_total_amount\">' + policy.totalAmount + '</td>' +
-                    '<td class=\"td_active\">' + policy.active + '</td>' +
+                    '<td class=\"td_active\">' + active + '</td>' +
                     '<td class=\"td_additionalInfos\">' + policy.additionalInfos + '</td>' +
                     '<td>' +  `${get_More_Info_Btn} <span class="separator">|</span> ${deleteButton}` + '</td>' +
                     '</tr>';

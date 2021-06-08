@@ -5,13 +5,13 @@ $(document).ready(function() {
         // PREPARE FORM DATA
         let formData = {
             policyNumber : $("#policyNumber").val(),
-            policyEffectiveDate :  $("#policyEffectiveDate").val(),
-            policyExpireDate: $("#policyExpireDate").val(),
+            policyEffectiveDate : $("#policyEffectiveDate").val(),
+            policyExpireDate : $("#policyExpireDate").val(),
             paymentOption: $("#paymentOption").val(),
             totalAmount: $("#totalAmount").val(),
             active: $("#active").val(),
             additionalInfos: $("#additionalInfos").val(),
-            creationDate: $("#creationDate").val()
+            creationDate : $("#creationDate").val()
         }
 
         // If effective date is greater than expiracy date

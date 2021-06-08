@@ -20,7 +20,7 @@ $(document).ready(function(){
                 let policyEditRow = '<tr id=\"' + tr_id + "\"" + '>' +
                     '<td>' + PolicyEditLog.id + '</td>' +
                     '<td class=\"td_edited_tablename\">' + PolicyEditLog.editedTableName + '</td>' +
-                    '<td class=\"td_edited_date\">' + PolicyEditLog.editedDate + '</td>' +
+                    '<td class=\"td_edited_date\">' + getDate(PolicyEditLog.editedDate) + '</td>' +
                     '<td class=\"td_edited_by\">' + PolicyEditLog.editedBy + '</td>' +
                     '<td class=\"td_additionalInfos\">' + PolicyEditLog.additionalInfos + '</td>' +
                     '<td>' +  `${get_More_Info_Btn} <span class="separator">|</span> ${deleteButton}` + '</td>' +

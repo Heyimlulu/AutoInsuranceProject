@@ -18,15 +18,29 @@ $(document).ready(function(){
                     ' type="button" class="btn btn-warning btn_id">' +
                     'Edit' +
                     '</button>';
-                
+
+                  let isPolicyCoverage;
+                  if (coverage.isPolicyCoverage == true) {
+                      isPolicyCoverage = 'Yes';
+                  } else if (coverage.isPolicyCoverage == false) {
+                      isPolicyCoverage = 'No';
+                  }
+
+                  let isVehicleCoverage;
+                  if (coverage.isVehicleCoverage == true) {
+                      isVehicleCoverage = 'Yes';
+                  } else if (coverage.isVehicleCoverage == false) {
+                      isVehicleCoverage = 'No';
+                  }
+
                 let tr_id = 'tr_' + coverage.id;
                 let coverageRow = '<tr id=\"' + tr_id + "\"" + '>' +
                     '<td>' + coverage.id + '</td>' +
                     '<td class=\"td_coverage_name\">' + coverage.coverageName + '</td>' +
                     '<td class=\"td_coverage_group\">' + coverage.coverageGroup + '</td>' +
                     '<td class=\"td_code\">' + coverage.code + '</td>' +
-                    '<td class=\"td_isPolicyCoverage\">' + coverage.isPolicyCoverage + '</td>' +
-                    '<td class=\"td_isVehicleCoverage\">' + coverage.isVehicleCoverage + '</td>' +
+                    '<td class=\"td_isPolicyCoverage\">' + isPolicyCoverage + '</td>' +
+                    '<td class=\"td_isVehicleCoverage\">' + isVehicleCoverage + '</td>' +
                     '<td class=\"td_description\">' + coverage.description + '</td>' +
                     '<td>' +  `${get_More_Info_Btn} <span class="separator">|</span> ${deleteButton}` + '</td>' +
                     '</tr>';

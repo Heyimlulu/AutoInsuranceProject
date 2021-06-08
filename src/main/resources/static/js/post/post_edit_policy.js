@@ -2,13 +2,14 @@ $(document).ready(function() {
     $("#add_new_edit_policy").submit(function(evt) {
         evt.preventDefault();
         let policyId = $("#policy_id_artifact").val();
+
         // PREPARE FORM DATA
         let formData = {
         	policyId : $("#policy_id_artifact").val(),
             editedTableName : $("#editedTableName").val(),
-                editedDate :  $("#editedDate").val(),
-                editedBy: $("#editedBy").val(),
-                additionalInfos: $("#additionalInfos").val()
+            editedDate :  $("#editedDate").val(),
+            editedBy: $("#editedBy").val(),
+            additionalInfos: $("#additionalInfos").val()
         }
 		
         $.ajax({
