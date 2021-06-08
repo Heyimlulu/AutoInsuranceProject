@@ -32,7 +32,7 @@ function getDate(value) {
     let dayMonth = daysList[date.getDay()];
     let day = date.getDate();
 
-    let fullDate = `${dayMonth} ${month} ${day}th, ${year}`;
+    let fullDate = `${dayMonth} ${month} ${day}, ${year}`;
 
     return fullDate; // I.E. Wednesday June 9th, 2021
 }
