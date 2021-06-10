@@ -96,7 +96,13 @@ public class Bill {
 
 	@Override
 	public String toString() {
-		return "Bill [id=" + id + ", DueDate=" + dueDate	+ ", minimumPayment=" + minimumPayment
-				+ ", createdDate=" + createdDate + ", balance=" + balance + ", status=" + status + "]";
+		return "Bill " +
+				"[id=" + id +
+				", DueDate=" + dueDate	+
+				", minimumPayment=" + minimumPayment +
+				", createdDate=" + createdDate +
+				", balance=" + balance +
+				", status=" + status +
+				"]";
 	}
 }

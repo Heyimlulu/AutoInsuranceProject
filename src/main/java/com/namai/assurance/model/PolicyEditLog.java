@@ -113,7 +113,12 @@ public class PolicyEditLog {
 
 	@Override
 	public String toString() {
-		return "PolicyEditLog [id=" + id + ", editedTableName=" + editedTableName + ", editedDate=" + editedDate
-				+ ", editedBy=" + editedBy + ", additionalInfos=" + additionalInfos + "]";
+		return "PolicyEditLog " +
+				"[id=" + id +
+				", editedTableName=" + editedTableName +
+				", editedDate=" + editedDate +
+				", editedBy=" + editedBy +
+				", additionalInfos=" + additionalInfos +
+				"]";
 	}
 }

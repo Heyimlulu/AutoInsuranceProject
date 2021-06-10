@@ -2,7 +2,10 @@ package com.namai.assurance.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "coverage")
@@ -30,15 +33,8 @@ public class Coverage {
 	@Column
 	private String description;
 
-	@JsonManagedReference(value = "pcoverage")
-	@OneToMany(mappedBy = "coverage", cascade = { CascadeType.ALL })
-	private List<PolicyCoverage> policyCoverage;
-
-	/*
-	@JsonManagedReference(value = "vehiclecoverage")
-	@OneToMany(mappedBy = "coverage", cascade = { CascadeType.ALL })
-	private List<VehicleCoverage> vehicleCoverage;
-	 */
+	@ManyToMany(mappedBy = "coverage", fetch = FetchType.LAZY)
+	private List<Policy> policies = new ArrayList<>();
 
 	public Coverage() {}
 
@@ -104,8 +100,14 @@ public class Coverage {
 
 	@Override
 	public String toString() {
-		return "Coverage [id=" + id + ", coverageName=" + coverageName + ", coverageGroup=" + coverageGroup
-				+ ", code=" + code + ", isPolicyCoverage=" + isPolicyCoverage + ", isVehicleCoverage=" + isVehicleCoverage
-				+ ", description=" + description + "]";
+		return "Coverage " +
+				"[id=" + id +
+				", coverageName=" + coverageName +
+				", coverageGroup=" + coverageGroup +
+				", code=" + code +
+				", isPolicyCoverage=" + isPolicyCoverage +
+				", isVehicleCoverage=" + isVehicleCoverage +
+				", description=" + description +
+				"]";
 	}
 }

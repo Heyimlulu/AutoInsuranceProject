@@ -245,8 +245,25 @@ public class Driver {
 
 	@Override
 	public String toString() {
-		return "Driver [id=" + id + ", title=" + title	+ ", first_name=" + first_name + ", last_name=" + last_name + ", middleInitial=" + middleInitial + ", dob=" + dob +
-				", email_adress=" + email_adress + ", phone_number=" + phone_number + ", cellNumber=" + cellNumber + ", ssn" + ssn + ", license_issue_date=" + license_issue_date + ", license_number=" + license_number +  ", is_primary_policy_holder=" + is_primary_policy_holder + 
-				", relation_withPrimary_policy_holder=" + relation_withPrimary_policy_holder + ", marital_statut=" + marital_statut + ", gender=" + gender + ", license_issue_state=" + license_issue_state + ", Active=" + active + "]";
+		return "Driver " +
+				"[id=" + id +
+				", title=" + title	+
+				", first_name=" + first_name +
+				", last_name=" + last_name +
+				", middleInitial=" + middleInitial +
+				", dob=" + dob +
+				", email_adress=" + email_adress +
+				", phone_number=" + phone_number +
+				", cellNumber=" + cellNumber +
+				", ssn" + ssn +
+				", license_issue_date=" + license_issue_date +
+				", license_number=" + license_number +
+				", is_primary_policy_holder=" + is_primary_policy_holder +
+				", relation_withPrimary_policy_holder=" + relation_withPrimary_policy_holder +
+				", marital_statut=" + marital_statut +
+				", gender=" + gender +
+				", license_issue_state=" + license_issue_state +
+				", Active=" + active +
+				"]";
 	}
 }

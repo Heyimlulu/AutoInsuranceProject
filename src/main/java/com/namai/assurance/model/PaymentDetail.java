@@ -168,8 +168,25 @@ public class PaymentDetail {
 
 	@Override
 	public String toString() {
-		return "PaymentDetail [id=" + id + ", PaidDate=" + paidDate	+ ", Amount=" + amount + ", Payment Method=" + paymentMethod + ", Payer FirstName=" + payerFirstName + ", Payer LastName=" + payerLastName +
-				", Card Number=" + cardNumber + ", Zip Code=" + zipCode + ", Card Expire Date=" + cardExpireDate + ", Card Type" + cardType + ", Debit or Credit=" + debitOrCredit + ", Bank Name=" + bankName + 
-				", Account Number=" + accountNumber + ", Routing Number=" + routingNumber + ", Check Number=" + checkNumber + ", Check Image=" + checkImage + ", Additional Infos=" + additionalInfos + ", Created Date=" + createdDate + "]";
+		return "PaymentDetail " +
+				"[id=" + id +
+				", PaidDate=" + paidDate +
+				", Amount=" + amount +
+				", Payment Method=" + paymentMethod +
+				", Payer FirstName=" + payerFirstName +
+				", Payer LastName=" + payerLastName +
+				", Card Number=" + cardNumber +
+				", Zip Code=" + zipCode +
+				", Card Expire Date=" + cardExpireDate +
+				", Card Type" + cardType +
+				", Debit or Credit=" + debitOrCredit +
+				", Bank Name=" + bankName +
+				", Account Number=" + accountNumber +
+				", Routing Number=" + routingNumber +
+				", Check Number=" + checkNumber +
+				", Check Image=" + checkImage +
+				", Additional Infos=" + additionalInfos +
+				", Created Date=" + createdDate +
+				"]";
 	}
 }

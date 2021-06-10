@@ -19,32 +19,13 @@ public class PolicyCoverage {
 	@Column
 	private Date createdDate;
 
-	@JsonBackReference(value = "policycoverage")
-	@ManyToOne
-	@JoinColumn(name = "policy_id")
-	private Policy policy;
-
-	@JsonBackReference(value = "pcoverage")
-	@ManyToOne
-	@JoinColumn(name = "coverage_id")
-	private Coverage coverage;
-
-	public Policy getPolicy() { return policy; }
-	public void setPolicy(Policy policy) { this.policy = policy; }
-
-	public Coverage getCoverage() { return coverage; }
-	public void setCoverage(Coverage coverage) { this.coverage = coverage; }
-
-
 	public PolicyCoverage() {}
 
-	public PolicyCoverage(long id, boolean active, Date createdDate, Policy policy, Coverage coverage) {
+	public PolicyCoverage(long id, boolean active, Date createdDate) {
 		super();
 		this.id = id;
 		this.active = active;
 		this.createdDate = createdDate;
-		this.policy = policy;
-		this.coverage = coverage;
 	}
 
 	public long getId() {
@@ -70,6 +51,10 @@ public class PolicyCoverage {
 
 	@Override
 	public String toString() {
-		return "Vehicle Coverage [id=" + id	+ ", active=" + active + ", createdDate=" + createdDate + "]";
+		return "Vehicle Coverage " +
+				"[id=" + id	+
+				", active=" + active +
+				", createdDate=" + createdDate +
+				"]";
 	}
 }

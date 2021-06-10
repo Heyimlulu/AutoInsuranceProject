@@ -2,17 +2,13 @@ package com.namai.assurance.model;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -52,26 +48,32 @@ public class Policy {
 	 * 
 	 * ==== It will delete all rows mapped with the same policyID ====
 	 */
-	
+
 	@JsonManagedReference(value = "editlog")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<PolicyEditLog> policyEditLogs = new ArrayList<>();
-	
+
 	@JsonManagedReference(value = "bill")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Bill> bill = new ArrayList<>();
-	
+
 	@JsonManagedReference(value = "driver")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Driver> driver = new ArrayList<>();
-	
+
 	@JsonManagedReference(value = "vehicle")
 	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
 	private List<Vehicle> vehicle = new ArrayList<>();
 
-	@JsonManagedReference(value = "policycoverage")
-	@OneToMany(mappedBy = "policy", cascade = { CascadeType.ALL })
-	private List<PolicyCoverage> policyCoverage = new ArrayList<>();
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	@JoinTable(name = "policy_coverage",
+			joinColumns = {
+				@JoinColumn(name = "policy_id", referencedColumnName = "id", nullable = false, updatable = false
+			)},
+			inverseJoinColumns = {
+				@JoinColumn(name = "coverage_id", referencedColumnName = "id", nullable = false, updatable = false
+			)})
+	private List<Coverage> coverage= new ArrayList<>();
 
 	// Constructors
 
@@ -93,9 +95,7 @@ public class Policy {
 
 	// Getter and Setter
 
-	public long getId() {
-		return id;
-	}
+	public long getId() { return id; }
 	public void setId(long id) { this.id = id; }
 		
 	public String getPolicyNumber() {
@@ -156,9 +156,16 @@ public class Policy {
 
 	@Override
 	public String toString() {
-		return "Policy [id=" + id + ", policyNumber=" + policyNumber + ", policyEffectiveDate=" + policyEffectiveDate
-				+ ", policyExpireDate=" + policyExpireDate + ", paymentOption=" + paymentOption + ", totalAmount="
-				+ totalAmount + ", active=" + active + ", additionalInfos=" + additionalInfos + ", creationDate="
-				+ creationDate + "]";
+		return "Policy " +
+				"[id=" + id +
+				", policyNumber=" + policyNumber +
+				", policyEffectiveDate=" + policyEffectiveDate +
+				", policyExpireDate=" + policyExpireDate +
+				", paymentOption=" + paymentOption +
+				", totalAmount=" + totalAmount +
+				", active=" + active +
+				", additionalInfos=" + additionalInfos +
+				", creationDate=" + creationDate +
+				"]";
 	}
 }

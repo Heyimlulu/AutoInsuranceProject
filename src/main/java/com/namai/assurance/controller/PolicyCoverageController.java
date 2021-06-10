@@ -1,7 +1,6 @@
 package com.namai.assurance.controller;
 
 import com.namai.assurance.model.Message;
-import com.namai.assurance.model.Coverage;
 import com.namai.assurance.model.PolicyCoverage;
 import com.namai.assurance.service.PolicyCoverageServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +23,6 @@ public class PolicyCoverageController {
 	@PostMapping("/create/{id}")
 	public ResponseEntity<Message> addNewPolicyCoverage(@RequestBody PolicyCoverage policyCoverage, @PathVariable long id) {
 		try {
-			Coverage c = policyCoverageServices.getCoverageServices().getCoverageById(id).get();
-			policyCoverage.setCoverage(c);
 			PolicyCoverage returnedPolicyCoverage = policyCoverageServices.savePolicyCoverage(policyCoverage);
 
 			return new ResponseEntity<Message>(new Message("Upload Successfully!", null, null, null, null, null, null, null, Arrays.asList(returnedPolicyCoverage), ""),
