@@ -44,4 +44,4 @@ So, we will create a different table to make our database as a Normalized databa
 
 # Author
 
-[© Prakash Lekhak - 2014](https://www.codeproject.com/Tips/826425/Relational-Database-Design-with-an-Auto-Insurance)
+[Relational Database Design with an Auto Insurance Database Sample](https://www.codeproject.com/Tips/826425/Relational-Database-Design-with-an-Auto-Insurance) by © Prakash Lekhak - 2014 
