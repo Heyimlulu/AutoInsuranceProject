@@ -11,6 +11,8 @@
     <!-- Bootstrap 5.0 Bundle with Popper -->
     <script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
     <!-- Script files -->
+    <script type="text/javascript" src="../js/post/post_coverage.js"></script>
+    <script type="text/javascript" src="../js/covCategory.js"></script>
     <script type="text/javascript" src="/js/update/update_coverage.js"></script>
     <script type="text/javascript" src="/js/delete/delete_coverage.js"></script>
     <script type="text/javascript" src="/js/get/get_coverage.js"></script>
@@ -45,12 +47,12 @@
         </div>
         <div class="add-form">
             <button class="btn btn-success">
-                <a style="color: white;text-decoration: none;" href="addcoverage.html">Insert New</a>
+                <a style="color: white;text-decoration: none;" data-bs-toggle="modal" data-bs-target="#add-modal">Insert New</a>
             </button>
         </div>
     </div>
 
-    <!-- Modal 5.0 -->
+    <!-- Delete Modal -->
     <div class="modal fade" id="delete-modal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -62,7 +64,7 @@
                 </div>
 
                 <!-- Modal Body -->
-                <div class="modal-body"></div>
+                <div class="modal-body delete-form"></div>
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
@@ -73,6 +75,60 @@
         </div>
     </div>
 
+    <!-- Add Modal -->
+    <div class="modal fade" id="add-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Coverage</h5>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form id="add_new_coverage" class="row">
+                        <div class="form-group col-12">
+                            <label for="coverageName">Coverage Name</label>
+                            <select id="coverageName" class="form-select" aria-label="Default select">
+                                <option value="" disabled selected>-- Select category --</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="coverageGroup">Coverage Group</label>
+                            <select id="coverageGroup" class="form-select" aria-label="Default select" onChange="changecat(this.value);">
+                                <option value="" disabled selected>-- Select category --</option>
+                                <option value="Personal auto coverages">Personal auto coverages</option>
+                                <option value="Vehicle coverages">Vehicle coverages</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="code">Code:</label>
+                            <input type="text" class="form-control" id="code" placeholder="-- Select category --" name="code" disabled required></input>
+                        </div>
+                        <div class="checkbox">
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="policyCoverage" value="1">
+                                <label class="form-check-label" for="policyCoverage">Policy Coverage</label>
+                            </div>
+                            <div class="form-check-inline">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="vehicleCoverage" value="1">
+                                <label class="form-check-label" for="vehicleCoverage">Vehicle Coverage</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="description">Description:</label>
+                            <input type="text" class="form-control" id="description" placeholder="Enter Description" name="description"></input>
+                        </div>
+                        <button type="button" class="btn btn-secondary col-4" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary col-4" id="btn-add-new-coverage">Create</button>
+                    </form>
+                    <div id="response" style="display:none; margin-top:10px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 </body>

@@ -11,6 +11,7 @@
 	<!-- Bootstrap 5.0 Bundle with Popper -->
 	<script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
 	<!-- Script files -->
+	<script type="text/javascript" src="/js/post/post_policy.js"></script>
 	<script type="text/javascript" src="/js/update/update_policy.js"></script>
 	<script type="text/javascript" src="/js/delete/delete_policy.js"></script>
 	<script type="text/javascript" src="/js/get/get_policy.js"></script>
@@ -48,12 +49,12 @@
 			</div>
 			<div class="add-form">
 				<button class="btn btn-success">
-					<a style="color: white;text-decoration: none;" href="addpolicy.html">Insert New</a>
+					<a style="color: white;text-decoration: none;" data-bs-toggle="modal" data-bs-target="#add-modal">Insert New</a>
 				</button>
 			</div>
 		  </div>
 
-		<!-- Modal 5.0 -->
+		<!-- Delete modal -->
 		<div class="modal fade" id="delete-modal" tabindex="-1">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
@@ -65,13 +66,81 @@
 					</div>
 
 					<!-- Modal Body -->
-					<div class="modal-body"></div>
+					<div class="modal-body delete-form"></div>
 
 					<!-- Modal Footer -->
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 						<button type="button" class="btn btn-danger" id="model-delete-btn">Delete</button>
 					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Add modal -->
+		<div class="modal fade" id="add-modal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h5 class="modal-title">Add Policy</h5>
+						<button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<!-- Modal Body -->
+					<div class="modal-body">
+						<form id="add_new_police" class="row">
+							<div class="form-group col-12">
+								<label class="control-label" for="policyNumber">Policy Number:</label>
+								<input type="text" class="form-control" id="policyNumber"
+									   placeholder="Enter Policy Number" name="policyNumber" maxlength="20" required></input>
+							</div>
+							<div class="form-group col-4">
+								<label class="control-label" for="creationDate">Creation Date:</label>
+								<input type="date" class="form-control" id="creationDate"
+									   placeholder="Enter creationDate" name="creationDate" required></input>
+							</div>
+							<div class="form-group col-4">
+								<label class="control-label" for="policyEffectiveDate">Effective Date:</label>
+								<input type="date" class="form-control" id="policyEffectiveDate"
+									   placeholder="Enter Effective Date" name="policyEffectiveDate" min="" required></input>
+							</div>
+							<div class="form-group col-4">
+								<label class="control-label" for="policyExpireDate">Expiration Date:</label>
+								<input type="date" class="form-control" id="policyExpireDate"
+									   placeholder="Enter policyExpireDate" name="policyExpireDate" min="" required></input>
+							</div>
+							<div class="form-group col-12">
+								<label for="paymentOption">Payment Option:</label>
+								<select id="paymentOption" class="form-select" aria-label="Default select">
+									<option value="Monthly">Monthly</option>
+									<option value="Once">Once</option>
+								</select>
+							</div>
+							<div class="form-group col-12">
+								<label class="control-label" for="totalAmount">Total Amount:</label>
+								<input type="number" class="form-control" id="totalAmount"
+									   placeholder="Enter totalAmount" name="totalAmount" required></input>
+							</div>
+							<div class="form-group col-12">
+								<label for="active">Active?</label>
+								<select id="active" class="form-select" aria-label="Default select example">
+									<option value="true">Yes</option>
+									<option value="false">No</option>
+								</select>
+							</div>
+							<div class="form-group col-12">
+								<label class="control-label" for="additionalInfos">Additional Infos:</label>
+								<input type="text" class="form-control" id="additionalInfos"
+									   placeholder="Enter additionalInfos" name="additionalInfos"></input>
+							</div>
+							<button type="button" class="btn btn-secondary col-4" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary col-4" id="btn-add-new-policy">Create</button>
+						</form>
+						<div id="response" style="display:none; margin-top:10px"></div>
+					</div>
+
 				</div>
 			</div>
 		</div>

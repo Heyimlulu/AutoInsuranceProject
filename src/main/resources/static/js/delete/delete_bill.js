@@ -5,7 +5,7 @@ $(document).ready(function(){
         let btn_id = (event.srcElement.id);
         billId = btn_id.split("_")[2];
 
-        $("div.modal-body").text("All datas registered in bill N°" + billId + " will be deleted, do you want to continue?");
+        $("div.delete-form").text("All datas registered in bill N°" + billId + " will be deleted, do you want to continue?");
         $("#model-delete-btn").css({"display": "inline"});
     });
 
@@ -14,7 +14,7 @@ $(document).ready(function(){
             url: '/api/bill/deletebyid/' + billId,
             type: 'DELETE',
             success: function(response) {
-                $("div.modal-body").text("All datas in bill N°" + billId + " has been successfully deleted" + "!");
+                $("div.delete-form").text("All datas in bill N°" + billId + " has been successfully deleted" + "!");
 
                 $("#model-delete-btn").css({"display": "none"});
                 $("button.btn.btn-secondary").text("Close");

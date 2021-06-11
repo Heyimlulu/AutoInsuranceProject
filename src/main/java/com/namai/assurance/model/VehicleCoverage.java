@@ -1,7 +1,4 @@
-/*
 package com.namai.assurance.model;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -20,32 +17,18 @@ public class VehicleCoverage {
 	@Column
 	private Date createdDate;
 
-	@JsonBackReference
-	@ManyToOne
-	@JoinColumn(name = "vehicle_id")
-	private Vehicle vehicle;
-	
-	@JsonBackReference
-	@ManyToOne
-	@JoinColumn(name = "coverage_id")
-	private Coverage coverage;
-
-	public Vehicle getVehicle() { return vehicle; }
-	public void setVehicle(Vehicle vehicle) { this.vehicle = vehicle; }
-
-	public Coverage getCoverage() { return coverage; }
-	public void setCoverage(Coverage coverage) { this.coverage = coverage; }
+	// Constructors
 
 	public VehicleCoverage() {}
 
-	public VehicleCoverage(long id, boolean active, Date createdDate, Vehicle vehicle, Coverage coverage) {
+	public VehicleCoverage(long id, boolean active, Date createdDate) {
 		super();
 		this.id = id;
 		this.active = active;
 		this.createdDate = createdDate;
-		//this.vehicle = vehicle;
-		//this.coverage = coverage;
 	}
+
+	// Getters and Setters
 
 	public long getId() {
 		return id;
@@ -70,8 +53,10 @@ public class VehicleCoverage {
 
 	@Override
 	public String toString() {
-		return "Vehicle Coverage [id=" + id + ", active=" + active + ", createdDate=" + createdDate + "]";
+		return "Vehicle Coverage " +
+                "[id=" + id +
+                ", active=" + active +
+                ", createdDate=" + createdDate +
+                "]";
 	}
 }
-
- */

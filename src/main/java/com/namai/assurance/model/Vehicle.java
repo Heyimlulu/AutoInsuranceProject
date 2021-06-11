@@ -1,20 +1,12 @@
 package com.namai.assurance.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -58,28 +50,28 @@ public class Vehicle {
 	@Column(nullable = false)
 	private boolean active;
 
+	// Relations
+
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+	@JoinTable(name = "vehicle_coverage",
+			joinColumns = {
+					@JoinColumn(name = "vehicle_id", referencedColumnName = "id", nullable = false, updatable = false
+					)},
+			inverseJoinColumns = {
+					@JoinColumn(name = "coverage_id", referencedColumnName = "id", nullable = false, updatable = false
+					)})
+	private List<Coverage> coverage= new ArrayList<>();
+
 	@JsonBackReference(value = "vehicle")
 	@ManyToOne
-	@JoinColumn(name = "policy_id")
+	@JoinColumn(name = "policy_id", nullable = false)
 	private Policy policy;
-
-	/*
-	@JsonManagedReference
-	@OneToMany(mappedBy = "vehicle", cascade = { CascadeType.ALL })
-	private List<VehicleCoverage> vehicleCoverage;
-
-	 */
 	
 	public Policy getPolicy() { return policy; }
 	public void setPolicy(Policy policy) { this.policy = policy; }
 
-	/*
-	// VehicleCoverage Model - GET/SET
-	public List<VehicleCoverage> getVehicleCoverage() { return vehicleCoverage; }
-	public void setVehicleCoverage(List<VehicleCoverage> vehicleCoverage) { this.vehicleCoverage = vehicleCoverage; }
+	// Constructors
 
-	 */
-	
 	public Vehicle() {}
 
 	public Vehicle(long id, long year, String make, String model, String color, String trim, int mileAge,
@@ -100,6 +92,8 @@ public class Vehicle {
 		
 		this.policy = policy;
 	}
+
+	// Getters and Setters
 
 	public long getId() { return this.id; }
 	public void setId(long id) { this.id = id; }

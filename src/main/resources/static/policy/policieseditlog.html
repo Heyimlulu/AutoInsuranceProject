@@ -11,6 +11,7 @@
 	<!-- Bootstrap 5.0 Bundle with Popper -->
 	<script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
 	<!-- Script files -->
+	<script type="text/javascript" src="/js/post/post_edit_policy.js"></script>
 	<script type="text/javascript" src="/js/update/update_policy_edit_log.js"></script>
 	<script type="text/javascript" src="/js/delete/delete_edit_log_policy.js"></script>
 	<script type="text/javascript" src="/js/get/get_edit_policy.js"></script>
@@ -44,12 +45,12 @@
 			</div>
 			<div class="add-form">
 				<button class="btn btn-success">
-					<a style="color: white;text-decoration: none;" href="addpolicyeditlog.html">Insert New</a>
+					<a style="color: white;text-decoration: none;" data-bs-toggle="modal" data-bs-target="#add-modal">Insert New</a>
 				</button>
 			</div>
 		</div>
 
-		<!-- Modal 5.0 -->
+		<!-- Delete Modal -->
 		<div class="modal fade" id="delete-modal" tabindex="-1">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
@@ -61,12 +62,60 @@
 					</div>
 
 					<!-- Modal Body -->
-					<div class="modal-body"></div>
+					<div class="modal-body delete-form"></div>
 
 					<!-- Modal Footer -->
 					<div class="modal-footer">
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 						<button type="button" class="btn btn-danger" id="model-delete-btn">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Add Modal -->
+		<div class="modal fade" id="add-modal" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+
+					<!-- Modal Header -->
+					<div class="modal-header">
+						<h5 class="modal-title">Add Policy Edit Log</h5>
+						<button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<!-- Modal Body -->
+					<div class="modal-body">
+						<form id="add_new_edit_policy" class="row">
+							<div class="form-group">
+								<label class="control-label" for="policy_id_artifact">Policy Id:</label>
+								<input type="text" class="form-control" id="policy_id_artifact"
+									   placeholder="Enter Policy Id" name="policy_id_artifact" required></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="editedTableName">Policy edited table:</label>
+								<input type="text" class="form-control" id="editedTableName"
+									   placeholder="Enter Policy Edited Table" name="editedTableName" maxlength="50" required></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="editedDate">Edited Date:</label>
+								<input type="date" class="form-control" id="editedDate"
+									   placeholder="Enter Edited Date" name="editedDate" required></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="editedBy">Edited By:</label>
+								<input type="text" class="form-control" id="editedBy"
+									   placeholder="Enter edited by" name="editedBy" maxlength="50"  required></input>
+							</div>
+							<div class="form-group">
+								<label class="control-label" for="additionalInfos">Additionals Infos:</label>
+								<input type="text" class="form-control" id="additionalInfos"
+									   placeholder="Enter Additional Infos" name="additionalInfos"></input>
+							</div>
+							<button type="button" class="btn btn-secondary col-4" data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary col-4" id="btn-add-new-edit_policy">Create</button>
+						</form>
+						<div id="response" style="display:none; margin-top:10px">
 					</div>
 				</div>
 			</div>

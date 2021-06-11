@@ -5,7 +5,7 @@ $(document).ready(function(){
         let btn_id = (event.srcElement.id);
         policyEditLogId = btn_id.split("_")[2];
 
-        $("div.modal-body")
+        $("div.delete-form")
             .text("Policy Edit Log N°" + policyEditLogId + " will be deleted, do you want to continue?");
         $("#model-delete-btn").css({"display": "inline"});
     });
@@ -15,7 +15,7 @@ $(document).ready(function(){
             url: '/api/editLog/deletebyid/' + policyEditLogId,
             type: 'DELETE',
             success: function(response) {
-                $("div.modal-body").text("Policy Edit Log N°" + policyEditLogId + " has been successfully deleted" + "!");
+                $("div.delete-form").text("Policy Edit Log N°" + policyEditLogId + " has been successfully deleted" + "!");
 
                 $("#model-delete-btn").css({"display": "none"});
                 $("button.btn.btn-secondary").text("Close");

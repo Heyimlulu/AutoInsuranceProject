@@ -72,13 +72,17 @@ public class PaymentDetail {
 	@Column(nullable = false)
 	private Date createdDate;
 
+	// Relations
+
 	@JsonBackReference(value = "paymentdetail")
 	@ManyToOne
-	@JoinColumn(name = "bill_id")
+	@JoinColumn(name = "bill_id", nullable = false)
 	private Bill bill;
 
 	public Bill getBill() { return bill; }
 	public void setBill(Bill bill) { this.bill = bill; }
+
+	// Constructors
 
 	public PaymentDetail() {}
 
@@ -109,6 +113,8 @@ public class PaymentDetail {
 		
 		this.bill = bill;
 	}
+
+	// Getters and Setters
 
 	public long getId() { return this.id; }
 	public void setId(long id) { this.id = id; }

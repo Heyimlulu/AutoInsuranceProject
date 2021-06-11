@@ -11,6 +11,7 @@
     <!-- Bootstrap 5.0 Bundle with Popper -->
     <script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
     <!-- Script files -->
+    <script type="text/javascript" src="../js/post/post_paymentdetail.js"></script>
     <script type="text/javascript" src="../js/delete/delete_paymentdetail.js"></script>
     <script type="text/javascript" src="../js/get/get_paymentdetail.js"></script>
     <script type="text/javascript" src="../js/update/update_paymentdetail.js"></script>
@@ -48,12 +49,12 @@
         </div>
         <div class="add-form">
             <button class="btn btn-success">
-                <a style="color: white;text-decoration: none;" href="addpaymentdetail.html">Insert New</a>
+                <a style="color: white;text-decoration: none;" data-bs-toggle="modal" data-bs-target="#add-modal">Insert New</a>
             </button>
         </div>
     </div>
 
-    <!-- Modal 5.0 -->
+    <!-- Delete Modal -->
     <div class="modal fade" id="delete-modal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -65,7 +66,7 @@
                 </div>
 
                 <!-- Modal Body -->
-                <div class="modal-body"></div>
+                <div class="modal-body delete-form"></div>
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
@@ -76,6 +77,120 @@
         </div>
     </div>
 
+    <!-- Add Modal -->
+    <div class="modal fade" id="add-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Payment Detail</h5>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form id="add_new_paymentdetail" class="row">
+                        <div class="form-group col-12">
+                            <label class="control-label" for="billID">Bill ID:</label>
+                            <input type="number" class="form-control" id="billID" placeholder="Enter Bill ID" name="billID" required></input>
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="control-label" for="createdDate">Created Date:</label>
+                            <input type="date" class="form-control" id="createdDate" placeholder="Enter Creation Date" name="createdDate" required></input>
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="control-label" for="paidDate">Due Date:</label>
+                            <input type="date" class="form-control" id="paidDate" placeholder="Enter Paid Date" name="paidDate" min="" required></input>
+                        </div>
+
+                        <h4 class="subtitle"><span>General Informations</span></h4>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="payerFirstname">Payer Firstname:</label>
+                            <input type="text" class="form-control" id="payerFirstname" placeholder="Enter Payer Firstname" name="payerFirstname"></input>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label class="control-label" for="payerLastname">Payer Lastname:</label>
+                            <input type="text" class="form-control" id="payerLastname" placeholder="Enter Payer Lastname" name="payerLastname"></input>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="amount">Amount:</label>
+                            <input type="number" class="form-control" id="amount" placeholder="Enter Amount" name="amount" min="" required></input>
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="paymentMethod">Payment Method:</label>
+                            <select id="paymentMethod" class="form-select" aria-label="Default select">
+                                <option value="" selected></option>
+                                <option value="Credit/Debit">Credit/Debit</option>
+                                <option value="Online Banking Withdraw">Online Banking Withdraw</option>
+                                <option value="Check">Check</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="debitCredit">Is it debit card or credit card:</label>
+                            <select id="debitCredit" class="form-select" aria-label="Default select">
+                                <option value="" selected></option>
+                                <option value="Debit">Debit</option>
+                                <option value="Credit">Credit</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="additionalInfo">Additional Info:</label>
+                            <input type="text" class="form-control" id="additionalInfo" placeholder="Enter Additional Info" name="additionalInfo"></input>
+                        </div>
+
+                        <h4 class="subtitle"><span>Credit Card Informations</span></h4>
+                        <div class="form-group col-9">
+                            <label class="control-label" for="cardNumber">Card Number:</label>
+                            <input type="text" class="form-control" id="cardNumber" name="cardNumber" pattern="[0-9]{13,16}" maxlength="16" placeholder="xxxx xxxx xxxx xxxx"></input>
+                        </div>
+                        <div class="form-group col-3">
+                            <label class="control-label" for="zipCode">Zip Code:</label>
+                            <input type="text" class="form-control" id="zipCode"  name="zipCode"></input>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="cardExpireDate">Card Expire Date:</label>
+                            <input type="date" class="form-control" id="cardExpireDate" placeholder="Enter Card Expire Date" name="cardExpireDate"></input>
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="cardType">Card Type:</label>
+                            <select id="cardType" class="form-select" aria-label="Default select">
+                                <option value="" selected></option>
+                                <option value="Mastercard">Mastercard</option>
+                                <option value="Visa">Visa</option>
+                                <option value="American Express">American Express</option>
+                            </select>
+                        </div>
+
+                        <h4 class="subtitle"><span>Bank Informations</span></h4>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="bankName">Bank Name:</label>
+                            <input type="text" class="form-control" id="bankName" placeholder="Enter Bank Name" name="bankName"></input>
+                        </div>
+                        <div class="form-group col-4">
+                            <label class="control-label" for="routingNumber">Routing Number:</label>
+                            <input type="text" class="form-control" id="routingNumber" placeholder="Enter Routing Number" name="routingNumber"></input>
+                        </div>
+                        <div class="form-group col-4">
+                            <label class="control-label" for="accountNumber">Account Number:</label>
+                            <input type="text" class="form-control" id="accountNumber" placeholder="Enter Account Number" name="accountNumber"></input>
+                        </div>
+                        <div class="form-group col-4">
+                            <label class="control-label" for="checkNumber">Check Number:</label>
+                            <input type="text" class="form-control" id="checkNumber" placeholder="Enter Check Number" name="checkNumber"></input>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="checkImage">Check Image:</label>
+                            <input type="file" class="form-control" id="checkImage" name="checkImage"></input>
+                        </div>
+                        <button type="button" class="btn btn-secondary col-4" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary col-4" id="btn-add-new-paymentdetail">Create</button>
+                    </form>
+                    <div id="response" style="display:none; margin-top:10px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 </body>

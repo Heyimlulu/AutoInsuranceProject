@@ -75,13 +75,17 @@ public class Driver {
 	@Column(nullable = false)
 	private boolean active;
 
+	// Relations
+
 	@JsonBackReference(value = "driver")
 	@ManyToOne
-	@JoinColumn(name = "policy_id")
+	@JoinColumn(name = "policy_id", nullable = false)
 	private Policy policy;
 
 	public Policy getPolicy() { return policy; }
 	public void setPolicy(Policy policy) { this.policy = policy; }
+
+	// Constructors
 
 	public Driver() {}
 
@@ -112,6 +116,8 @@ public class Driver {
 		this.cellNumber = cellNumber;
 		this.policy = policy;
 	}
+
+	// Getters and Setters
 
 	public long getId() {
 		return id;

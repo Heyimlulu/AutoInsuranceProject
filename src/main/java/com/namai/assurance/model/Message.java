@@ -14,9 +14,7 @@ public class Message {
 	private List<Coverage> coverage = new ArrayList<Coverage>();
 	private String error = "";
 
-	/*
-	 * ======== Message, Error and One to Many table ========
-	 */
+	// Message, Error and OneToMany
 	
 	public String getMessage() { return this.message; }
 	public void setMessage(String message) { this.message = message; }
@@ -29,10 +27,8 @@ public class Message {
 
 	public List<Coverage> getCoverage() { return coverage; }
 	public void setCoverage(List<Coverage> coverage) { this.coverage = coverage; }
-	
-	/*
-	 * ======== Tables ========
-	 */
+
+	// Tables
 	
 	public List<Policy> getPolicies() {	return policies; }
 	public void setPolicies(List<Policy> policies) { this.policies = policies; }
@@ -52,9 +48,7 @@ public class Message {
 	public List<Driver> getDrivers() { return driver; }
 	public void setDriver(List<Driver> driver) { this.driver = driver; }
 
-	/*
-	 * ======== Constructors ========
-	 */
+	// Constructors
 	
 	public Message(String message, List<Policy> policies, List<PolicyEditLog> editLogPolicies, List<Bill> bill, 
 			List<PaymentDetail> paymentDetail, List<Vehicle> vehicle, List<Driver> driver, List<Coverage> coverage, String error) {

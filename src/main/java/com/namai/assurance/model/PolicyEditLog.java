@@ -34,18 +34,21 @@ public class PolicyEditLog {
 	@Column(columnDefinition = "text")
 	private String additionalInfos;
 
+	// Relations
+
 	@JsonBackReference(value = "editlog")
 	@ManyToOne
-	@JoinColumn(name = "policy_id")
+	@JoinColumn(name = "policy_id", nullable = false)
 	private Policy policy;
 
 	public Policy getPolicy() {
 		return policy;
 	}
-
 	public void setPolicy(Policy policy) {
 		this.policy = policy;
 	}
+
+	// Constructors
 
 	public PolicyEditLog() {}
 	
@@ -59,10 +62,11 @@ public class PolicyEditLog {
 		this.policy = policy;
 	}
 
+	// Getters and Setters
+
 	public long getId() {
 		return id;
 	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -70,7 +74,6 @@ public class PolicyEditLog {
 	public String getEditedTableName() {
 		return editedTableName;
 	}
-
 	public void setEditedTableName(String editedTableName) {
 		this.editedTableName = editedTableName;
 	}
@@ -78,7 +81,6 @@ public class PolicyEditLog {
 	public Date getEditedDate() {
 		return editedDate;
 	}
-
 	public void setEditedDate(Date editedDate) {
 		this.editedDate = editedDate;
 	}
@@ -86,7 +88,6 @@ public class PolicyEditLog {
 	public String getEditedBy() {
 		return editedBy;
 	}
-
 	public void setEditedBy(String editedBy) {
 		this.editedBy = editedBy;
 	}
@@ -94,7 +95,6 @@ public class PolicyEditLog {
 	public String getAdditionalInfos() {
 		return additionalInfos;
 	}
-
 	public void setAdditionalInfos(String additionalInfos) {
 		this.additionalInfos = additionalInfos;
 	}

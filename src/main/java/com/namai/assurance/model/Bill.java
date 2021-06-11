@@ -40,21 +40,24 @@ public class Bill {
 	@Column(nullable = false, columnDefinition = "nvarchar(50)")
 	private String status;
 
+	// Relations
+
 	@JsonBackReference(value = "bill")
 	@ManyToOne
-	@JoinColumn(name = "policy_id")
+	@JoinColumn(name = "policy_id", nullable = false)
 	private Policy policy;
 	
 	@JsonManagedReference(value = "paymentdetail")
 	@OneToMany(mappedBy = "bill", cascade = { CascadeType.ALL }) // Will delete all rows mapped with the same billID
 	private List<PaymentDetail> paymentDetail;
 
-	// Payment Detail Model - GET/SET
 	public List<PaymentDetail> getBill() { return paymentDetail; }
 	public void setPaymentDetail(List<PaymentDetail> paymentDetail) { this.paymentDetail = paymentDetail; }
 	
 	public Policy getPolicy() { return policy; }
 	public void setPolicy(Policy policy) { this.policy = policy; }
+
+	// Constructors
 
 	public Bill() {}
 
@@ -68,6 +71,8 @@ public class Bill {
 		this.status = status;
 		this.policy = policy;
 	}
+
+	// Getters and Setters
 
 	public long getId() { return this.id; }
 	public void setId(long id) { this.id = id; }

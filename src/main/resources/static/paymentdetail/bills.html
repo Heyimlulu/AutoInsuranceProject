@@ -11,6 +11,7 @@
     <!-- Bootstrap 5.0 Bundle with Popper -->
     <script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
     <!-- Script files -->
+    <script type="text/javascript" src="../js/post/post_bill.js"></script>
     <script type="text/javascript" src="/js/update/update_bill.js"></script>
     <script type="text/javascript" src="/js/delete/delete_bill.js"></script>
     <script type="text/javascript" src="/js/get/get_bill.js"></script>
@@ -45,12 +46,12 @@
         </div>
         <div class="add-form">
             <button class="btn btn-success">
-                <a style="color: white;text-decoration: none;" href="addbill.html">Insert New</a>
+                <a style="color: white;text-decoration: none;" data-bs-toggle="modal" data-bs-target="#add-modal">Insert New</a>
             </button>
         </div>
     </div>
 
-    <!-- Modal 5.0 -->
+    <!-- Delete Modal -->
     <div class="modal fade" id="delete-modal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -62,7 +63,7 @@
                 </div>
 
                 <!-- Modal Body -->
-                <div class="modal-body"></div>
+                <div class="modal-body delete-form"></div>
 
                 <!-- Modal Footer -->
                 <div class="modal-footer">
@@ -73,6 +74,55 @@
         </div>
     </div>
 
+    <!-- Delete Modal -->
+    <div class="modal fade" id="add-modal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Bill</h5>
+                    <button type="button" class="btn-close close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body">
+                    <form id="add_new_bill" class="row">
+                        <div class="form-group col-12">
+                            <label class="control-label" for="policyID">Policy ID:</label>
+                            <input type="number" class="form-control" id="policyID" placeholder="Enter Policy ID" name="policyID" required></input>
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="control-label" for="createdDate">Created Date:</label>
+                            <input type="date" class="form-control" id="createdDate" placeholder="Enter Created Date" name="createdDate" required></input>
+                        </div>
+                        <div class="form-group col-6">
+                            <label class="control-label" for="dueDate">Due Date:</label>
+                            <input type="date" class="form-control" id="dueDate" placeholder="Enter Due Date" name="dueDate" min="" required></input>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="minimumPayment">Minimum Payment:</label>
+                            <input type="number" class="form-control" id="minimumPayment" placeholder="Enter Minimum Payment" name="minimumPayment" min="" required></input>
+                        </div>
+                        <div class="form-group col-12">
+                            <label class="control-label" for="balance">Balance:</label>
+                            <input type="number" class="form-control" id="balance" placeholder="Enter Balance" name="balance" required></input>
+                        </div>
+                        <div class="form-group col-12">
+                            <label for="status">Status</label>
+                            <select id="status" class="form-select" aria-label="Default select">
+                                <option value="paid">Paid</option>
+                                <option value="unpaid">Unpaid</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn btn-secondary col-4" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary col-4" id="btn-add-new-bill">Create</button>
+                    </form>
+                    <div id="response" style="display:none; margin-top:10px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 </body>

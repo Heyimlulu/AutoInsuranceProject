@@ -1,7 +1,5 @@
 package com.namai.assurance.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -19,6 +17,8 @@ public class PolicyCoverage {
 	@Column
 	private Date createdDate;
 
+	// Constructors
+
 	public PolicyCoverage() {}
 
 	public PolicyCoverage(long id, boolean active, Date createdDate) {
@@ -27,6 +27,8 @@ public class PolicyCoverage {
 		this.active = active;
 		this.createdDate = createdDate;
 	}
+
+	// Getters and Setters
 
 	public long getId() {
 		return id;

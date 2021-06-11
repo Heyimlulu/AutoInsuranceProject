@@ -33,8 +33,15 @@ public class Coverage {
 	@Column(columnDefinition = "varchar(255)")
 	private String description;
 
+	// Relations
+
 	@ManyToMany(mappedBy = "coverage", fetch = FetchType.LAZY)
 	private List<Policy> policies = new ArrayList<>();
+
+	@ManyToMany(mappedBy = "coverage", fetch = FetchType.LAZY)
+	private List<Vehicle> vehicles = new ArrayList<>();
+
+	// Constructors
 
 	public Coverage() {}
 
@@ -48,6 +55,8 @@ public class Coverage {
 		this.isVehicleCoverage = isVehicleCoverage;
 		this.description = description;
 	}
+
+	// Getters and Setters
 
 	public long getId() {
 		return id;
