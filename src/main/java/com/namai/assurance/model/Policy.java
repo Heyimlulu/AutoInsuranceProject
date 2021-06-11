@@ -10,6 +10,7 @@ import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.joda.time.DateTime;
 
 @Entity
 @Table(name="policy")
@@ -19,28 +20,28 @@ public class Policy {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "nvarchar(20)")
 	private String policyNumber;
 	
-	@Column
+	@Column(nullable = false)
 	private Date policyEffectiveDate;
 
-	@Column
+	@Column(nullable = false)
 	private Date policyExpireDate;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(100)")
 	private String paymentOption;
 
-	@Column
+	@Column(nullable = false)
 	private double totalAmount;
 
-	@Column
+	@Column(nullable = false)
 	private boolean active;
 
-	@Column
+	@Column(columnDefinition = "text")
 	private String additionalInfos;
 
-	@Column
+	@Column(nullable = false)
 	private Date creationDate;
 	
 	/*

@@ -32,7 +32,7 @@
 					<div class="form-group">
 						<label class="control-label" for="editedTableName">Policy edited table:</label>
 						<input type="text" class="form-control" id="editedTableName"
-								placeholder="Enter Policy Edited Table" name="editedTableName" required></input>
+								placeholder="Enter Policy Edited Table" name="editedTableName" maxlength="50" required></input>
                     </div>
 					<div class="form-group">
 						<label class="control-label" for="editedDate">Edited Date:</label>
@@ -42,12 +42,12 @@
 					<div class="form-group">
 						<label class="control-label" for="editedBy">Edited By:</label>
 						<input type="text" class="form-control" id="editedBy"
-								placeholder="Enter edited by" name="editedBy" required></input>
+								placeholder="Enter edited by" name="editedBy" maxlength="50"  required></input>
 					</div>                    
 					<div class="form-group">
 						<label class="control-label" for="additionalInfos">Additionals Infos:</label>
 						<input type="text" class="form-control" id="additionalInfos"
-								placeholder="Enter Additional Infos" name="additionalInfos" required></input>
+								placeholder="Enter Additional Infos" name="additionalInfos"></input>
 					</div>
 					<button type="button" onclick="window.history.back();" class="btn btn-secondary col-4" id="btn-cancel-new-edit_policy">Cancel</button>
 					<button type="submit" class="btn btn-primary col-4" id="btn-add-new-edit_policy">Create</button>

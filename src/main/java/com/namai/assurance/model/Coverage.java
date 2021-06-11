@@ -15,22 +15,22 @@ public class Coverage {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(255)")
 	private String coverageName;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String coverageGroup;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(20)")
 	private long code;
 
-	@Column
+	@Column(nullable = false)
 	private boolean isPolicyCoverage;
 
-	@Column
+	@Column(nullable = false)
 	private boolean isVehicleCoverage;
 
-	@Column
+	@Column(columnDefinition = "varchar(255)")
 	private String description;
 
 	@ManyToMany(mappedBy = "coverage", fetch = FetchType.LAZY)

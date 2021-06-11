@@ -21,58 +21,58 @@ public class Driver {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column
+	@Column(nullable = false)
 	private Date dob;
 
-	@Column
+	@Column(columnDefinition = "varchar(100)")
 	private String email_adress;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String first_name;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String last_name;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(20)")
 	private String phone_number;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(12)")
 	private String ssn;
 	
-	@Column
+	@Column(columnDefinition = "varchar(50)")
 	private String title;
 	
-	@Column
+	@Column(columnDefinition = "char(10)")
 	private String middleInitial;
 	
-	@Column
+	@Column(nullable = false)
 	private Date license_issue_date;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String license_issue_state;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(20)")
 	private long license_number;
 
-	@Column
+	@Column(columnDefinition = "varchar(10)")
 	private String gender;
 
-	@Column
+	@Column(columnDefinition = "varchar(20)")
 	private String marital_statut;
 
-	@Column
+	@Column(nullable = false)
 	private Boolean is_primary_policy_holder;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String relation_withPrimary_policy_holder;
 	
-	@Column
+	@Column(nullable = false)
 	private Date created_date;
 	
-	@Column 
+	@Column(columnDefinition = "varchar(20)")
 	private String cellNumber;
 	
-	@Column
+	@Column(nullable = false)
 	private boolean active;
 
 	@JsonBackReference(value = "driver")

@@ -25,37 +25,37 @@ public class Vehicle {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "char(4)")
 	private long year;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String make; // = Vehicle's Brand
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String model;
 	
-	@Column
+	@Column(columnDefinition = "varchar(50)")
 	private String color;
 	
-	@Column
+	@Column(columnDefinition = "varchar(50)")
 	private String trim;
 	
-	@Column
-	private double mileAge;
+	@Column(nullable = false)
+	private int mileAge;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(20)")
 	private long vinNumber;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(20)")
 	private long vehicleNumberPlate;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String vehicleRegisteredState;
 	
-	@Column
+	@Column(nullable = false)
 	private Date createdDate;
 	
-	@Column
+	@Column(nullable = false)
 	private boolean active;
 
 	@JsonBackReference(value = "vehicle")
@@ -82,7 +82,7 @@ public class Vehicle {
 	
 	public Vehicle() {}
 
-	public Vehicle(long id, long year, String make, String model, String color, String trim, double mileAge, 
+	public Vehicle(long id, long year, String make, String model, String color, String trim, int mileAge,
 			long vinNumber, long vehicleNumberPlate, String vehicleRegisteredState, Date createdDate, boolean active, Policy policy) {
 		super();
 		this.id = id;
@@ -119,8 +119,8 @@ public class Vehicle {
 	public String getTrim() { return trim; }
 	public void setTrim(String trim) { this.trim = trim; }
 	
-	public double getMileAge() { return mileAge; }
-	public void setMileAge(double mileAge) { this.mileAge = mileAge; }
+	public int getMileAge() { return mileAge; }
+	public void setMileAge(int mileAge) { this.mileAge = mileAge; }
 	
 	public long getVinNumber() { return vinNumber; }
 	public void setVinNumber(long vinNumber) { this.vinNumber = vinNumber; }

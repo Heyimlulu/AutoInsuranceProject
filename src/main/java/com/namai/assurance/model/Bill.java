@@ -25,22 +25,19 @@ public class Bill {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column
-	private long policyIdArtifact;
-
-	@Column
+	@Column(nullable = false)
 	private Date dueDate;
 
-	@Column
+	@Column(nullable = false)
 	private double minimumPayment;
 
-	@Column
+	@Column(nullable = false)
 	private Date createdDate;
 
-	@Column
+	@Column(nullable = false)
 	private double balance;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "nvarchar(50)")
 	private String status;
 
 	@JsonBackReference(value = "bill")
@@ -61,10 +58,9 @@ public class Bill {
 
 	public Bill() {}
 
-	public Bill(long id, long policyIdArtifact, Date dueDate, double minimumPayment, Date createdDate, double balance, String status, Policy policy) {
+	public Bill(long id, Date dueDate, double minimumPayment, Date createdDate, double balance, String status, Policy policy) {
 		super();
 		this.id = id;
-		this.policyIdArtifact = policyIdArtifact;
 		this.dueDate = dueDate;
 		this.minimumPayment = minimumPayment;
 		this.createdDate = createdDate;
@@ -75,9 +71,6 @@ public class Bill {
 
 	public long getId() { return this.id; }
 	public void setId(long id) { this.id = id; }
-
-	public long getPolicyIdArtifact() { return policyIdArtifact; }
-	public void setPolicyIdArtifact(long policyIdArtifact) { this.policyIdArtifact = policyIdArtifact; }
 
 	public Date getDueDate() { return dueDate; }
 	public void setDueDate(Date dueDate) { this.dueDate = dueDate; }

@@ -18,7 +18,6 @@ public class PolicyEditLogServices {
 	public PolicyServices getPolicyServices() {
 		return policyServices;
 	}
-
 	public void setPolicyServices(PolicyServices policyServices) {
 		this.policyServices = policyServices;
 	}

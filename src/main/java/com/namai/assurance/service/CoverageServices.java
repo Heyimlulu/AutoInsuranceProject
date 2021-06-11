@@ -12,6 +12,14 @@ import java.util.Optional;
 public class CoverageServices {
 	
 	@Autowired CoverageRepository repository;
+	@Autowired private PolicyServices policyServices; //
+
+	public PolicyServices getPolicyServices() {
+		return policyServices;
+	} //
+	public void setPolicyServices(PolicyServices policyServices) {
+		this.policyServices = policyServices;
+	} //
 
 	public Coverage saveCoverage(Coverage coverage) {
 		return repository.save(coverage);

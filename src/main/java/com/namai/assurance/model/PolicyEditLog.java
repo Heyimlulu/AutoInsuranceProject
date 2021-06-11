@@ -22,19 +22,16 @@ public class PolicyEditLog {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String editedTableName;
 
-	@Column
-	private long policy_id_artifact;
-
-	@Column
+	@Column(nullable = false)
 	private Date editedDate;
 
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(50)")
 	private String editedBy;
 
-	@Column
+	@Column(columnDefinition = "text")
 	private String additionalInfos;
 
 	@JsonBackReference(value = "editlog")
@@ -52,11 +49,10 @@ public class PolicyEditLog {
 
 	public PolicyEditLog() {}
 	
-	public PolicyEditLog(long id, String editedTableName, long policy_id_artifact, Date editedDate, String editedBy, String additionalInfos, Policy policy) {
+	public PolicyEditLog(long id, String editedTableName, Date editedDate, String editedBy, String additionalInfos, Policy policy) {
 		super();
 		this.id = id;
 		this.editedTableName = editedTableName;
-		this.policy_id_artifact = policy_id_artifact;
 		this.editedDate = editedDate;
 		this.editedBy = editedBy;
 		this.additionalInfos = additionalInfos;
@@ -101,14 +97,6 @@ public class PolicyEditLog {
 
 	public void setAdditionalInfos(String additionalInfos) {
 		this.additionalInfos = additionalInfos;
-	}
-
-	public long getPolicy_id_artifact() {
-		return policy_id_artifact;
-	}
-
-	public void setPolicy_id_artifact(long policy_id_artifact) {
-		this.policy_id_artifact = policy_id_artifact;
 	}
 
 	@Override

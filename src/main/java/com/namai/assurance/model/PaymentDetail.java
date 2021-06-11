@@ -21,46 +21,46 @@ public class PaymentDetail {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column
+	@Column(nullable = false)
 	private Date paidDate;
 	
-	@Column
+	@Column(nullable = false)
 	private double amount;
 	
-	@Column
+	@Column(nullable = false, columnDefinition = "varchar(100)")
 	private String paymentMethod;
 	
-	@Column
+	@Column(columnDefinition = "varchar(50)")
 	private String payerFirstName;
 	
-	@Column
+	@Column(columnDefinition = "varchar(50)")
 	private String payerLastName;
 	
-	@Column
+	@Column(columnDefinition = "varchar(50)")
 	private long cardNumber;
 	
-	@Column
+	@Column(columnDefinition = "varchar(10)")
 	private long zipCode;
 	
-	@Column
+	@Column(columnDefinition = "varchar(10)")
 	private Date cardExpireDate;
 	
-	@Column
+	@Column(columnDefinition = "varchar(20)")
 	private String cardType;
 	
-	@Column
+	@Column(columnDefinition = "varchar(50)")
 	private String debitOrCredit;
 	
-	@Column
+	@Column(columnDefinition = "varchar(100)")
 	private String bankName;
 	
-	@Column
+	@Column(columnDefinition = "varchar(20)")
 	private long accountNumber;
 	
-	@Column
+	@Column(columnDefinition = "varchar(20)")
 	private long routingNumber;
 	
-	@Column
+	@Column(columnDefinition = "varchar(20)")
 	private long checkNumber;
 	
 	@Column
@@ -69,7 +69,7 @@ public class PaymentDetail {
 	@Column
 	private String additionalInfos;
 	
-	@Column
+	@Column(nullable = false)
 	private Date createdDate;
 
 	@JsonBackReference(value = "paymentdetail")
