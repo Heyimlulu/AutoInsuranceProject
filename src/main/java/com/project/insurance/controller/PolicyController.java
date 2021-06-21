@@ -22,7 +22,7 @@ import com.project.insurance.model.Message;
 
 @RestController
 @RequestMapping("/api/policy")
-public class RestAPIController {
+public class PolicyController {
 	
 	@Autowired
     PolicyServices policyServices;
