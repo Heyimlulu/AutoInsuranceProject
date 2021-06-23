@@ -2,6 +2,17 @@ $(document).ready(function() {
     $("#add_new_police").submit(function(evt) {
         evt.preventDefault();
 
+        let pID = '1';
+        let pActive = $("#active").val();
+        let pCreationDate = $("#creationDate").val();
+
+        let url = "/policy/addcoverage.html?id=" + pID +
+            "&active=" + pActive +
+            "&creationdate=" + pCreationDate;
+
+        window.location.href = url;
+
+        /*
         // PREPARE FORM DATA
         let formData = {
             policyNumber : $("#policyNumber").val(),
@@ -68,6 +79,8 @@ $(document).ready(function() {
                 $("#response").css({"display": "block"});
             }
         });
+
+         */
     });
 
     function todayDate() {
