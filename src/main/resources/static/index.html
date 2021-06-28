@@ -1,84 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Auto Insurance Application</title>
+<title>Auto Insurance Management</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Bootstrap 5.0 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<link href="/resources/bootstrap-5.0.1-dist/css/bootstrap.css" rel="stylesheet">
 <!-- JQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/resources/jquery-3.4.1.min.js"></script>
 <!-- Bootstrap 5.0 Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
 <!-- Script files -->
 <script src="/js/sidebar.js"></script>
-<script src="/js/navbar.js"></script>
+<script src="/js/konami.js"></script>
 <!-- Custom CSS -->
 <link rel="stylesheet" href="./css/styles.css">
-
+<link rel="stylesheet" href="./css/background.css">
 </head>
 <body>
-<div id="navbar"></div>
-<div id="sidebar"></div>
-	<div class="container">
-		<div class="jumbotron">
-  			<h1 class="title">Insurance Project</h1>
-  			<p class="lead">
-				An automobile insurance management application using the Spring Boot, Maven and Bootstrap frameworks
-			</p>
-			<p class="lead disclaimer">
-				/!\ This website is currently in development and may changed or not in the future /!\
-			</p>
-			<button class="btn btn-light btn-credits" data-bs-toggle="collapse" href="#credits" role="button" aria-expanded="false">More informations</button>
+<div id="mySidebar"></div>
 
-			<div class="collapse" id="credits">
-				<hr>
+<div id="content" class="container">
+	<div class="area" >
+		<ul class="circles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
 
-				<div class="news">
-					<h1 class="title">What's new? - Devlog</h1>
+		<div id="secret"></div>
 
-					<h2 class="release-date">-- 4/28/2021 --</h2>
-					<h4 class="release-title">Project repository is now set to public</h4>
-					<h4 class="release-title">New pages availables</h4>
-					<ul>
-						<li>Add Driver</li>
-						<li>All Drivers</li>
-					</ul>
-
-					<h2 class="release-date">-- 3/23/2021 --</h2>
-					<h4 class="release-title">Upload to Heroku!</h4>
-					<h4 class="release-title">All availables pages</h4>
-					<ul>
-						<li>Add Policy</li>
-						<li>All Policies</li>
-
-						<li>Add Policy Edit Log</li>
-						<li>All Policies Edit Log</li>
-
-						<li>Add Bill</li>
-						<li>All Bills</li>
-
-						<li>Add Payment Detail</li>
-						<li>All Payment Details</li>
-
-						<li>Add Vehicle</li>
-						<li>All Vehicles</li>
-					</ul>
-				</div>
-
-				<h2 class="title">Credits</h2>
-				<p class="lead credits">
-					<a class="credits-links" href="https://github.com/Heyimlulu/AutoInsuranceProject" target="_blank">&copy; Insurance Project</a> is a personal project created by
-					<a class="credits-links" href="https://github.com/Heyimlulu" target="_blank">Heyimlulu</a> ,
-					<a class="credits-links" href="https://github.com/Dead-Bot" target="_blank">Dead-Bot</a> &
-					<a class="credits-links" href="https://github.com/namaio" target="_blank">namaio</a>
+		<div id="content-title" class="px-4 py-5 my-5 text-center">
+			<h1 class="display-5 fw-bold">Auto Insurance Management</h1>
+			<div class="col-lg-6 mx-auto">
+				<p class="lead mb-4">
+					A personal project created by
+					<a class="credits" href="https://github.com/Heyimlulu" target="_blank">Heyimlulu</a> ,
+					<a class="credits" href="https://github.com/Dead-Bot" target="_blank">Dead-Bot</a> &
+					<a class="credits" href="https://github.com/namaio" target="_blank">namaio</a>
 				</p>
 			</div>
-
 		</div>
-
-		<hr>		
 	</div>
-
+</div>
 </body>
 </html>

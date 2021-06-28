@@ -1,13 +1,27 @@
-html {
-    margin: 4rem 0 0 16rem;
+body {
+    display: block;
+    margin: 8px;
+}
+
+#secret {
+    text-align: center;
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+}
+
+.listing {
+    margin: 0.7em 0;
 }
 
 h3 {
     text-align: center;
-}
-
-.news h1 {
-    margin-top: .7em;
 }
 
 .title {
@@ -16,16 +30,28 @@ h3 {
     line-height: 1.2;
 }
 
-.release-date {
-    font-size: 1.7rem;
-    font-weight: 400;
-    line-height: 1.2;
+#content-title {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
 }
 
-.release-title {
-    font-size: 1.4rem;
-    font-weight: 300;
-    line-height: 1.2;
+table {
+    text-align: center;
+}
+
+.add-form {
+    margin-top: 1em;
+}
+
+.separator {
+    padding: 0 0.1em;
+}
+
+.checkbox {
+    margin-bottom: .3em;
+    text-align: center;
 }
 
 /* ================ Subtitle ================ */
@@ -60,12 +86,8 @@ h3 {
 
 /* ================================ */
 
-button[type='submit'] {
+button {
     margin: auto;
-}
-
-#navbar {
-    display: none;
 }
 
 /* form style */
@@ -82,70 +104,23 @@ button[type='submit'] {
 }
 
 .form-design {
-    background-color: #d3d8ef;
+    background-color: #d2f4ea;
     padding: 10px;
     border-radius: 3px;
     margin: auto;
 }
 
-/* jumbotron style */
-.jumbotron {
-    padding: 2rem 1rem;
-    margin: 2rem 10rem;
-    background-color: #d3d8ef;
-    border-radius: .3rem;
-}
-.disclaimer {
-    font-weight: bold;
-    color: red;
-}
+/* Credits - Creator */
 .credits {
-    margin: 0.4rem 0;
-    font-size: 1rem;
-}
-
-.credits-links {
     text-decoration: none;
     color: #7386D5;
 }
 
-.credits-links:hover {
-    color: white;
-}
-
-.btn-credits:active {
-    background-color: #d3d8ef;
-}
-
-/* Bootstrap navbar dropdown with hover effect */
-@media all and (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: none;
-    }
-    .navbar .nav-item:hover .nav-link {
-        color: rgba(0,0,0,.7);
-    }
-    .navbar .nav-item:hover .dropdown-menu {
-        display: block;
-    }
-    .navbar .nav-item .dropdown-menu {
-        margin-top:0;
-    }
+.credits:hover {
+    color: #d2f4ea;
 }
 
 @media only screen and (max-width: 800px) {
-    html {
-        margin: 0;
-    }
-
-    .jumbotron {
-        margin: 2rem 1rem;
-    }
-
-    #navbar {
-        display: block;
-    }
-
     .subtitle span::before,
     .subtitle span::after {
         width: 30px;

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Auto Insurance Application | Update Payment Detail</title>
+    <title>Auto Insurance Management | Update Payment Detail</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap 5.0 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="/resources/bootstrap-5.0.1-dist/css/bootstrap.css" rel="stylesheet">
     <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/resources/jquery-3.4.1.min.js"></script>
     <!-- Bootstrap 5.0 Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
     <!-- Script files -->
-    <script type="text/javascript" src="/js/update_paymentdetail.js"></script>
+    <script type="text/javascript" src="/js/update/update_paymentdetail.js"></script>
     <script type="text/javascript" src="/js/load/paymentdetail.js"></script>
     <script src="../js/sidebar.js"></script>
-    <script src="../js/navbar.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-<div id="navbar"></div>
-<div id="sidebar"></div>
+<div id="mySidebar"></div>
+
 <div class="container">
     <div class="row">
         <div class="col-sm-6 form-design" id="div_edit_log_policy_updating">
@@ -42,11 +41,11 @@
                 <h4 class="subtitle"><span>General Informations</span></h4>
                 <div class="form-group col-md-6">
                     <label class="control-label" for="payerFirstname">Payer Firstname:</label>
-                    <input type="text" class="form-control" id="payerFirstname" placeholder="Enter Payer Firstname" name="payerFirstname" required></input>
+                    <input type="text" class="form-control" id="payerFirstname" placeholder="Enter Payer Firstname" name="payerFirstname"></input>
                 </div>
                 <div class="form-group col-md-6">
                     <label class="control-label" for="payerLastname">Payer Lastname:</label>
-                    <input type="text" class="form-control" id="payerLastname" placeholder="Enter Payer Lastname" name="payerLastname" required></input>
+                    <input type="text" class="form-control" id="payerLastname" placeholder="Enter Payer Lastname" name="payerLastname"></input>
                 </div>
                 <div class="form-group col-12">
                     <label class="control-label" for="amount">Amount:</label>
@@ -55,62 +54,67 @@
                 <div class="form-group col-12">
                     <label for="paymentMethod">Payment Method:</label>
                     <select id="paymentMethod" class="form-select" aria-label="Default select">
-                        <option value="6 months payment">6 months payment</option>
-                        <option value="Annual payment">Annual payment</option>
-                        <option value="Full payment">Full payment</option>
+                        <option value="" selected></option>
+                        <option value="Credit/Debit">Credit/Debit</option>
+                        <option value="Online Banking Withdraw">Online Banking Withdraw</option>
+                        <option value="Check">Check</option>
                     </select>
                 </div>
                 <div class="form-group col-12">
                     <label for="debitCredit">Debit or Credit:</label>
                     <select id="debitCredit" class="form-select" aria-label="Default select">
+                        <option value="" selected></option>
                         <option value="Debit">Debit</option>
                         <option value="Credit">Credit</option>
                     </select>
                 </div>
                 <div class="form-group col-12">
                     <label class="control-label" for="additionalInfo">Additional Info:</label>
-                    <input type="text" class="form-control" id="additionalInfo" placeholder="Enter Additional Info" name="additionalInfo" required></input>
+                    <input type="text" class="form-control" id="additionalInfo" placeholder="Enter Additional Info" name="additionalInfo"></input>
                 </div>
 
                 <h4 class="subtitle"><span>Credit Card Informations</span></h4>
                 <div class="form-group col-9">
                     <label class="control-label" for="cardNumber">Card Number:</label>
-                    <input type="number" class="form-control" id="cardNumber" placeholder="Enter Card Number" name="cardNumber" required></input>
+                    <input type="text" class="form-control" id="cardNumber" name="cardNumber" pattern="[0-9]{13,16}" maxlength="16" placeholder="xxxx xxxx xxxx xxxx"></input>
                 </div>
                 <div class="form-group col-3">
                     <label class="control-label" for="zipCode">Zip Code:</label>
-                    <input type="number" class="form-control" id="zipCode" placeholder="Enter Zip Code" name="zipCode" required></input>
+                    <input type="text" class="form-control" id="zipCode" pattern="[0-9]{3}" maxlength="3" placeholder="xxx" name="zipCode"></input>
                 </div>
                 <div class="form-group col-12">
                     <label class="control-label" for="cardExpireDate">Card Expire Date:</label>
-                    <input type="date" class="form-control" id="cardExpireDate" placeholder="Enter Card Expire Date" name="cardExpireDate" required></input>
+                    <input type="date" class="form-control" id="cardExpireDate" placeholder="Enter Card Expire Date" name="cardExpireDate"></input>
                 </div>
                 <div class="form-group col-12">
                     <label for="cardType">Card Type:</label>
                     <select id="cardType" class="form-select" aria-label="Default select">
+                        <option value="" selected></option>
                         <option value="Mastercard">Mastercard</option>
                         <option value="Visa">Visa</option>
+                        <option value="American Express">American Express</option>
                     </select>
                 </div>
 
                 <h4 class="subtitle"><span>Bank Informations</span></h4>
                 <div class="form-group col-12">
                     <label class="control-label" for="bankName">Bank Name:</label>
-                    <input type="text" class="form-control" id="bankName" placeholder="Enter Bank Name" name="bankName" required></input>
+                    <input type="text" class="form-control" id="bankName" placeholder="Enter Bank Name" name="bankName"></input>
                 </div>
                 <div class="form-group col-4">
                     <label class="control-label" for="routingNumber">Routing Number:</label>
-                    <input type="number" class="form-control" id="routingNumber" placeholder="Enter Routing Number" name="routingNumber" required></input>
+                    <input type="text" class="form-control" id="routingNumber" placeholder="Enter Routing Number" name="routingNumber"></input>
                 </div>
                 <div class="form-group col-4">
                     <label class="control-label" for="accountNumber">Account Number:</label>
-                    <input type="number" class="form-control" id="accountNumber" placeholder="Enter Account Number" name="accountNumber" required></input>
+                    <input type="text" class="form-control" id="accountNumber" placeholder="Enter Account Number" name="accountNumber"></input>
                 </div>
                 <div class="form-group col-4">
                     <label class="control-label" for="checkNumber">Check Number:</label>
-                    <input type="number" class="form-control" id="checkNumber" placeholder="Enter Check Number" name="checkNumber" required></input>
+                    <input type="text" class="form-control" id="checkNumber" placeholder="Enter Check Number" name="checkNumber"></input>
                 </div>
-                <button type="submit" class="btn btn-danger col-3" id="btn-add-new-policy">Submit</button>
+                <button type="button" onclick="window.history.back();" class="btn btn-secondary col-4">Cancel</button>
+                <button type="submit" class="btn btn-primary col-4">Update</button>
             </form>
             <div id="response" style="display: none; margin: 10px"></div>
         </div>

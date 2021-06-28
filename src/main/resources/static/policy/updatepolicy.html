@@ -1,71 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Auto Insurance Application | Update Policy</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Bootstrap 5.0 CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<!-- JQuery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Bootstrap 5.0 Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-<!-- Script files -->
-<script type="text/javascript" src="/js/update_policy.js"></script>
+	<title>Auto Insurance Management | Update Policy</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap 5.0 CSS -->
+	<link href="/resources/bootstrap-5.0.1-dist/css/bootstrap.css" rel="stylesheet">
+	<!-- JQuery -->
+	<script src="/resources/jquery-3.4.1.min.js"></script>
+	<!-- Bootstrap 5.0 Bundle with Popper -->
+	<script src="/resources/bootstrap-5.0.1-dist/js/bootstrap.bundle.js"></script>
+	<!-- Script files -->
+	<script type="text/javascript" src="/js/update/update_policy.js"></script>
 	<script type="text/javascript" src="/js/load/policy.js"></script>
-<script src="../js/sidebar.js"></script>
-<script src="../js/navbar.js"></script>
-<!-- Custom CSS -->
-<link rel="stylesheet" href="../css/styles.css">
+	<script src="../js/sidebar.js"></script>
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-<div id="navbar"></div>
-<div id="sidebar"></div>
+<div id="mySidebar"></div>
+
 	<div class="container">
-		<div class="row">
+		<div>
             <div class="col-sm-6 form-design" id="div_policy_updating">
                 <h3>Update Policy</h3>
-				<form id="update_policy_form">
+				<form id="update_policy_form" class="row">
 					<div class="form-group">
 						<label for="policyID">Id:</label>
 						<input type="number" class="form-control" id="policyID" readonly>
 					</div>
-					<div class="form-group">
-						<label for="policyNumber">Policy Number:</label>
-						<input type="text" class="form-control" placeholder="Enter Policy number" id="policyNumber">
+					<div class="form-group col-12">
+						<label class="control-label" for="policyNumber">Policy Number:</label>
+						<input type="text" class="form-control" id="policyNumber"
+							   placeholder="Enter Policy Number" name="policyNumber" maxlength="20" required></input>
 					</div>
-					<div class="form-group">
-						<label for="policyEffectiveDate">Effective Date:</label>
-						<input type="date" class="form-control" placeholder="Enter Effective date" id="policyEffectiveDate">
-					</div>				  
-					<div class="form-group">
-						<label for="policyExpireDate">Expire Date:</label>
-						<input type="date" class="form-control" placeholder="Enter Expire date" id="policyExpireDate">
-					</div>				  				
-					<div class="form-group">
-						<label for="paymentOption">Payment option:</label>
-						<input type="text" class="form-control" placeholder="Enter payment option" id="paymentOption">
+					<div class="form-group col-4">
+						<label class="control-label" for="creationDate">Creation Date:</label>
+						<input type="date" class="form-control" id="creationDate"
+							   placeholder="Enter creationDate" name="creationDate" required></input>
 					</div>
-					<div class="form-group">
-						<label for="totalAmount">Total amount:</label>
-						<input type="number" class="form-control" placeholder="Enter the total amount" id="totalAmount">
+					<div class="form-group col-4">
+						<label class="control-label" for="policyEffectiveDate">Effective Date:</label>
+						<input type="date" class="form-control" id="policyEffectiveDate"
+							   placeholder="Enter Effective Date" name="policyEffectiveDate" min="" required></input>
 					</div>
-					<div class="form-group">
+					<div class="form-group col-4">
+						<label class="control-label" for="policyExpireDate">Expiration Date:</label>
+						<input type="date" class="form-control" id="policyExpireDate"
+							   placeholder="Enter policyExpireDate" name="policyExpireDate" min="" required></input>
+					</div>
+					<div class="form-group col-12">
+						<label for="paymentOption">Payment Option:</label>
+						<select id="paymentOption" class="form-select" aria-label="Default select">
+							<option value="Monthly">Monthly</option>
+							<option value="Once">Once</option>
+						</select>
+					</div>
+					<div class="form-group col-12">
+						<label class="control-label" for="totalAmount">Total Amount:</label>
+						<input type="number" class="form-control" id="totalAmount"
+							   placeholder="Enter totalAmount" name="totalAmount" required></input>
+					</div>
+					<div class="form-group col-12">
 						<label for="active">Active?</label>
 						<select id="active" class="form-select" aria-label="Default select example">
 							<option value="true">Yes</option>
 							<option value="false">No</option>
 						</select>
 					</div>
-					<div class="form-group">
-						<label for="additionalInfos">Additional Infos:</label>
-						<input type="text" class="form-control" placeholder="Enter additional infos" id="additionalInfos">
+					<div class="form-group col-12">
+						<label class="control-label" for="additionalInfos">Additional Infos:</label>
+						<input type="text" class="form-control" id="additionalInfos"
+							   placeholder="Enter additionalInfos" name="additionalInfos"></input>
 					</div>
-					<div class="form-group">
-						<label for="creationDate">Creation date:</label>
-						<input type="date" class="form-control" placeholder="Enter creation date" id="creationDate">
-					</div>				  				
-					<button type="submit" class="btn btn-primary">Submit</button>
+					<button type="button" onclick="window.history.back();" class="btn btn-secondary col-4">Cancel</button>
+					<button type="submit" class="btn btn-primary col-4">Update</button>
 				</form>
 				<div id="response" style="display:none; margin:10px">
 				</div>
