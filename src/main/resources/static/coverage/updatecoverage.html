@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Auto Insurance Management | Update Coverage</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Script files -->
+    <script type="text/javascript" src="/js/update/update_coverage.js"></script>
+    <script type="text/javascript" src="/js/load/coverage.js"></script>
+    <script type="text/javascript" src="../js/covCategory.js"></script>
+    <script src="../js/sidebar.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+<div id="mySidebar"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 form-design" id="div_coverage_updating">
+            <h3>Update Coverage</h3>
+            <form id="update_coverage_form" class="row">
+                <div class="form-group col-12">
+                    <label class="control-label" for="coverageId">Coverage Id:</label>
+                    <input type="text" class="form-control" id="coverageId" name="coverageId" disabled></input>
+                </div>
+                <div class="form-group col-12">
+                    <label for="coverageName">Coverage Name</label>
+                    <select id="coverageName" class="form-select" aria-label="Default select">
+                        <option value="" disabled selected>-- Select category --</option>
+                    </select>
+                </div>
+                <div class="form-group col-12">
+                    <label for="coverageGroup">Coverage Group</label>
+                    <select id="coverageGroup" class="form-select" aria-label="Default select" onChange="changecat(this.value);">
+                        <option value="" disabled selected>-- Select category --</option>
+                        <option value="Personal auto coverages">Personal auto coverages</option>
+                        <option value="Vehicle coverages">Vehicle coverages</option>
+                    </select>
+                </div>
+                <div class="form-group col-12">
+                    <label class="control-label" for="code">Code:</label>
+                    <input type="text" class="form-control" id="code" placeholder="-- Select category --" name="code" disabled required></input>
+                </div>
+                <div class="checkbox">
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="policyCoverage" value="1">
+                        <label class="form-check-label" for="policyCoverage">Policy Coverage</label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="vehicleCoverage" value="1">
+                        <label class="form-check-label" for="vehicleCoverage">Vehicle Coverage</label>
+                    </div>
+                </div>
+                <div class="form-group col-12">
+                    <label class="control-label" for="description">Description:</label>
+                    <input type="text" class="form-control" id="description" placeholder="Enter Description" name="description"></input>
+                </div>
+                <button type="button" onclick="window.history.back();" class="btn btn-secondary col-4">Cancel</button>
+                <button type="submit" class="btn btn-primary col-4">Update</button>
+            </form>
+            <div id="response" style="display: none; margin: 10px"></div>
+        </div>
+    </div>
+    <hr>
+</div>
+</body>
+</html>

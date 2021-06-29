@@ -11,7 +11,6 @@ window.onload = function () {
     /* Decode input field to avoid URL syntax */
     document.getElementById('edit_log_policy_id').value = decodeURI(data.editlogid);
     document.getElementById('edit_log_policy_edited_table').value = decodeURI(data.editedtablename);
-    document.getElementById('policy_id_artifact').value = decodeURI(data.idartifact);
     document.getElementById('edit_log_policy_edited_date').value = decodeURI(data.editeddate);
     document.getElementById('edit_log_policy_edited_by').value = decodeURI(data.editedby);
     document.getElementById('edit_log_additional_info').value = decodeURI(data.additionalinfos);
